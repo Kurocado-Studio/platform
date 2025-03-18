@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@kurocado-studio/ui": "workspace:*",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
