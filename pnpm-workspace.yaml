@@ -2,3 +2,4 @@ packages:
   - 'apps/*'
   - 'packages/*'
   - 'workspace/qa/*'
+  - '!node_modules'

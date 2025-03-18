@@ -15,7 +15,7 @@
     "lint": "turbo run lint",
     "setup": "pnpm i && turbo run setup",
     "test": "turbo run test",
-    "lint:fix": "turbo run lint:fix",
+    "lint:fix": "turbo run lint:fix --",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "version-packages": "changeset version"
@@ -30,11 +30,7 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*": ["prettier --write ."],
-    "{apps,packages,workspace}/**/*.{ts,tsx}": [
-      "turbo run lint:fix",
-      "turbo run lint"
-    ]
+    "*.{js,ts,tsx}": ["prettier --write", "turbo run lint:fix --"]
   },
   "engines": {
     "node": ">=20"

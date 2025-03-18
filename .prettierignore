@@ -5,5 +5,5 @@ coverage
 apps
 packages
 workspace
-.turbo
+.husky
 .idea
