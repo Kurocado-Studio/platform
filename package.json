@@ -9,8 +9,8 @@
     "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
-    "prettier:check": "prettier --check . && turbo run prettier:check",
-    "prettier:fix": "prettier --check . --write && turbo run prettier:fix",
+    "prettier:check": "turbo run prettier:check",
+    "prettier:fix": "prettier --write . &&  turbo run prettier:fix",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "setup": "pnpm i && turbo run setup",
@@ -30,12 +30,10 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*": [
-      "pnpm run prettier-fix"
-    ],
-    "**/*.{ts,tsx}": [
-      "pnpm run eslint-fix",
-      "pnpm run lint"
+    "*": ["prettier --write ."],
+    "{apps,packages,workspace}/**/*.{ts,tsx}": [
+      "turbo run lint:fix",
+      "turbo run lint"
     ]
   },
   "engines": {
