@@ -30,7 +30,12 @@
     "turbo": "^2.0.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": ["prettier --write", "turbo run lint:fix --"]
+    "*": ["prettier --write"],
+    "{apps,workspace,packages}.{ts,tsx}": [
+      "prettier --write",
+      "turbo run lint:fix --",
+      "turbo run lint --"
+    ]
   },
   "engines": {
     "node": ">=20"
