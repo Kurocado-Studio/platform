@@ -18,17 +18,17 @@
   "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
-    "setup": "pnpm install",
-    "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
     "dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
-    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored"
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --check . --write",
+    "setup": "pnpm install",
+    "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@kurocado-studio/qa": "^1.1.4",
+    "@kurocado-studio/qa": "*",
     "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
