@@ -1,5 +1,6 @@
 {
-  "name": "@kurocado-studio/design-system",
+  "name": "@kurocado-studio/platform",
+  "private": true,
   "version": "0.0.0-semantically-released",
   "type": "module",
   "packageManager": "pnpm@9.12.2",
@@ -8,9 +9,9 @@
     "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
-    "prettier:check": "turbo run prettier:check",
-    "prettier:fix": "turbo run prettier:fix",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier:check": "prettier --check . && turbo run prettier:check",
+    "prettier:fix": "prettier --check . --write && turbo run prettier:fix",
+    "format": "prettier --write .",
     "lint": "turbo run lint",
     "setup": "pnpm i && turbo run setup",
     "test": "turbo run test",
@@ -23,8 +24,19 @@
     "@kurocado-studio/styleguide": "^2.3.2",
     "commitlint": "^19.8.0",
     "eslint": "9.22",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "prettier": "3.5.3",
     "turbo": "^2.0.3"
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm run prettier-fix"
+    ],
+    "**/*.{ts,tsx}": [
+      "pnpm run eslint-fix",
+      "pnpm run lint"
+    ]
   },
   "engines": {
     "node": ">=20"
