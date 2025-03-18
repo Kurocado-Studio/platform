@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@kurocado-studio/qa": "^1.1.4",
-    "@kurocado-studio/styleguide": "^2.3.1",
+    "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.13.10",

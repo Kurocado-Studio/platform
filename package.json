@@ -20,7 +20,7 @@
     "version-packages": "changeset version"
   },
   "devDependencies": {
-    "@kurocado-studio/styleguide": "^2.3.1",
+    "@kurocado-studio/styleguide": "^2.3.2",
     "commitlint": "^19.8.0",
     "eslint": "9.22",
     "prettier": "3.5.3",
