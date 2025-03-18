@@ -11,7 +11,7 @@ const tsupOptions: Options = {
     'src/remix/setup.remix.ts',
     'src/remix/setup.npm.ts',
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'lightningcss'],
   format: ['esm'],
   sourcemap: true,
   splitting: true,

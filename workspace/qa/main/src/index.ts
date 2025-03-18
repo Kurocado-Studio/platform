@@ -1,4 +1,5 @@
 export * as ReactTestingLibrary from '@testing-library/react';
+export * as faker from '@faker-js/faker';
 export * from './common/vitestConfig';
 export * from './npm';
 export * from './remix';

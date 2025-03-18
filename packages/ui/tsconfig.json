@@ -5,18 +5,17 @@
     "@kurocado-studio/styleguide/remix/tsconfig"
   ],
   "compilerOptions": {
-    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "types": ["node", "react", "lodash-es"],
+    "typeRoots": ["node_modules/@types"],
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": ".",
     "jsx": "preserve"
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
+    "src",
     "tailwind.config.ts",
-    "test/**/*.test.ts",
-    "test/**/*.test.tsx",
+    "test",
     "tsup.config.ts",
     "setup.remix.ts"
   ],

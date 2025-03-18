@@ -6,18 +6,18 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean && rm -rf .turbo node_modules",
+    "clean": "turbo run clean && rm -rf .turbo .cache node_modules pnpm-lock.yaml",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",
-    "prettier:check": "turbo run prettier:check",
-    "prettier:fix": "prettier --write . &&  turbo run prettier:fix",
     "format": "prettier --write .",
     "lint": "turbo run lint",
-    "setup": "pnpm i && turbo run setup",
-    "test": "turbo run test",
     "lint:fix": "turbo run lint:fix --",
+    "prettier:check": "turbo run prettier:check",
+    "prettier:fix": "prettier --write . &&  turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "setup": "pnpm i && turbo run setup",
+    "test": "turbo run test",
     "version-packages": "changeset version"
   },
   "devDependencies": {

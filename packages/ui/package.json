@@ -28,7 +28,7 @@
     "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@kurocado-studio/qa": "*",
+    "@kurocado-studio/qa": "workspace:*",
     "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
