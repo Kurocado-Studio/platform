@@ -1,4 +1,3 @@
- 
 import tsconfigPaths from 'vite-tsconfig-paths';
 import type { ViteUserConfig } from 'vitest/config';
 
