@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", "storybook-static/**"],
+      "dependsOn": ["^build"]
+    },
+    "setup": {
+      "cache": false
+    },
+    "prettier:fix": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "prettier:check": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
+    },
+    "lint:fix": {
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "preview-storybook": {
+      "dependsOn": ["^build"],
+      "cache": false
+    }
+  }
+}

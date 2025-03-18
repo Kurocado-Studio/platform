@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["@kurocado-studio/styleguide/remix/tsconfig"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "jsx": "preserve"
+  },
+  "include": [".storybook/**/*.ts", "./stories/**/*.tsx"],
+  "exclude": ["dist", "build", "node_modules"]
+}
