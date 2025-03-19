@@ -8,9 +8,31 @@ on:
   push:
     branches:
       - main
+      - alpha
+      - beta
+      - canary
+      - pre/rc
 
 jobs:
+  lint:
+    name: Lint
+    uses: kurocado-studio/platform/.github/workflows/workflow.lint.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      monorepo: true
+
+  test:
+    name: Test
+    needs: lint
+    uses: kurocado-studio/platform/.github/workflows/workflow.test.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      monorepo: true
+
   release:
+    name: Release
     uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,12 +6,6 @@ permissions:
 
 on:
   pull_request:
-    branches:
-      - main
-      - alpha
-      - beta
-      - canary
-      - pre/rc
 
 jobs:
   lint:
@@ -27,15 +21,4 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
-      monorepo: true
-
-  release:
-    name: Release
-    needs: test
-    uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
-    secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    with:
-      branch_name: ${{ github.event.pull_request.base.ref }}
       monorepo: true
