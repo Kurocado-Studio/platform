@@ -47,7 +47,7 @@ jobs:
           exit 0  # Exit without error (exit code 0 means success)
 
       - name: Attempt Squash Merge
-        if: success()
+        if: ${{ success() && env.PR_AUTHOR == 'dependabot[bot]' }}
         run: |
           gh pr merge "$PR_URL" --squash --auto
         env:
