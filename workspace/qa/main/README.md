@@ -1,3 +1,3 @@
 # QA
 
-Quality Assurance assets for the team.
+quality assurance assets for the team.
