@@ -219,8 +219,8 @@ importers:
         specifier: ^9.6.0
         version: 9.6.0
       '@remix-run/node':
-        specifier: ^2.15.3
-        version: 2.16.1(typescript@5.8.2)
+        specifier: ^2.16.2
+        version: 2.16.2(typescript@5.8.2)
       '@remix-run/testing':
         specifier: ^2.16.2
         version: 2.16.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2)
