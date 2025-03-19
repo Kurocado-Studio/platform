@@ -1,0 +1,34 @@
+name: Lint
+
+on:
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        description: 'Automatically generated token that GitHub provides for every workflow run'
+        required: true
+    inputs:
+      monorepo:
+        default: false
+        description: "Set mode to 'monorepo' or 'single'."
+        required: false
+        type: boolean
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Install
+        uses: kurocado-studio/platform/.github/actions/install@main
+        with:
+          monorepo: ${{ inputs.monorepo }}
+
+      - name: Lint
+        uses: kurocado-studio/platform/.github/actions/lint@main
+        with:
+          monorepo: ${{ inputs.monorepo }}
