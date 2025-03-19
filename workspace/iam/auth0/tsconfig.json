@@ -5,7 +5,7 @@
     "@kurocado-studio/styleguide/remix/tsconfig"
   ],
   "compilerOptions": {
-    "types": ["lodash-es"],
+    "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "skipLibCheck": true,
     "rootDir": ".",
@@ -14,10 +14,11 @@
   },
   "include": [
     "src",
+    "setup.remix.ts",
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
-    "setup.remix.ts"
+    "vitest.config.ts"
   ],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["node_modules", "dist", "build"]
 }
