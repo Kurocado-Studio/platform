@@ -26,9 +26,7 @@
     "setup": "pnpm install",
     "typecheck": "tsc"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bundledDependencies": [
     "@testing-library/jest-dom",
     "vitest",

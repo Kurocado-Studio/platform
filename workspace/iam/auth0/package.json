@@ -27,9 +27,7 @@
     "typecheck": "tsc",
     "test": "vitest run --coverage"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
     "lodash-es": "^4.17.21",
