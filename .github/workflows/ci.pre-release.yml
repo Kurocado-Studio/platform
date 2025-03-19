@@ -1,35 +1,22 @@
-name: CI/CD Pipeline
-
-permissions:
-  contents: write
-  pull-requests: write
+name: Dependabot Auto-Merge Trigger
 
 on:
-  pull_request:
+  workflow_run:
+    workflows: ['CI/CD Pipeline']
     branches:
       - alpha
       - beta
       - canary
       - pre/rc
+    types:
+      - completed
+    secrets:
+      GH_TOKEN:
+        description: 'Automatically generated token that GitHub provides for every workflow run'
+        required: true
 
 jobs:
-  lint:
-    uses: kurocado-studio/platform/.github/workflows/workflow.lint.yml@main
-    secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      monorepo: true
-
-  test:
-    needs: lint
-    uses: kurocado-studio/platform/.github/workflows/workflow.test.yml@main
-    secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      monorepo: true
-
   release:
-    needs: test
     uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
