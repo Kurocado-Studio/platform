@@ -15,7 +15,6 @@ on:
 
 jobs:
   lint:
-    name: Lint
     uses: kurocado-studio/platform/.github/workflows/workflow.lint.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -23,7 +22,6 @@ jobs:
       monorepo: true
 
   test:
-    name: Test
     needs: lint
     uses: kurocado-studio/platform/.github/workflows/workflow.test.yml@main
     secrets:
@@ -32,7 +30,6 @@ jobs:
       monorepo: true
 
   release:
-    name: Release
     uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
