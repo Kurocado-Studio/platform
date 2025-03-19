@@ -7,6 +7,7 @@ const tsupOptions: Options = {
   dts: true,
   entry: [
     'src/index.ts',
+    'src/remix/index.ts',
     'src/nestjs/setup.nestjs.ts',
     'src/remix/setup.remix.ts',
     'src/remix/setup.npm.ts',

@@ -28,12 +28,12 @@
     "test": "vitest run --coverage"
   },
   "devDependencies": {
-    "@kurocado-studio/qa": "*",
+    "@kurocado-studio/qa": "workspace:*",
     "@kurocado-studio/styleguide": "^2.3.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.13.10",
-    "@types/react": "^18.2.61",
+    "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.4",
     "@vitest/coverage-v8": "^3.0.9",
     "eslint": "^9.22.0",

@@ -48,7 +48,7 @@
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
     "lodash-es": "^4.17.21",
-    "react-dom": "18.2.0",
+    "react-dom": "19.0.0",
     "supertest": "^7.0.0",
     "typescript": "^5.7.3",
     "unplugin-swc": "^1.5.1",
@@ -73,13 +73,13 @@
   },
   "devDependencies": {
     "@kurocado-studio/styleguide": "2.3.0",
-    "@types/react": "18.2.0",
+    "@types/react": "19.0.0",
     "commitlint": "19.8.0",
     "copyfiles": "2.4.1",
     "eslint": "9.22.0",
     "prettier": "3.5.3",
-    "react": "18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "19.0.0",
+    "react-dom": "^19.0.0",
     "semantic-release": "^23.1.1",
     "tsup": "^8.3.6"
   },
@@ -94,6 +94,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./react": "./dist/remix/index.js",
     "./remix/tsconfig.qa": "./dist/remix/tsconfig.qa.json",
     "./npm/tsconfig.qa": "./dist/npm/tsconfig.qa.json",
     "./nestjs/tsconfig.qa": "./dist/nestjs/tsconfig.qa.json",
