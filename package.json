@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "changeset": "changeset",
+    "changeset": "changeset version",
     "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
     "dev": "turbo run dev",

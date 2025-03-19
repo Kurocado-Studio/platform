@@ -3,4 +3,3 @@ packages:
   - 'packages/*'
   - 'workspace/qa/*'
   - 'workspace/iam/*'
-  - '!node_modules'
