@@ -1,3 +1,3 @@
-# QA Team
+# QA
 
 quality assurance assets
