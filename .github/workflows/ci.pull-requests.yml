@@ -8,6 +8,10 @@ on:
   pull_request:
     branches:
       - main
+      - alpha
+      - beta
+      - canary
+      - pre/rc
 
 jobs:
   lint:
@@ -23,4 +27,14 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
+      monorepo: true
+
+  release:
+    needs: test
+    uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    with:
+      branch_name: ${{ github.ref_name }}
       monorepo: true
