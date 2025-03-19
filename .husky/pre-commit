@@ -1,1 +1,16 @@
+# Check if any staged file is in the .changeset directory
+
+if ! git diff --cached --name-only | grep -q "^.changeset/"; then
+  echo "No changeset detected. Running 'pnpm changeset'..."
+
+  pnpm changeset
+
+  if [ $? -ne 0 ]; then
+    echo "🚨 Changeset generation failed or was canceled. Aborting commit."
+    exit 1
+  fi
+
+  git add .changeset
+fi
+
 pnpm exec lint-staged
