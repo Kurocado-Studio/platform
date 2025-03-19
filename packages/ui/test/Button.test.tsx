@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { Button } from 'src/Button';
 
 const { render, screen } = ReactTestingLibrary;
+
 describe('Button', () => {
   it('should render with the provided children', () => {
     render(<Button>Click Me</Button>);

@@ -30,6 +30,7 @@
       "cache": false
     },
     "dev": {
+      "dependsOn": ["^setup", "^build"],
       "cache": false,
       "persistent": true
     },
