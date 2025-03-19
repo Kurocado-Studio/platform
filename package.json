@@ -16,7 +16,7 @@
     "prettier:fix": "prettier --write . &&  turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release-monorepo": "pnpm -r exec -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "semantic-release": "pnpm run changeset && pnpm run semantic-release-monorepo",
+    "semantic-release": "pnpm run semantic-release-monorepo",
     "setup": "pnpm i && turbo run setup",
     "test": "turbo run test",
     "version-packages": "changeset version"
