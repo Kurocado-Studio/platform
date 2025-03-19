@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   dependabot-auto-merge:
+    name: Dependabot Auto-Merge Trigger
     uses: kurocado-studio/platform/.github/workflows/workflow.dependabot-auto-merge.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
