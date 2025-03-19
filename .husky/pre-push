@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "No changeset detected. Running 'pnpm changeset'..."
+pnpm changeset
+# If the changeset command exits with a non-zero exit code, abort the push
+if [ $? -ne 0 ]; then
+  echo "🚨 Changeset generation failed or was canceled. Aborting push."
+  exit 1
+fi
