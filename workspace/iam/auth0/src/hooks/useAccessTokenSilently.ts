@@ -36,7 +36,7 @@ export const useAccessTokenSilently = (
       });
 
       setAuthOktaToken(payload);
-    } catch (e) {
+    } catch {
       loginWithRedirect(options).then();
     }
   }, [getAccessTokenSilently, loginWithRedirect, options]);

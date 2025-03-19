@@ -18,7 +18,8 @@
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "src/globals.d.ts"
   ],
   "exclude": ["node_modules", "dist", "build"]
 }
