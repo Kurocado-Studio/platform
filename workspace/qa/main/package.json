@@ -27,10 +27,7 @@
     "typecheck": "tsc"
   },
   "files": ["dist"],
-  "bundledDependencies": [
-    "@testing-library/jest-dom",
-    "vitest"
-  ],
+  "bundledDependencies": ["@testing-library/jest-dom", "vitest"],
   "dependencies": {
     "@eslint/js": "^9.19.0",
     "@faker-js/faker": "^9.6.0",
