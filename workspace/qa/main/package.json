@@ -29,8 +29,7 @@
   "files": ["dist"],
   "bundledDependencies": [
     "@testing-library/jest-dom",
-    "vitest",
-    "@vitest/coverage-v8"
+    "vitest"
   ],
   "dependencies": {
     "@eslint/js": "^9.19.0",
