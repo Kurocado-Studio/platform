@@ -17,7 +17,7 @@
     "test": "turbo run test",
     "lint:fix": "turbo run lint:fix --",
     "preview-storybook": "turbo run preview-storybook",
-    "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "semantic-release": "pnpm -r exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "version-packages": "changeset version"
   },
   "devDependencies": {
