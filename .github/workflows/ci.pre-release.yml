@@ -1,5 +1,9 @@
 name: CI/CD Pre Release
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   workflow_run:
     workflows: ['CI/CD Pipeline']
