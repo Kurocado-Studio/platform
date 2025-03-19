@@ -1,0 +1,40 @@
+name: Deploy to Fly.io
+
+on:
+  workflow_call:
+    inputs:
+      branch_name:
+        required: true
+        type: string
+    secrets:
+      GH_TOKEN:
+        description: 'Automatically generated token that GitHub provides for every workflow run'
+        required: true
+      FLY_API_TOKEN:
+        description: 'Token needed to deploy the application to Fly.io'
+        required: true
+
+jobs:
+  Checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch Name
+        run: |
+          echo "Branch Name: ${{ inputs.branch_name }}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: |
+      inputs.branch_name == 'main' || 
+      inputs.branch_name == 'dev'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Deploy
+        uses: kurocado-studio/platform/.github/actions/deploy@main
+        with:
+          FLY_API_TOKEN: '${{ secrets.FLY_API_TOKEN }}'
