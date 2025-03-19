@@ -37,8 +37,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: Debug PR Author
+        run: echo "PR_AUTHOR is '${{ env.PR_AUTHOR }}'"
+
       - name: Exit if PR was not created by Dependabot
-        if: env.PR_AUTHOR != 'dependabot[bot]'
+        if: ${{ env.PR_AUTHOR != 'dependabot[bot]' }}
         run: |
           echo "The PR was not created by Dependabot. Exiting gracefully."
           exit 0  # Exit without error (exit code 0 means success)
