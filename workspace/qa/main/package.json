@@ -57,7 +57,7 @@
     "jsdom": "^26.0.0",
     "lodash-es": "^4.17.21",
     "react-dom": "19.0.0",
-    "supertest": "^7.0.0",
+    "supertest": "^7.1.0",
     "typescript": "^5.7.3",
     "unplugin-swc": "^1.5.1",
     "util": "^0.12.5",
