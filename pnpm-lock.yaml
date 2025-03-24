@@ -213,8 +213,8 @@ importers:
   workspace/qa/main:
     dependencies:
       '@eslint/js':
-        specifier: ^9.19.0
-        version: 9.22.0
+        specifier: ^9.23.0
+        version: 9.23.0
       '@faker-js/faker':
         specifier: ^9.6.0
         version: 9.6.0
