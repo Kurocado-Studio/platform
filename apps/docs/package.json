@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@kurocado-studio/styleguide": "^2.3.2",
-    "@storybook/addon-actions": "^8.2.6",
+    "@storybook/addon-actions": "^8.6.9",
     "@storybook/addon-essentials": "^8.6.7",
     "@storybook/addon-links": "^8.2.6",
     "@storybook/react": "^8.2.6",

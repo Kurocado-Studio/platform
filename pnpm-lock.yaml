@@ -49,8 +49,8 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2(@babel/core@7.26.10)(@commitlint/cli@19.8.0(@types/node@22.13.10)(typescript@5.8.2))(@commitlint/config-conventional@19.8.0)(@remix-run/react@2.16.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.8.2))(eslint@9.23.0(jiti@2.4.2))(husky@9.1.7)(jiti@2.4.2)(prettier@3.5.3)(rollup@4.37.0)(semantic-release@24.2.3(typescript@5.8.2))(typescript@5.8.2)(vite@6.2.3(@types/node@22.13.10)(jiti@2.4.2)(yaml@2.7.0))(vitest@3.0.9(@types/debug@4.1.12)(@types/node@22.13.10)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.7.0))(yaml@2.7.0)
       '@storybook/addon-actions':
-        specifier: ^8.2.6
-        version: 8.6.7(storybook@8.6.9(prettier@3.5.3))
+        specifier: ^8.6.9
+        version: 8.6.9(storybook@8.6.9(prettier@3.5.3))
       '@storybook/addon-essentials':
         specifier: ^8.6.7
         version: 8.6.7(@types/react@19.0.0)(storybook@8.6.9(prettier@3.5.3))
@@ -501,6 +501,10 @@ packages:
 
   '@babel/runtime@7.26.10':
     resolution: {integrity: sha512-2WJMeRQPHKSPemqk/awGrAiuFfzBmOIPXKizAsVhWH9YJqLZ0H+HS4c8loHGgW6utJ3E/ejXQUsiGaQy2NZ9Fw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.27.0':
+    resolution: {integrity: sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.26.9':
@@ -1851,6 +1855,11 @@ packages:
     resolution: {integrity: sha512-XgZCwIcZGThEyD7e2q7rN/jzg7ZHUxn/ln403eex04jWAGBBbtC2IVuowwCWV8HwDihnhpCZEP6HlgjakOYZbQ==}
     peerDependencies:
       storybook: ^8.6.7
+
+  '@storybook/addon-actions@8.6.9':
+    resolution: {integrity: sha512-H2v17sMbSl8jhSulPxcOyChsFbzik9E7mgCWIf4P114KcIUokWLVuALnSOeqHME6lY0pPBZs3DgvVVMVMm7zNw==}
+    peerDependencies:
+      storybook: ^8.6.9
 
   '@storybook/addon-backgrounds@8.6.7':
     resolution: {integrity: sha512-aDFzi83gDhYn0+FGjRYbY5TfBtoG/UgVr9Abi7s5ceabZRhPrYikMyFX0o8V3Z8COl6wUmWmF1luYE4MfXgN2g==}
@@ -7625,6 +7634,10 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  '@babel/runtime@7.27.0':
+    dependencies:
+      regenerator-runtime: 0.14.1
+
   '@babel/template@7.26.9':
     dependencies:
       '@babel/code-frame': 7.26.2
@@ -8368,7 +8381,7 @@ snapshots:
 
   '@manypkg/find-root@1.1.0':
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@types/node': 12.20.55
       find-up: 4.1.0
       fs-extra: 8.1.0
@@ -9196,6 +9209,15 @@ snapshots:
       storybook: 8.6.9(prettier@3.5.3)
       uuid: 9.0.1
 
+  '@storybook/addon-actions@8.6.9(storybook@8.6.9(prettier@3.5.3))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      '@types/uuid': 9.0.8
+      dequal: 2.0.3
+      polished: 4.3.1
+      storybook: 8.6.9(prettier@3.5.3)
+      uuid: 9.0.1
+
   '@storybook/addon-backgrounds@8.6.7(storybook@8.6.9(prettier@3.5.3))':
     dependencies:
       '@storybook/global': 5.0.0
@@ -9438,7 +9460,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -12725,7 +12747,7 @@ snapshots:
 
   media-query-parser@2.0.2:
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
 
   media-typer@0.3.0: {}
 
@@ -13469,7 +13491,7 @@ snapshots:
 
   polished@4.3.1:
     dependencies:
-      '@babel/runtime': 7.26.10
+      '@babel/runtime': 7.27.0
 
   possible-typed-array-names@1.1.0: {}
 
