@@ -64,30 +64,33 @@ minutes simply by installing it through NPM.
 
 - **Accelerate Developer Onboarding:** Minimize initial setup time to under five minutes.
 - **Reduce Technical Debt:** Implement centralized coding standards across all TypeScript projects.
-- **Boost Productivity:** Automate routine tasks related to code formatting, dependency management, and
-  CI/CD workflows.
+- **Boost Productivity:** Automate routine tasks related to code formatting, dependency management,
+  and CI/CD workflows.
 
 ## Develop
 
 A distributed platform using NPM as a central hub was developed, allowing seamless interaction among
 various critical project execution areas:
 
-- **Quality Assurance (QA):** Centralized solutions for automated testing frameworks, methodologies,
-  and strategies to ensure reliable quality control across all projects. This includes standardized
-  testing libraries, configurations, and CI integration for automated validation.
-- **Identity and Access Management (IAM):** Centralized authentication managed through Auth0 by
-  Okta, ensuring consistent, secure access management across multiple applications.
-- **DevOps:** Unified GitHub Actions to automate workflows such as continuous integration (CI),
-  continuous deployment (CD), and routine maintenance tasks, providing consistency and efficiency at
-  an organizational scale.
+- **[Quality Assurance (QA):](https://kurocado-studio.github.io/qa)** Centralized solutions for
+  automated testing frameworks, methodologies, and strategies to ensure reliable quality control
+  across all projects. This includes standardized testing libraries, configurations, and CI
+  integration for automated validation.
+- **[Identity and Access Management (IAM):](https://kurocado-studio.github.io/iam)** Centralized
+  authentication managed through Auth0 by Okta, ensuring consistent, secure access management across
+  multiple applications.
+- **[DevOps:](https://kurocado-studio.github.io/dev-ops)** Unified GitHub Actions to automate
+  workflows such as continuous integration (CI), continuous deployment (CD), and routine maintenance
+  tasks, providing consistency and efficiency at an organizational scale.
 - **Developer Experience (DX):** Enhanced developer productivity through utilities like axios
   wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
   form-handling libraries.
 - **[Engineering Style Guide](https://kurocado-studio.github.io/styleguide):** Enforced uniformity
   in coding standards, including linting, formatting, and commit conventions, ensuring consistent
   code quality and reducing overhead during code reviews.
-- **Design System:** A comprehensive library of reusable UI components, styles, and guidelines to
-  ensure visual and functional consistency across all projects.
+- **[Design System:](https://kurocado-studio.github.io/design-system)** A comprehensive library of
+  reusable UI components, styles, and guidelines to ensure visual and functional consistency across
+  all projects.
 
 Each area was organized into its own repository, providing flexibility in management, scalability,
 and delegation. This structure allowed each area to independently decide on adopting a monorepo
