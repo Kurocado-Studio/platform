@@ -7,3 +7,7 @@ packages
 workspace
 .husky
 .idea
+*.list
+*.xml
+*.tree
+/images/

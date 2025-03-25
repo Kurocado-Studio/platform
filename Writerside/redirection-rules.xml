@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="4b8695d9">
+        <description>Created after removal of "Design System" from Platform</description>
+        <accepts>Design-System.html</accepts>
+    </rule>
+    <rule id="18c147ba">
+        <description>Created after removal of "Styleguide" from Platform</description>
+        <accepts>Styleguide.html</accepts>
+    </rule>
+    <rule id="68ca2857">
+        <description>Created after removal of "DevExp" from Platform</description>
+        <accepts>DevExp.html</accepts>
+    </rule>
+    <rule id="9978245">
+        <description>Created after removal of "DevOps" from Platform</description>
+        <accepts>DevOps.html</accepts>
+    </rule>
+    <rule id="5921e5cd">
+        <description>Created after removal of "IAM" from Platform</description>
+        <accepts>IAM.html</accepts>
+    </rule>
+    <rule id="50582db2">
+        <description>Created after removal of "QA" from Platform</description>
+        <accepts>QA.html</accepts>
+    </rule>
+    <rule id="79abfe0e">
+        <description>Created after removal of "Teams" from Platform</description>
+        <accepts>Teams.html</accepts>
+    </rule>
+    <rule id="7235fa0c">
+        <description>Created after removal of "Dependabot Templates" from Platform</description>
+        <accepts>Dependabot-Templates.html</accepts>
+    </rule>
+</rules>

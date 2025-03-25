@@ -1,5 +1,3 @@
 packages:
   - 'apps/*'
   - 'packages/*'
-  - 'workspace/qa/*'
-  - 'workspace/iam/*'
