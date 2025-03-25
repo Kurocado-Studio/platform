@@ -1,4 +1,8 @@
-name: Dependabot Auto-Merge Trigger
+name: Dependabot Auto-Merge
+
+permissions:
+  contents: write
+  pull-requests: write
 
 on:
   workflow_run:
@@ -9,10 +13,6 @@ on:
       GH_TOKEN:
         description: 'Automatically generated token that GitHub provides for every workflow run'
         required: true
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   dependabot-auto-merge:

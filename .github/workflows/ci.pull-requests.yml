@@ -30,7 +30,6 @@ jobs:
       monorepo: true
 
   release:
-    name: Release
     needs: test
     uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
     secrets:
