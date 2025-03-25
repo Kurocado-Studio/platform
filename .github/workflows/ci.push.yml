@@ -26,6 +26,7 @@ jobs:
       instance_id: dcs
 
   release:
+    needs: lint
     uses: kurocado-studio/dev-ops/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
