@@ -72,23 +72,26 @@ minutes simply by installing it through NPM.
 A distributed platform using NPM as a central hub was developed, allowing seamless interaction among
 various critical project execution areas:
 
-- **[Quality Assurance (QA):](https://kurocado-studio.github.io/qa)** Centralized solutions for
+- **[Quality Assurance (QA)](https://kurocado-studio.github.io/qa)** Centralized solutions for
   automated testing frameworks, methodologies, and strategies to ensure reliable quality control
   across all projects. This includes standardized testing libraries, configurations, and CI
   integration for automated validation.
-- **[Identity and Access Management (IAM):](https://kurocado-studio.github.io/iam)** Centralized
+- **[Identity and Access Management (IAM)](https://kurocado-studio.github.io/iam)** Centralized
   authentication managed through Auth0 by Okta, ensuring consistent, secure access management across
   multiple applications.
-- **[DevOps:](https://kurocado-studio.github.io/dev-ops)** Unified GitHub Actions to automate
+- **[DevOps](https://kurocado-studio.github.io/dev-ops)** Unified GitHub Actions to automate
   workflows such as continuous integration (CI), continuous deployment (CD), and routine maintenance
   tasks, providing consistency and efficiency at an organizational scale.
-- **Developer Experience (DX):** Enhanced developer productivity through utilities like axios
+  - [**Lint workflow**](https://kurocado-studio.github.io/dev-ops/lint.html)
+  - [**Document workflow**](https://kurocado-studio.github.io/dev-ops/document.html)
+  - [**Release workflow**](https://kurocado-studio.github.io/dev-ops/release.html)
+- **Developer Experience (DX)** Enhanced developer productivity through utilities like axios
   wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
   form-handling libraries.
-- **[Engineering Style Guide](https://kurocado-studio.github.io/styleguide):** Enforced uniformity
-  in coding standards, including linting, formatting, and commit conventions, ensuring consistent
-  code quality and reducing overhead during code reviews.
-- **[Design System:](https://kurocado-studio.github.io/design-system)** A comprehensive library of
+- **[Engineering Styleguide](https://kurocado-studio.github.io/styleguide)** Enforced uniformity in
+  coding standards, including linting, formatting, and commit conventions, ensuring consistent code
+  quality and reducing overhead during code reviews.
+- **[Design System](https://kurocado-studio.github.io/design-system)** A comprehensive library of
   reusable UI components, styles, and guidelines to ensure visual and functional consistency across
   all projects.
 
@@ -96,6 +99,32 @@ Each area was organized into its own repository, providing flexibility in manage
 and delegation. This structure allowed each area to independently decide on adopting a monorepo
 setup, such as Turborepo, where beneficial. Automation through Dependabot and GitHub Actions ensured
 dependencies stayed secure and compliant with automated daily updates.
+
+```mermaid
+flowchart LR
+  A((Discover)) --> B((Define))
+  B --> C((Develop)) --> D((Deliver))
+
+%% First Diamond
+  subgraph Research
+    A --Identify needs--> QA[QA Challenges]
+    A --Identify needs--> IAM[IAM Gaps]
+    A --Identify needs--> DevOps[Code Inconsistencies]
+    A --Identify needs--> Speed[Speed & Quality]
+  end
+
+%% Platform
+  subgraph Second Diamond - Platform
+    C --Refine solutions--> DX[DX Enhancements]
+    C --Refine solutions--> StyleGuide[Engineering Style Guide]
+    C --Refine solutions--> DesignSystem[Design System]
+    C --Refine solutions--> Identity[IAM]
+    C --Refine solutions--> Actions[Github Actions]
+  end
+
+  D --> F(Templates ready to be deployed on Vercel)
+
+```
 
 ## Deliver
 
