@@ -1,8 +1,4 @@
-# Turborepo Design System
-
-If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
-
-This guide explains how to use a React design system starter powered by:
+# Kurocado Studio Platform
 
 - 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
 - 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
