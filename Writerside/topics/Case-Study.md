@@ -188,3 +188,8 @@ The implementation of this platform significantly improved operational efficienc
 The platform will continue to evolve, with ongoing integration of additional tools such as DangerJS
 and continued migration from JavaScript to TypeScript. Continuous refinement aims to sustain rapid
 onboarding capabilities, facilitating scalable and efficient development operations.
+
+Another aspect to look ahead to is the ultimate goal of expanding the freelance studio, allowing the
+hiring of specialists dedicated to specific areas of the platform. These specialized teams will be
+able to effectively manage and maintain their respective components, ensuring quality and long-term
+stability.
