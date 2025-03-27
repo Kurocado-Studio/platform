@@ -85,6 +85,7 @@ various critical project execution areas:
   - [**Lint workflow**](https://kurocado-studio.github.io/dev-ops/lint.html)
   - [**Document workflow**](https://kurocado-studio.github.io/dev-ops/document.html)
   - [**Release workflow**](https://kurocado-studio.github.io/dev-ops/release.html)
+  - [**Here is an example of a CI/CD pipeline running the workflows**](https://github.com/Kurocado-Studio/iam/actions/runs/14111561197)
 - **Developer Experience (DX)** Enhanced developer productivity through utilities like axios
   wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
   form-handling libraries.
