@@ -72,13 +72,9 @@ minutes simply by installing it through NPM.
 A distributed platform using NPM as a central hub was developed, allowing seamless interaction among
 various critical project execution areas:
 
-- **[Quality Assurance (QA)](https://kurocado-studio.github.io/qa)** Centralized solutions for
-  automated testing frameworks, methodologies, and strategies to ensure reliable quality control
-  across all projects. This includes standardized testing libraries, configurations, and CI
-  integration for automated validation.
-- **[Identity and Access Management (IAM)](https://kurocado-studio.github.io/iam)** Centralized
-  authentication managed through Auth0 by Okta, ensuring consistent, secure access management across
-  multiple applications.
+- **[Engineering Styleguide](https://kurocado-studio.github.io/styleguide)** Enforced uniformity in
+  coding standards, including linting, formatting, and commit conventions, ensuring consistent code
+  quality and reducing overhead during code reviews.
 - **[DevOps](https://kurocado-studio.github.io/dev-ops)** Unified GitHub Actions to automate
   workflows such as continuous integration (CI), continuous deployment (CD), and routine maintenance
   tasks, providing consistency and efficiency at an organizational scale.
@@ -86,15 +82,19 @@ various critical project execution areas:
   - [**Document workflow**](https://kurocado-studio.github.io/dev-ops/document.html)
   - [**Release workflow**](https://kurocado-studio.github.io/dev-ops/release.html)
   - [**Here is an example of a CI/CD pipeline running the workflows**](https://github.com/Kurocado-Studio/iam/actions/runs/14111561197)
-- **Developer Experience (DX)** Enhanced developer productivity through utilities like axios
-  wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
-  form-handling libraries.
-- **[Engineering Styleguide](https://kurocado-studio.github.io/styleguide)** Enforced uniformity in
-  coding standards, including linting, formatting, and commit conventions, ensuring consistent code
-  quality and reducing overhead during code reviews.
+- **[Identity and Access Management (IAM)](https://kurocado-studio.github.io/iam)** Centralized
+  authentication managed through Auth0 by Okta, ensuring consistent, secure access management across
+  multiple applications.
 - **[Design System](https://kurocado-studio.github.io/design-system)** A comprehensive library of
   reusable UI components, styles, and guidelines to ensure visual and functional consistency across
   all projects.
+- **[Quality Assurance (QA)](https://kurocado-studio.github.io/qa)** Centralized solutions for
+  automated testing frameworks, methodologies, and strategies to ensure reliable quality control
+  across all projects. This includes standardized testing libraries, configurations, and CI
+  integration for automated validation.
+- **Developer Experience (DX)** Enhanced developer productivity through utilities like axios
+  wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
+  form-handling libraries.
 
 Each area was organized into its own repository, providing flexibility in management, scalability,
 and delegation. This structure allowed each area to independently decide on adopting a monorepo
