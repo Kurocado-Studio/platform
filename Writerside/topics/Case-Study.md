@@ -7,10 +7,23 @@ how a versatile TypeScript platform was developed to streamline this process.
 
 ## Discover
 
-Launching and operating a TypeScript-focused development studio requires efficient management of
-project setups, developer onboarding, and maintaining code consistency. Without standardized tools
-and processes, considerable time and resources can be wasted on repetitive tasks and resolving
-inconsistencies.
+In preparing a TypeScript-focused development studio, I examined multiple established styleguides,
+including the well-known Airbnb guide and the (now sunsetted) Vercel engineering styleguide. The
+goal was to unify their strongest points into a single source of truth for linting, formatting, and
+commit conventions—ensuring that any new project automatically adheres to proven best practices.
+
+Through this process, I realized how essential it was to minimize repetitive setup tasks.
+Researching various boilerplates and scaffolding tools helped confirm that a standardized
+template—coupled with robust DevOps workflows—would allow projects to spin up in under five minutes.
+At the same time, I reviewed monorepo strategies to see if consolidating everything in one place
+made sense, but ultimately decided a modular, multi-repo approach worked best for enabling partial
+integration via NPM.
+
+Above all, the driving principle was a “write once” philosophy: standardize as many aspects of the
+development environment as possible so I can focus on other platform components without sacrificing
+speed or consistency. This discovery work shaped the final platform requirements, especially around
+NPM-based modularization, consistent coding standards, and maintainability by a single developer or
+small teams.
 
 ## Define
 
