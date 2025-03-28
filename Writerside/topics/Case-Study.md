@@ -27,45 +27,124 @@ small teams.
 
 ```mermaid
 flowchart LR
-    B -->|CI/CD Workflows| B1[GitHub Actions]
-    B1 -->|Runs Tests & Builds| B
+%% 0
+  B(GitHub) -->|CI/CD Workflows| B1[GitHub Actions]
+%% 1
+  B1 -->|Runs Tests & Builds| B
+%% 2
+  B1 -->|Publishes Artifacts| PNPM(NPM)
+
+  subgraph "Platform Modules (GitHub Repos)"
+    D1(Engineering Styleguide)
+    D5(QA)
+    D3(IAM)
+    D4(Design System)
+    D6(DX)
+  end
+
+%% Each module is versioned and maintained in GitHub
+%% 3
+  B --> D1
+%% 4
+  B --> D5
+%% 5
+  B --> D3
+%% 6
+  B --> D4
+%% 7
+  B --> D6
+
+%% Some modules might rely on other modules internally via the NPM Registry
+%% 8 (IAM -> QA)
+  D3 -- depends on --> AD5
+%% 9 (IAM -> DX)
+  D3 -- depends on --> AD6
+%% 10 (IAM -> Styleguide)
+  D3 -- depends on --> AD1
+
+%% 11 (Design System -> QA)
+  D4 -- depends on --> AD5
+%% 12 (Design System -> DX)
+  D4 -- depends on --> AD6
+%% 13 (Design System -> Styleguide)
+  D4 -- depends on --> AD1
+
+%% 14 (QA -> Styleguide)
+  D5 -- depends on --> AD1
+%% 15 (QA -> DX)
+  D5 -- depends on --> AD6
+
+%% 16 (DX -> Styleguide)
+  D6 -- depends on --> AD1
+%% 17 (DX -> QA)
+  D6 -- depends on --> AD5
+%% 18 (DX -> Design System)
+  D6 -- depends on --> AD4
+
+%% NPM subgraph
+  subgraph NR["NPM Registry"]
+    AD1(Engineering Styleguide)
+    AD3(IAM)
+    AD4(Design System)
+    AD5(QA)
+    AD6(DX)
+  end
+
+%% Once published, each module is available for consumption or internal usage
 
 
-    subgraph Platform Modules
-      D1(Engineering Styleguide)
-      D3(IAM)
-      D4(Design System)
-      D5(QA)
-      D6(DX)
-    end
+%% Consumer apps subgraph
+  subgraph CA["Consumer Apps"]
+    E1(React App #1)
+    E2(React App #2)
+    E3(Any Client's React App)
+  end
 
-    B(GiHhub)
+%% Now draw lines from the "NPM Registry" subgraph to Consumer Apps
+%% (Indicating they install any combination of modules from the registry.)
+%% 24
+  AD5 -->|npm install| E1
+  AD1 -->|npm install| E1
+%% 25
+  AD4 -->|npm install| E2
+  AD4 -->|npm install| E3
+%% 26
+  AD6 -->|npm install| E3
 
-    B -->|Holds Repos| D1
-    B --> D3
-    B --> D4
-    B --> D5
-    B --> D6
+%% -----------------------
+%% Optional: Link Styling
+%% -----------------------
+  linkStyle 0 stroke:#666,stroke-width:2px
+  linkStyle 1 stroke:#666,stroke-width:2px
+  linkStyle 2 stroke:#666,stroke-width:2px
 
+  linkStyle 3 stroke:#F66,stroke-width:2px
+  linkStyle 4 stroke:#F66,stroke-width:2px
+  linkStyle 5 stroke:#F66,stroke-width:2px
+  linkStyle 6 stroke:#F66,stroke-width:2px
+  linkStyle 7 stroke:#F66,stroke-width:2px
 
+  linkStyle 8 stroke:#0F0,stroke-width:1px,stroke-dasharray:5,5
+linkStyle 9 stroke:#0F0,stroke-width:1px,stroke-dasharray:5,5
+linkStyle 10 stroke:#0F0,stroke-width:1px,stroke-dasharray:5,5
 
-    C(NPM Registry)
+linkStyle 11 stroke:#66F,stroke-width:2px,stroke-dasharray:5,5
+linkStyle 12 stroke:#66F,stroke-width:2px,stroke-dasharray:5,5
+linkStyle 13 stroke:#66F,stroke-width:2px,stroke-dasharray:5,5
 
-    D1 --> C
-    D3 --> C
-    D4 --> C
-    D5 --> C
-    D6 --> C
+linkStyle 14 stroke:#F0F,stroke-width:2px,stroke-dasharray:5,5
+linkStyle 15 stroke:#F0F,stroke-width:2px,stroke-dasharray:5,5
 
-    subgraph Consumer Apps
-      E1(React App #1)
-      E2(React App #2)
-      E3(Any Client's React App)
-    end
+linkStyle 16 stroke:#0FF,stroke-width:2px,stroke-dasharray:5,5
+linkStyle 17 stroke:#0FF,stroke-width:2px,stroke-dasharray:5,5
+linkStyle 18 stroke:#0FF,stroke-width:2px,stroke-dasharray:5,5
 
-    C -->|npm install| E1
-    C -->|npm install| E2
-    C -->|npm install| E3
+linkStyle 19 stroke:#FF0,stroke-width:1px
+linkStyle 20 stroke:#FF0,stroke-width:1px
+linkStyle 21 stroke:#FF0,stroke-width:1px
+
+linkStyle 22 stroke:#FF0,stroke-width:1px
+linkStyle 23 stroke:#FF0,stroke-width:1px
 
 ```
 
