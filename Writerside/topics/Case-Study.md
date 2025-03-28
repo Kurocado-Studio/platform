@@ -25,6 +25,50 @@ speed or consistency. This discovery work shaped the final platform requirements
 NPM-based modularization, consistent coding standards, and maintainability by a single developer or
 small teams.
 
+```mermaid
+flowchart LR
+    B -->|CI/CD Workflows| B1[GitHub Actions]
+    B1 -->|Runs Tests & Builds| B
+
+
+    subgraph Platform Modules
+      D1(Engineering Styleguide)
+      D3(IAM)
+      D4(Design System)
+      D5(QA)
+      D6(DX)
+    end
+
+    B(GiHhub)
+
+    B -->|Holds Repos| D1
+    B --> D3
+    B --> D4
+    B --> D5
+    B --> D6
+
+
+
+    C(NPM Registry)
+
+    D1 --> C
+    D3 --> C
+    D4 --> C
+    D5 --> C
+    D6 --> C
+
+    subgraph Consumer Apps
+      E1(React App #1)
+      E2(React App #2)
+      E3(Any Client's React App)
+    end
+
+    C -->|npm install| E1
+    C -->|npm install| E2
+    C -->|npm install| E3
+
+```
+
 ## Define
 
 "Establish a development platform supported by a single developer that allows new projects to go
