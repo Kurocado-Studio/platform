@@ -230,9 +230,9 @@ various critical project execution areas:
   automated testing frameworks, methodologies, and strategies to ensure reliable quality control
   across all projects. This includes standardized testing libraries, configurations, and CI
   integration for automated validation.
-- **Developer Experience (DX)** Enhanced developer productivity through utilities like axios
-  wrappers for simplified API interactions, reusable React hooks for common tasks, and streamlined
-  form-handling libraries.
+- **[Developer Experience](https://kurocado-studio.github.io/dev-experience)** Enhanced developer
+  productivity through utilities like axios wrappers for simplified API interactions, reusable React
+  hooks for common tasks, and streamlined form-handling libraries.
 
 Each area was organized into its own repository, providing flexibility in management, scalability,
 and delegation. This structure allowed each area to independently decide on adopting a monorepo
