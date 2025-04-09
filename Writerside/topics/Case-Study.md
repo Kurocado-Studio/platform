@@ -7,23 +7,32 @@ how a versatile TypeScript platform was developed to streamline this process.
 
 ## Discover
 
-In preparing a TypeScript-focused development studio, I examined multiple established styleguides,
-including the well-known Airbnb guide and the (now sunsetted) Vercel engineering styleguide. The
-goal was to unify their strongest points into a single source of truth for linting, formatting, and
-commit conventions—ensuring that any new project automatically adheres to proven best practices.
+In the Discovery phase, I authored a focused **[business plan](Business-Plan.md)** to anchor every
+subsequent decision about the platform. This plan fulfills four strategic purposes:
 
-Through this process, I realized how essential it was to minimize repetitive setup tasks.
-Researching various boilerplates and scaffolding tools helped confirm that a standardized
-template—coupled with robust DevOps workflows—would allow projects to spin up in under five minutes.
-At the same time, I reviewed monorepo strategies to see if consolidating everything in one place
-made sense, but ultimately decided a modular, multi-repo approach worked best for enabling partial
-integration via NPM.
+1. **Define Direction & Scope** – It translates market pain points and competitive advantages into a
+   clear product vision, ensuring each platform module (Design System, IAM, QA, DevOps, DX, and
+   Engineering Style Guide) exists for a measurable, revenue‑linked reason—not as isolated tech
+   experiments.
 
-Above all, the driving principle was a “write once” philosophy: standardize as many aspects of the
-development environment as possible so I can focus on other platform components without sacrificing
-speed or consistency. This discovery work shaped the final platform requirements, especially around
-NPM-based modularization, consistent coding standards, and maintainability by a single developer or
-small teams.
+2. **Justify Architectural Decisions** – By documenting the “why” behind every choice (e.g.,
+   NPM‑only distribution, modular multi‑repo structure, Quick Reaction Force templates), the plan
+   provides an audit trail that protects the project from scope creep and keeps stakeholders aligned
+   on value, budget, and timelines.
+
+3. **Operationalize Competitive Advantage** – One key differentiator in the larger studio plan is
+   our freemium, open‑source model. The platform embodies that advantage: each module can be shared
+   publicly to showcase code quality and accelerate client onboarding, turning the platform itself
+   into a live demonstration of transparency and expertise.
+
+4. **Create a Dual‑Purpose Asset** – Should this side hustle scale, the platform is already
+   positioned as a commercial offering; if not, it still functions as a **portfolio centerpiece**
+   that proves senior‑level skills in TypeScript, DevOps, UX‑centric architecture, and Agile product
+   management—valuable for job‑hunting or consulting engagements.
+
+By front‑loading this strategic thinking, the business plan ensures the platform remains
+laser‑focused on market needs, defensible in its design choices, and flexible enough to serve both
+entrepreneurial growth and personal career goals.
 
 ```mermaid
 flowchart LR
