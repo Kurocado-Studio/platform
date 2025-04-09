@@ -8,5 +8,6 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="Case-Study.md"/>
+    <toc-element topic="Business-Plan.md"/>
     <toc-element topic="Templates.md"/>
 </instance-profile>
