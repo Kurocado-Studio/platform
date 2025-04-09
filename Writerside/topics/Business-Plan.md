@@ -123,7 +123,9 @@ Enterprise** with **Advanced Security** features.
 
 ## Strategic Outcomes
 
-For clients, the result is faster time‑to‑market, iron‑clad budget predictability, and
-differentiated digital experiences that align with business goals. For Kurocado Studio, the model
-delivers sustainable margins, a living portfolio that doubles as a sales asset, and a scalable
-platform that can evolve into a standalone SaaS offering or full‑service agency as demand grows.
+- **For clients**, the result is faster time‑to‑market, iron‑clad budget predictability, and
+  differentiated digital experiences that align with business goals.
+
+- **For Kurocado Studio**, the model delivers sustainable margins, a living portfolio that doubles
+  as a sales asset, and a scalable platform that can evolve into a standalone SaaS offering or
+  full‑service agency as demand grows.
