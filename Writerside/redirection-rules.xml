@@ -38,4 +38,12 @@
         <description>Created after removal of "Dependabot Templates" from Platform</description>
         <accepts>Dependabot-Templates.html</accepts>
     </rule>
+    <rule id="48398164">
+        <description>Created after removal of "Platform" from Platform</description>
+        <accepts>Platform.html</accepts>
+    </rule>
+    <rule id="43476290">
+        <description>Created after removal of "DevOps" from Platform</description>
+        <accepts>DevOps.html</accepts>
+    </rule>
 </rules>
