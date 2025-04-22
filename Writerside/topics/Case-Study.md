@@ -286,7 +286,7 @@ flowchart LR
 <tldr>
     <h2>Product Starter Kit</h2>
     <p>The Product Starter Kit bundles everything you need to get started with a new product</p>
-    <a href="https://www.jetbrains.com/help/writerside/semantic-markup-reference.html#title">
+    <a href="https://github.com/Kurocado-Studio/product-starter-kit">
         <strong>See the Product Starter Kit on GitHub</strong> 
     </a>
 
