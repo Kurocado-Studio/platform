@@ -33,6 +33,7 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PAT_FORCE_PUSH: ${{ secrets.PAT_FORCE_PUSH }}
     with:
       branch_name: ${{ github.ref_name }}
       monorepo: true
