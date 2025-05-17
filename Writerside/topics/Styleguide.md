@@ -2,106 +2,115 @@
 
 |            |                                                                                                                                                                                              |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NPM        | <https://www.npmjs.com/package/@kurocado-studio/styleguide>                                                                                                                                  |
-| Repository | <https://github.com/Kurocado-Studio/styleguide>                                                                                                                                              |
+| NPM        | [https://www.npmjs.com/package/@kurocado-studio/styleguide](https://www.npmjs.com/package/@kurocado-studio/styleguide)                                                                       |
+| Repository | [https://github.com/Kurocado-Studio/styleguide](https://github.com/Kurocado-Studio/styleguide)                                                                                               |
 | Main       | [![CI/CD Main Pipeline](https://github.com/Kurocado-Studio/styleguide/actions/workflows/ci.push.yml/badge.svg)](https://github.com/Kurocado-Studio/styleguide/actions/workflows/ci.push.yml) |
 
-Kurocado Studio needs to streamline development workflows, speed up project onboarding, and ensure
-consistency across internal and client-facing projects. Internal teams, external contributors, and
-clients require a unified standard for TypeScript development that is both efficient and adaptable.
+Kurocado Studio's Engineering Styleguide provides standardized development configurations to
+streamline workflows, accelerate onboarding, and maintain consistency across internal and
+client-facing TypeScript projects.
 
-Additionally, when we engage in contracts with clients, we want to provide the flexibility for them
-to fork, edit, and publish their own versions of the style guide (e.g. @(OUR_ORG or
-THEIR_ORG)—dash—CLIENT_NAME_STYLEGUIDE on NPM). This ensures we can adhere to their coding standards
-and guidelines seamlessly.
+Clients and collaborators can easily fork, customize, and publish their own tailored versions (e.g.,
+`@CLIENT_ORG/CLIENT_NAME_STYLEGUIDE`) on NPM or GitHub.
 
 ## Objectives
 
-- **Speed up Development Onboarding:**
-  - Provide templated repositories that enable teams to go from “0 to Hello World” in under five
-    minutes without compromising code quality.
-- **Streamline Development Processes:**
-  - Reduce technical debt by offering a centralized, comprehensive and enforceable coding style
-    guide for all TypeScript projects.
-- **Enhance Developer Efficiency:**
-  - Minimize ambiguities by delivering clear standards for code formatting, commit conventions, and
-    workflow automation.
+- **Accelerate Project Onboarding:**
 
-## **Use Cases**
+  - Enable "0 to Hello World" setups in under five minutes with high-quality code templates.
 
-1. **Internal Team Adoption:**
-   1. Kurocado Studio’s internal teams will rely on the Style Guide as the definitive reference for
-      all design and development standards, ensuring consistency across projects.
-2. **External Contributor Alignment:**
-   1. External developers or freelancers working with Kurocado Studio will use the Style Guide to
-      align their contributions with studio quality standards and expectations.
-3. **Client Collaboration:**
-   1. The Style Guide will serve as a transparent resource for clients, enabling them to understand
-      and influence how their projects are built and designed. Clients may fork, customize, and
-      publish their version of the guide (e.g., @OUR_ORG/CLIENT_NAME_STYLEGUIDE on NPM).
-4. **Quick Prototyping on CodeSandbox:**
-   1. Provide templates and guidelines that facilitate rapid prototyping directly on CodeSandbox.
-      This enables teams to experiment, iterate, and validate ideas quickly without compromising on
-      code quality or deviating from best practices.
+- **Standardize Development Practices:**
+
+  - Centralize and enforce coding standards, reducing technical debt.
+
+- **Boost Developer Efficiency:**
+
+  - Provide clear guidelines for code formatting, linting, commit conventions, and workflow
+    automation.
+
+## Use Cases
+
+1. **Internal Teams:**
+
+   - Use as a central reference for consistent design and development standards.
+
+2. **External Contributors:**
+
+   - Align freelance developers and contractors with studio standards and expectations.
+
+3. **Client Collaborations:**
+
+   - Transparent resources allowing clients to influence and maintain control over their project's
+     development standards.
+
+4. **Rapid Prototyping:**
+
+   - Templates optimized for quick prototyping on platforms like CodeSandbox, enabling efficient
+     experimentation without sacrificing code quality.
 
 ## Scope & Constraints
 
-### **In Scope**
+### In Scope
 
-1. **Development of a Comprehensive Style Guide:**
-   1. Define standards for code formatting, linting rules, commit conventions, and configuration
-      management.
-   2. Incorporate automated workflows using GitHub Actions to enforce standards across repositories.
-2. **Reusable Configurations and Scripts:**
-   1. Create configuration files and scripts to standardize and automate common development tasks,
-      ensuring consistency and efficiency.
+1. **Comprehensive Style Guide:**
+
+   - Clear standards for linting, formatting, commit practices, and configuration management.
+   - Automated enforcement via GitHub Actions.
+
+2. **Reusable Scripts and Configurations:**
+
+   - Standardized automation for common development tasks.
+
 3. **Templates for Prototyping and Deployment:**
-   1. Develop and maintain templated repositories optimized for:
-      1. Quick prototyping on platforms:
-         1. CodeSandbox.
-      2. Framework-specific setups:
-         1. Remix
-         2. NestJS
-         3. NPM packages
+
+   - Quick-start templates for:
+
+     - CodeSandbox
+     - Remix
+     - NestJS
+     - Vue
+     - NPM packages
+
 4. **Documentation and Onboarding Materials**
-5. **Open-Sourcing:**
-   1. Publish reusable packages to the NPM registry for internal and external use.
 
-### **Constraints**
+5. **Open-Sourced Packages:**
 
-1. **Resource Availability:**
-   1. Limited time and development resources require careful prioritization of high-impact
-      deliverables.
-2. **Alignment with Existing Ecosystem:**
-   1. Ensure seamless integration with Vercel, GitHub Actions, and other tools currently in use at
-      Kurocado Studio.
-3. **Balance Between Flexibility and Standardization:**
-   1. Create a guide that enforces best practices while remaining adaptable for rapid prototyping
-      and diverse project needs.
+   - Published to NPM for broad accessibility.
 
-## **Key Milestones**
+### Constraints
 
-|                                     |     |
-| ----------------------------------- | --- |
-| DangerJS integration                |     |
-| JavaScript to TypeScript Conversion |     |
+1. **Resource Limitations:**
 
-## **Success Criteria**
+   - Prioritize impactful, high-value deliverables within available resources.
 
-- **Efficiency**
-  - **Rapid Prototyping:**
-    - Achieve “0 to Hello World” setups in under 5 minutes for all projects using the templates.
-  - **Time Savings:**
-    - Reduce repetitive setup tasks by at least 25% through reusable configurations and GitHub
-      Actions.
-- **Quality and Consistency**
-  - **Error Reduction:**
-    - Cut down on common linting or formatting issues by at least 25% through automated checks.
-  - **Standardized Deliverables:**
-    - Ensure all deliverables meet consistent code quality standards across projects.
-- **Client Collaboration**
-  - **Fork and Customize:**
-    - Clients successfully fork and adapt the style guide to their needs when needed.
-  - **Seamless Handover:**
-    - Deliver projects that align with client guidelines by using the style guide templates as
-      @(OUR_ORG or THEIR_ORG)—dash—CLIENT_NAME_STYLEGUIDE on NPM or GitHub.
+2. **Integration with Existing Tooling:**
+
+   - Ensure seamless compatibility with Vercel, GitHub Actions, and current ecosystem tools.
+
+3. **Flexibility and Rigor Balance:**
+
+   - Maintain best practices while supporting agile prototyping and diverse project requirements.
+
+## Key Milestones
+
+| Milestone                          | Status |
+| ---------------------------------- | ------ |
+| DangerJS Integration               |        |
+| JavaScript to TypeScript Migration |        |
+
+## Success Criteria
+
+- **Development Efficiency:**
+
+  - Quick-start setups achieve functional "Hello World" examples in under 5 minutes.
+  - Reduce setup tasks by 25% via reusable configurations and automation.
+
+- **Quality and Consistency:**
+
+  - Decrease common code issues by 25% through automated linting and formatting.
+  - Consistent quality across all project deliverables.
+
+- **Client Flexibility:**
+
+  - Clients easily fork and adapt the style guide.
+  - Seamless project handovers, aligning with client-specific standards.
