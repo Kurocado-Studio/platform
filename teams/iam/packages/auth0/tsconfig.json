@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@kurocado-studio/qa/remix/tsconfig.qa",
+    "@kurocado-studio/styleguide/remix/tsconfig"
+  ],
+  "compilerOptions": {
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": "./",
+    "jsx": "preserve"
+  },
+  "include": [
+    "src",
+    "setup.remix.ts",
+    "tailwind.config.ts",
+    "test",
+    "tsup.config.ts",
+    "vitest.config.ts",
+    "src/globals.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "build"]
+}
