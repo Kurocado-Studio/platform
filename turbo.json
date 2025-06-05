@@ -40,6 +40,10 @@
     "preview-storybook": {
       "dependsOn": ["^build"],
       "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^setup", "^build"],
+      "cache": false
     }
   }
 }
