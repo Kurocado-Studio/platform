@@ -11,7 +11,7 @@
   },
   "include": [
     "src",
-    "setup.remix.ts",
+    "setup.web.ts",
     "tailwind.config.ts",
     "test",
     "tsup.config.ts",
