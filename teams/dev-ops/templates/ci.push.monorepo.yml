@@ -1,0 +1,39 @@
+name: CI/CD Main Pipeline
+
+permissions:
+  contents: write
+  id-token: write
+  pages: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: kurocado-studio/platform/.github/workflows/workflow.lint.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      monorepo: true
+
+  document:
+    needs: lint
+    uses: kurocado-studio/platform/.github/workflows/workflow.document.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      instance_id: dcs
+
+  release:
+    needs: lint
+    uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PAT_FORCE_PUSH: ${{ secrets.PAT_FORCE_PUSH }}
+    with:
+      branch_name: ${{ github.ref_name }}
+      monorepo: true
