@@ -1,6 +1,6 @@
 /* eslint import/no-default-export: 0 */
 /* eslint import/no-cycle: 0 */
-import { vitestRemix } from '@kurocado-studio/qa';
+import { vitestReact } from '@kurocado-studio/qa/web';
 import { defineConfig } from 'vitest/config';
 
-export default defineConfig(vitestRemix);
+export default defineConfig(vitestReact);

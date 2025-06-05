@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { ReactTestingLibrary } from '@kurocado-studio/qa';
+import { reactTestingLibrary } from '@kurocado-studio/qa/web';
 import { type Mock, vi } from 'vitest';
 
 import {
@@ -7,7 +7,7 @@ import {
   useAccessTokenSilently,
 } from '../../src';
 
-const { renderHook, waitFor } = ReactTestingLibrary;
+const { renderHook, waitFor } = reactTestingLibrary;
 
 vi.mock('@auth0/auth0-react', () => ({
   useAuth0: vi.fn(),
