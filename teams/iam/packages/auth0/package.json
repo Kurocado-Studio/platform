@@ -44,7 +44,6 @@
   },
   "devDependencies": {
     "@kurocado-studio/qa": "workspace:*",
-    "@kurocado-studio/internal": "2.3.3",
     "@kurocado-studio/internal": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
