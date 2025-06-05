@@ -1,6 +1,6 @@
 import {
   defineESLintConfig,
   eslintReactConfig,
-} from '@kurocado-studio/styleguide';
+} from '@kurocado-studio/internal';
 
 export default defineESLintConfig(eslintReactConfig);

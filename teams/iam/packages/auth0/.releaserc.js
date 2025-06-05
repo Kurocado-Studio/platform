@@ -1,4 +1,4 @@
-import { semanticReleaseNpmConfig } from '@kurocado-studio/styleguide';
+import { semanticReleaseNpmConfig } from '@kurocado-studio/internal';
 
 export default {
   ...semanticReleaseNpmConfig,

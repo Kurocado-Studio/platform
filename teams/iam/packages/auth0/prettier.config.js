@@ -1,1 +1,1 @@
-export { prettierConfig as default } from '@kurocado-studio/styleguide';
+export { prettierConfig as default } from '@kurocado-studio/internal';
