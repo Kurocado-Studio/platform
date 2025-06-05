@@ -1,5 +1,5 @@
-import { reactTestingLibrary } from '@kurocado-studio/qa/web';
 import { faker } from '@kurocado-studio/qa';
+import { reactTestingLibrary } from '@kurocado-studio/qa/web';
 import * as React from 'react';
 import { type Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 
