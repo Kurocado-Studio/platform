@@ -19,8 +19,16 @@ jobs:
     with:
       monorepo: true
 
-  document:
+  test:
     needs: lint
+    uses: kurocado-studio/platform/.github/workflows/workflow.test.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      monorepo: true
+
+  document:
+    needs: test
     uses: kurocado-studio/platform/.github/workflows/workflow.document.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,7 +36,7 @@ jobs:
       instance_id: dcs
 
   release:
-    needs: lint
+    needs: test
     uses: kurocado-studio/platform/.github/workflows/workflow.release.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
