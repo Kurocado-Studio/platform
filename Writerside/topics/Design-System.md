@@ -1,9 +1,10 @@
 # Design System
 
-|            |                                                    |
-| ---------- | -------------------------------------------------- |
-| Repository | <https://github.com/Kurocado-Studio/design-system> |
-| Storybook  | <https://design-system-kurocado-studio.vercel.app> |
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
+| Repository      | <https://github.com/Kurocado-Studio/design-system>          |
+| React Storybook | <https://design-system-kurocado-studio.vercel.app>          |
+| Vue Storybook   | <https://design-system-docs-vue-kurocado-studio.vercel.app> |
 
 **A token‑driven UI library whose look & feel can be tweaked in Figma and—via
 Token Studio—propagated to React components in seconds, guaranteeing pixel‑perfect brand consistency
