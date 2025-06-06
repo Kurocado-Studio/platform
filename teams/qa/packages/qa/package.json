@@ -27,7 +27,6 @@
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
     "setup": "pnpm install",
-    "test": "vitest run --coverage",
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
   },
