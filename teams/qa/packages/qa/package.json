@@ -2,13 +2,13 @@
   "name": "@kurocado-studio/qa",
   "version": "0.0.0-semantically-released",
   "description": "",
-  "homepage": "https://github.com/kurocado-studio/qa",
+  "homepage": "https://github.com/kurocado-studio/platform",
   "bugs": {
-    "url": "https://github.com/kurocado-studio/qa/issues"
+    "url": "https://github.com/kurocado-studio/platform/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kurocado-studio/qa.git"
+    "url": "git+https://github.com/kurocado-studio/platform.git"
   },
   "license": "MIT",
   "type": "module",

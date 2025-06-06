@@ -2,13 +2,13 @@
   "name": "@kurocado-studio/auth-zero",
   "version": "0.0.0-semantically-released",
   "description": "",
-  "homepage": "https://github.com/kurocado-studio/iam",
+  "homepage": "https://github.com/kurocado-studio/platform",
   "bugs": {
-    "url": "https://github.com/kurocado-studio/iam/issues"
+    "url": "https://github.com/kurocado-studio/platform/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kurocado-studio/iam.git"
+    "url": "git+https://github.com/kurocado-studio/platform.git"
   },
   "license": "MIT",
   "type": "module",
