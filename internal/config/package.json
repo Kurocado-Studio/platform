@@ -39,7 +39,8 @@
     "copyfiles": "^2.4.1",
     "semantic-release": "^24.2.3",
     "semantic-release-monorepo": "^8.0.2",
-    "tsup": "^8.5.0"
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "access": "public"
