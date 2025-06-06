@@ -27,7 +27,6 @@
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
     "setup": "pnpm install",
-    "test": "vitest run --coverage",
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
   },
@@ -51,6 +50,7 @@
     "@remix-run/node": "^2.15.3",
     "@remix-run/testing": "^2.15.3",
     "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -92,7 +92,8 @@
     "prettier": "3.5.3",
     "react": "^19.1.0",
     "semantic-release": "^24.2.3",
-    "tsup": "^8.3.6"
+    "tsup": "^8.3.6",
+    "typescript": "^5.8.3"
   },
   "overrides": {
     "conventional-changelog-conventionalcommits": ">= 8.0.0"
