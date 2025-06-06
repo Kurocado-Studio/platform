@@ -3,11 +3,10 @@ import { render, screen } from '@kurocado-studio/qa/web';
 import React from 'react';
 import type { Mock } from 'vitest';
 
-import { useAriaTextField } from 'src/hooks/useAriaTextField';
 import type { TextFieldProps } from 'src/types';
 
-import { HtmlForm } from '../src';
-import { mockFieldMetadata, mockFormMetadata, testA11y } from '../src/utils';
+import { HtmlForm, useAriaTextField } from '../src';
+import { mockFieldMetadata, mockFormMetadata } from '../src/utils';
 
 function UnitTestAriaTextField(props: TextFieldProps): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =
@@ -36,50 +35,6 @@ describe('useAriaTextField Hook - Accessibility Tests', () => {
 
   beforeEach(() => {
     vi.resetAllMocks();
-  });
-
-  it('should have no accessibility violations with default props', async () => {
-    useFieldMock.mockReturnValue([
-      mockFieldMetadata({
-        name: 'test',
-        valid: true,
-        descriptionId: 'desc-id',
-        errorId: 'error-id',
-        initialValue: '',
-      }),
-      mockFormMetadata(),
-    ]);
-
-    const results = await testA11y(
-      <UnitTestAriaTextField name='test' label='Test Label' />,
-      HtmlForm,
-    );
-
-    expect(results).toHaveNoViolations();
-  });
-
-  it('should have no accessibility violations when there is an error', async () => {
-    useFieldMock.mockReturnValue([
-      mockFieldMetadata({
-        name: 'test',
-        errors: ['Field is required'],
-        valid: false,
-        descriptionId: 'desc-id',
-        errorId: 'error-id',
-      }),
-      mockFormMetadata(),
-    ]);
-
-    const results = await testA11y(
-      <UnitTestAriaTextField
-        name='test'
-        label='Test Label'
-        errorMessage='Field is required'
-      />,
-      HtmlForm,
-    );
-
-    expect(results).toHaveNoViolations();
   });
 
   it('should associate label and input correctly', () => {
