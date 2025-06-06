@@ -1,5 +1,6 @@
 package-lock.json
 package.json
+dist
 pnpm-lock.yaml
 .prettierignore
 .npmrc
