@@ -5,8 +5,8 @@
     "@kurocado-studio/internal/tsconfig.web"
   ],
   "compilerOptions": {
-    "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
     "typeRoots": ["node_modules/@types"],
+    "types": ["node", "vitest", "jest"],
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": "./",
