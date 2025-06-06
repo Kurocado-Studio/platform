@@ -1,5 +1,5 @@
 import { faker } from '@kurocado-studio/qa';
-import { reactTestingLibrary } from '@kurocado-studio/qa/web';
+import { render, renderHook, screen } from '@kurocado-studio/qa/web';
 import * as React from 'react';
 import { type Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -12,8 +12,6 @@ import {
   OrgUserToken,
   useAuthSilentlyContext,
 } from '../../src';
-
-const { screen, render, renderHook } = reactTestingLibrary;
 
 function TestAuthAccessSilentlyProvider(
   props: AuthProviderProps,

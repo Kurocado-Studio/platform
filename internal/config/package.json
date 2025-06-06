@@ -31,7 +31,6 @@
     "typecheck": "tsc --noEmit --pretty"
   },
   "devDependencies": {
-    "@kurocado-studio/qa": "2.0.1",
     "@kurocado-studio/styleguide": "^2.5.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",

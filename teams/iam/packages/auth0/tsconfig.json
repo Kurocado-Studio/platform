@@ -1,6 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@kurocado-studio/internal/tsconfig.web"],
+  "extends": [
+    "@kurocado-studio/qa/web/tsconfig.qa",
+    "@kurocado-studio/internal/tsconfig.web"
+  ],
   "compilerOptions": {
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
