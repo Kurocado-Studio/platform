@@ -6,7 +6,7 @@
   ],
   "compilerOptions": {
     "typeRoots": ["node_modules/@types"],
-    "types": ["node", "vitest", "jest"],
+    "types": ["node", "vitest"],
     "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": "./",
