@@ -1,5 +1,5 @@
 import { useField } from '@conform-to/react';
-import { ReactTestingLibrary } from '@internal/config';
+import { render, screen } from '@kurocado-studio/qa/web';
 import React from 'react';
 import type { Mock } from 'vitest';
 
@@ -8,8 +8,6 @@ import type { TextFieldProps } from 'src/types';
 
 import { HtmlForm } from '../src';
 import { mockFieldMetadata, mockFormMetadata, testA11y } from '../src/utils';
-
-const { render, screen } = ReactTestingLibrary;
 
 function UnitTestAriaTextField(props: TextFieldProps): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =

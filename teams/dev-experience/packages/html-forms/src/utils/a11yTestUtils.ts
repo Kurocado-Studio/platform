@@ -1,8 +1,6 @@
-import { ReactTestingLibrary } from '@internal/config';
+import { render } from '@kurocado-studio/qa/web';
 import type React from 'react';
 import { type AxeCore, axe } from 'vitest-axe';
-
-const { render } = ReactTestingLibrary;
 
 export const renderWithA11y = (
   Component: React.ReactElement,

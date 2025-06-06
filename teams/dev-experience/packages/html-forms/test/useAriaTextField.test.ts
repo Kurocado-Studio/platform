@@ -1,5 +1,5 @@
 import { useField } from '@conform-to/react';
-import { ReactTestingLibrary } from '@internal/config';
+import { renderHook } from '@kurocado-studio/qa/web';
 import { useTextField } from 'react-aria';
 import type { Mock } from 'vitest';
 
@@ -9,8 +9,6 @@ import {
   mockFieldMetadata,
   mockFormMetadata,
 } from '../src/utils';
-
-const { renderHook } = ReactTestingLibrary;
 
 vi.mock('@conform-to/react', async () => {
   return {
