@@ -34,7 +34,7 @@ with partners and sponsors.
 ## What’s in the Platform
 
 Each part of the platform is versioned, documented, and distributed via NPM. All repos are public
-under the [`@kurocado-studio`](https://github.com/Kurocado-Studio) namespace.
+under the [`@kurocado-studio`](https://www.npmjs.com/org/kurocado-studio) namespace.
 
 ### Engineering Styleguide
 
