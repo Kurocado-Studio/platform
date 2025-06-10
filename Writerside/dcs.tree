@@ -4,12 +4,10 @@
 
 <instance-profile id="dcs"
                  name="Platform"
-                 start-page="starter-topic.md">
+                 start-page="Templates.md">
 
     <toc-element topic="Templates.md"/>
-    <toc-element topic="starter-topic.md"/>
     <toc-element topic="Case-Study.md"/>
-    <toc-element topic="Business-Plan.md"/>
     <toc-element topic="Design-System.md"/>
     <toc-element topic="Styleguide.md">
         <toc-element topic="Guides.md">

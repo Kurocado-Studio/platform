@@ -46,4 +46,12 @@
         <description>Created after removal of "DevOps" from Platform</description>
         <accepts>DevOps.html</accepts>
     </rule>
+    <rule id="20572c3c">
+        <description>Created after removal of "Business Plan" from Platform</description>
+        <accepts>Business-Plan.html</accepts>
+    </rule>
+    <rule id="70035d08">
+        <description>Created after removal of "Typescript Platform" from Platform</description>
+        <accepts>starter-topic.html</accepts>
+    </rule>
 </rules>
