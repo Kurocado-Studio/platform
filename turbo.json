@@ -6,7 +6,11 @@
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
+    "pre:setup": {
+      "cache": false
+    },
     "setup": {
+      "dependsOn": ["^pre:setup"],
       "cache": false
     },
     "prettier:fix": {
