@@ -29,7 +29,7 @@ jobs:
         uses: kurocado-studio/platform/.github/actions/install@main
         with:
           monorepo: ${{ inputs.monorepo }}
-          npm_token: ${{ inputs.NPM_TOKEN }}
+          npm_token: ${{ secrets.NPM_TOKEN }}
 
       - name: Lint
         uses: kurocado-studio/platform/.github/actions/lint@main
