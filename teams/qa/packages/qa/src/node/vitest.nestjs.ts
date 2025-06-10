@@ -7,6 +7,7 @@ export interface VitestNestjs extends VitestConfig {}
 
 export const vitestNestjs: VitestNestjs = {
   ...vitestConfig,
+  // @ts-ignore type mismatch
   plugins: [
     ...get(vitestConfig, ['plugins'], []),
     swc.vite({

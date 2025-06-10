@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    "@kurocado-studio/qa/web/tsconfig.qa",
-    "@kurocado-studio/styleguide/remix/tsconfig"
-  ],
+  "extends": ["@kurocado-studio/styleguide/remix/tsconfig"],
   "exclude": ["dist", "build", "node_modules"]
 }

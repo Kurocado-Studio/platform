@@ -4,6 +4,9 @@ inputs:
   monorepo:
     default: 'false'
     required: false
+  npm_token:
+    description: 'NPM token for private packages'
+    required: false
 
 runs:
   using: 'composite'
@@ -12,6 +15,12 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: 20
+
+    - name: Set NPM token
+      if: ${{ inputs.npm-token != '' }}
+      shell: bash
+      run: |
+        echo "//registry.npmjs.org/:_authToken=${{ inputs.npm-token }}" > ~/.npmrc
 
     - name: Install pnpm
       shell: bash

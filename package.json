@@ -17,10 +17,11 @@
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
     "setup": "pnpm i && turbo run setup",
+    "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@kurocado-studio/styleguide": "^2.3.3",
+    "@kurocado-studio/styleguide": "^2.5.2",
     "commitlint": "^19.8.1",
     "eslint": "9.28",
     "husky": "^9.1.7",
