@@ -17,11 +17,16 @@ runs:
         node-version: 20
 
     - name: Set NPM token
-      if: ${{ inputs.npm_token != '' }}
       shell: bash
       run: |
-        echo "//registry.npmjs.org/:_authToken=${{ inputs.npm_token }}" > ~/.npmrc
-        echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+        if [ -n "$NPM_TOKEN" ]; then
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          echo "NPM token configured"
+        else
+          echo "No NPM token provided - skipping private package authentication"
+        fi
+      env:
+        NPM_TOKEN: ${{ inputs.npm_token }}
 
     - name: Install pnpm
       shell: bash
