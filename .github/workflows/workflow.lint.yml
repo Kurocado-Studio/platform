@@ -6,6 +6,9 @@ on:
       GH_TOKEN:
         description: 'Automatically generated token that GitHub provides for every workflow run'
         required: true
+      NPM_TOKEN:
+        description: 'Token used to install (if applicable) private packages from NPM registry'
+        required: false
     inputs:
       monorepo:
         default: false
@@ -26,6 +29,7 @@ jobs:
         uses: kurocado-studio/platform/.github/actions/install@main
         with:
           monorepo: ${{ inputs.monorepo }}
+          npm_token: ${{ inputs.NPM_TOKEN }}
 
       - name: Lint
         uses: kurocado-studio/platform/.github/actions/lint@main
