@@ -23,21 +23,11 @@
     "dev:vite": "vite build --watch --mode development",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
-    "prepare": "husky install",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
     "setup": "pnpm install",
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
-  },
-  "lint-staged": {
-    "*": [
-      "pnpm run prettier:fix"
-    ],
-    "**/*.{ts,tsx}": [
-      "pnpm run lint:fix",
-      "pnpm run lint"
-    ]
   },
   "files": [
     "dist",
@@ -87,8 +77,6 @@
     "commitlint": "19.8.1",
     "copyfiles": "2.4.1",
     "eslint": "9.28.0",
-    "husky": "9.1.7",
-    "lint-staged": "16.1.0",
     "prettier": "3.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
