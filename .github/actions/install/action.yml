@@ -17,10 +17,10 @@ runs:
         node-version: 20
 
     - name: Set NPM token
-      if: ${{ inputs.npm-token != '' }}
+      if: ${{ inputs.npm_token != '' }}
       shell: bash
       run: |
-        echo "//registry.npmjs.org/:_authToken=${{ inputs.npm-token }}" > ~/.npmrc
+        echo "//registry.npmjs.org/:_authToken=${{ inputs.npm_token }}" > ~/.npmrc
 
     - name: Install pnpm
       shell: bash
