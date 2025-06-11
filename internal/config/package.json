@@ -27,7 +27,7 @@
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
-    "setup": "pnpm install",
+    "pre:setup": "pnpm install && pnpm build",
     "typecheck": "tsc --noEmit --pretty"
   },
   "devDependencies": {

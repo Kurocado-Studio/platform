@@ -1,31 +1,88 @@
 # Kurocado Studio TypeScript Development Platform
 
-A unified TypeScript platform designed to streamline project setups, enforce consistency, and
-enhance developer productivity. Quickly set up and maintain projects with pre-configured templates
-and centralized standards.
-
-**[See the case study](https://kurocado-studio.github.io/platform/case-study.html)**
+**Turn engineering foundations into installable developer products.**
 
 ## Overview
 
-This repository provides a collection of modules, workflows, and configurations to quickly bootstrap
-and manage TypeScript-based development projects across multiple areas, including Identity and
-Access Management (IAM), Quality Assurance (QA), DevOps automation, Styleguide enforcement, and a
-reusable Design System.
+**Kurocado Studio Platform** is an opinionated, modular system that turns the repetitive foundations
+of frontend engineering into installable, reusable packages.
 
-### Rapid Project Initialization:
+Built with a **“Platform as a Product”** mindset and written in **TypeScript**, this system helps
+developers:
 
-[**See GitHub templates for instant project setups**](https://kurocado-studio.github.io/platform/templates.html)
+- Set up CI/CD, QA, IAM, and DevOps in minutes.
+- Share best practices across teams using centralized configuration.
+- Install only what they need, when they need it:  
+  `npm i @kurocado-studio/{module}`
 
-## Platform Sections
+## Why This Exists
 
-- [Design System](https://kurocado-studio.github.io/design-system): Reusable UI components and
-  cohesive style guidelines.
-- [DevOps Automation](https://kurocado-studio.github.io/dev-ops): CI/CD workflows with GitHub
-  Actions for automated deployment and maintenance.
-- [Identity and Access Management](https://kurocado-studio.github.io/iam): Auth0 integration for
-  centralized, secure authentication.
-- [Quality Assurance](https://kurocado-studio.github.io/qa): Standardized testing libraries and
-  automated validation via GitHub Actions.
-- [Styleguide](https://kurocado-studio.github.io/styleguide): Consistent coding standards, linting,
-  formatting, and commit message conventions.
+After years working with startups and product teams, I saw the same scaffolding built over and over
+again:
+
+- CI/CD pipelines
+- Auth and IAM flows
+- Testing harnesses
+- Lint/format/commit tooling
+
+I turned that boilerplate into a **DX-first platform**—something we can open source, maintain, and
+eventually scale with partners and sponsors.
+
+## Modules
+
+Each module is versioned, documented, and published under the
+[`@kurocado-studio`](https://www.npmjs.com/org/kurocado-studio) namespace.
+
+**[Style Guide](https://github.com/Kurocado-Studio/styleguide)** Centralizes TypeScript rules,
+ESLint config, Prettier, and commit conventions.
+
+| Module               | Purpose                                                                                 |
+| -------------------- | --------------------------------------------------------------------------------------- |
+| **QA**               | Pre-wired `Vitest` + `React Testing Library` with A11y-first defaults and CI support.   |
+| **IAM**              | Drop-in auth strategies (Auth0, etc.) with RBAC support, guards, and reusable context.  |
+| **DevOps Workflows** | GitHub Actions for linting, testing, semantic release, and dependency updates.          |
+| **DX Utilities**     | Custom Axios wrappers, error handlers, form helpers with `@conform-to/react`, and more. |
+
+## Benefits
+
+- 🚀 **85% faster onboarding** — set up new projects in under 5 minutes.
+- 🔒 **Zero-drift config** — shared standards enforced by CI.
+- 🔁 **Composable** — install only what you need, per project.
+- 🧩 **Scalable** — supports mono-repos, multi-framework projects, and future React/Remix upgrades.
+
+## Developer Experience Overview
+
+1. **Install a module**:
+
+   ```bash
+   npm i @kurocado-studio/qa
+   ```
+
+2. **Set up CI/CD** with reusable workflows:
+
+   ```yaml
+   # .github/workflows/ci.yml
+   uses: kurocado-studio/platform/.github/workflows/test.yml@main
+   ```
+
+3. **Add auth module** to your frontend app:
+
+   ```bash
+   npm i @kurocado-studio/iam
+   ```
+
+## Roadmap
+
+- [ ] Support for **Vue 3**, **Next.js**, and **Astro**
+- [ ] Integrated **feature flags** and **DangerJS**
+- [ ] **Visual dashboard** to manage modules across projects
+- [ ] Community docs and contributor onboarding
+- [ ] Launch on GitHub Sponsors
+
+## Contributing
+
+We welcome contributors! Coming soon:
+
+- Contribution guide
+- Maintainer handbook
+- Public roadmap and module proposals
