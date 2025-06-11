@@ -46,4 +46,48 @@
         <description>Created after removal of "DevOps" from Platform</description>
         <accepts>DevOps.html</accepts>
     </rule>
+    <rule id="20572c3c">
+        <description>Created after removal of "Business Plan" from Platform</description>
+        <accepts>Business-Plan.html</accepts>
+    </rule>
+    <rule id="70035d08">
+        <description>Created after removal of "Typescript Platform" from Platform</description>
+        <accepts>starter-topic.html</accepts>
+    </rule>
+    <rule id="7df111d8">
+        <description>Created after removal of "Design System" from Platform</description>
+        <accepts>Design-System.html</accepts>
+    </rule>
+    <rule id="71bdebb4">
+        <description>Created after removal of "Guides" from Platform</description>
+        <accepts>Guides.html</accepts>
+    </rule>
+    <rule id="6678fe9c">
+        <description>Created after removal of "Commitlint" from Platform</description>
+        <accepts>How-To-Install-Commitlint.html</accepts>
+    </rule>
+    <rule id="38e1b622">
+        <description>Created after removal of "ESLint" from Platform</description>
+        <accepts>How-To-Install-ESLint.html</accepts>
+    </rule>
+    <rule id="6b97a651">
+        <description>Created after removal of "Prettier" from Platform</description>
+        <accepts>How-To-Install-Prettier.html</accepts>
+    </rule>
+    <rule id="3033a801">
+        <description>Created after removal of "Semantic Release" from Platform</description>
+        <accepts>How-To-Install-Semantic-Release.html</accepts>
+    </rule>
+    <rule id="2f9a9d92">
+        <description>Created after removal of "How To Install Vitest" from Platform</description>
+        <accepts>How-To-Install-Vitest.html</accepts>
+    </rule>
+    <rule id="3b8e05c3">
+        <description>Created after removal of "Engineering Styleguide" from Platform</description>
+        <accepts>Styleguide.html</accepts>
+    </rule>
+    <rule id="49636e08">
+        <description>Created after removal of "Templates" from Platform</description>
+        <accepts>Templates.html</accepts>
+    </rule>
 </rules>
