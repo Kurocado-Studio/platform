@@ -8,7 +8,7 @@ on:
         required: true
       NPM_TOKEN:
         description: 'Token used to publish the package on NPM registry'
-        required: true
+        required: false
 
 jobs:
   lint:
