@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-- [Prettier](How-To-Install-Prettier.md)
-- [ESLint](How-To-Install-ESLint.md)
-- [CommitLint](How-To-Install-Commitlint.md)
+- [Prettier](https://kurocado-studio.github.io/styleguide/how-to-install-prettier.html)
+- [ESLint](https://kurocado-studio.github.io/styleguide/how-to-install-eslint.html)
+- [CommitLint](https://kurocado-studio.github.io/styleguide/how-to-install-commitlint.html)
 
 ## Consuming the workflow
 

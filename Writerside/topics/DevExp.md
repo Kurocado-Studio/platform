@@ -1,10 +1,5 @@
 # DevEX
 
-|            |                                                                                                                                                                                                                        |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Repository | <https://github.com/Kurocado-Studio/dev-experience>                                                                                                                                                                    |
-| Main       | [![CI/CD Main Pipeline](https://github.com/Kurocado-Studio/dev-experience/actions/workflows/ci.push.monorepo.yml/badge.svg)](https://github.com/Kurocado-Studio/dev-experience/actions/workflows/ci.push.monorepo.yml) |
-
 Kurocado Studio’s **Developer Experience (DevEx)** repository centralizes utilities and workflows to
 enhance productivity for both internal and client-facing projects. Core components include:
 
@@ -51,8 +46,7 @@ organization.
 3. **Client Collaboration**
    - The Dev Experience solutions (e.g., axios wrappers, form libraries, and custom hooks) will
      serve as transparent, cost-free resources for clients and other boutique studios. By making
-     these libraries openly available, we empower external teams to understand, influence, and adapt
-     the underlying architecture to suit their specific needs.
+     these libraries openly available, we empower external teams to do business with the studio.
 
 ## Scope & Constraints
 

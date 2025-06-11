@@ -1,10 +1,5 @@
 # IAM
 
-|            |                                                                                                                                                                                                  |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Repository | <https://github.com/kurocado-studio/iam>                                                                                                                                                         |
-| Main       | [![CI/CD Main Pipeline](https://github.com/Kurocado-Studio/iam/actions/workflows/ci.push.monorepo.yml/badge.svg)](https://github.com/Kurocado-Studio/iam/actions/workflows/ci.push.monorepo.yml) |
-
 **Kurocado Studio IAM** provides a centralized solution for authentication, authorization, and user
 management across internal and client-facing applications. It leverages integrations to simplify
 secure sign-ups, logins, and role-based access control (RBAC).

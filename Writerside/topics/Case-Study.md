@@ -42,7 +42,7 @@ under the [`@kurocado-studio`](https://www.npmjs.com/org/kurocado-studio) namesp
 conventions.
 
 - Built with
-  [`Kurocado-Studio engineering style-guide`](https://github.com/Kurocado-Studio/style-guide)
+  [`Kurocado-Studio engineering style-guide`](https://github.com/Kurocado-Studio/styleguide)
 - Includes test and formatting checks on commit and CI
 - Encourages “zero-drift” TypeScript hygiene
 
