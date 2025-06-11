@@ -179,8 +179,8 @@ importers:
         specifier: ^3.2.3
         version: 3.2.3(vitest@3.2.3(@types/debug@4.1.12)(@types/node@22.15.30)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.8.0))
       commitlint:
-        specifier: 19.8.0
-        version: 19.8.0(@types/node@22.15.30)(typescript@5.8.3)
+        specifier: 19.8.1
+        version: 19.8.1(@types/node@22.15.30)(typescript@5.8.3)
       copyfiles:
         specifier: 2.4.1
         version: 2.4.1
@@ -3626,11 +3626,6 @@ packages:
   commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
-
-  commitlint@19.8.0:
-    resolution: {integrity: sha512-O5waRm0RsjH1g2sT4ifTV58sBYW3wPjfclsdicj1NWUyF91aF0fSqFgKC8EEOUi9RRLKBOhlJarS6V1jWIUx1Q==}
-    engines: {node: '>=v18'}
-    hasBin: true
 
   commitlint@19.8.1:
     resolution: {integrity: sha512-j7jojdmHrVOZ16gnjK2nbQuzdwA9TpxS9iNb9Q9QS3ytgt3JZVIGmsNbCuhmnsJWGspotlQ34yH8n1HvIKImiQ==}
@@ -11932,14 +11927,6 @@ snapshots:
   commander@4.1.1: {}
 
   commander@8.3.0: {}
-
-  commitlint@19.8.0(@types/node@22.15.30)(typescript@5.8.3):
-    dependencies:
-      '@commitlint/cli': 19.8.1(@types/node@22.15.30)(typescript@5.8.3)
-      '@commitlint/types': 19.8.1
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
 
   commitlint@19.8.1(@types/node@22.14.1)(typescript@5.8.3):
     dependencies:
