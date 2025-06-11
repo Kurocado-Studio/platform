@@ -20,6 +20,9 @@ on:
       GH_TOKEN:
         description: 'Automatically generated token that GitHub provides for every workflow run'
         required: true
+      NPM_TOKEN:
+        description: 'Token used to publish the package on NPM registry'
+        required: true
 
 jobs:
   check-changes:
@@ -72,6 +75,8 @@ jobs:
 
       - name: Install Dependencies
         uses: kurocado-studio/platform/.github/actions/install@main
+        with:
+          npm_token: ${{ secrets.NPM_TOKEN }}
 
       - name: Build docs using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4

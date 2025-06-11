@@ -55,6 +55,7 @@ jobs:
         uses: kurocado-studio/platform/.github/actions/install@main
         with:
           monorepo: ${{ inputs.monorepo }}
+          npm_token: ${{ secrets.NPM_TOKEN }}
 
       - name: Debug Monorepo Input
         run: echo "Is monorepo true? ${{ format('{0}', inputs.monorepo) }}"
