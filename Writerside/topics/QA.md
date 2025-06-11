@@ -1,10 +1,8 @@
 # QA
 
-|            |                                                                                                                                                                              |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Repository | <https://github.com/Kurocado-Studio/qa>                                                                                                                                      |
-| NPM        | <https://www.npmjs.com/package/@kurocado-studio/qa>                                                                                                                          |
-| Main       | [![CI/CD Main Pipeline](https://github.com/Kurocado-Studio/qa/actions/workflows/ci.push.yml/badge.svg)](https://github.com/Kurocado-Studio/qa/actions/workflows/ci.push.yml) |
+|     |                                                     |
+| --- | --------------------------------------------------- |
+| NPM | <https://www.npmjs.com/package/@kurocado-studio/qa> |
 
 Kurocado Studio’s **QA** solution ensures consistent and high-quality standards across all internal
 and client-facing projects. It provides testing libraries and automated checks that streamline QA
@@ -66,18 +64,3 @@ processes for both developers and stakeholders.
 2. **E2E & Integration Enhancements**
    - Add or refine E2E testing strategies, including environment setup (e.g., Docker, test data).
    - Provide guidelines or scaffolds for multi-service integration testing.
-
-## Success Criteria
-
-1. **Quality & Reliability**
-   - **Reduced Regressions**: Catch major bugs before production releases, tracked via regression
-     logs or bug tickets.
-2. **Developer Adoption**
-   - **Faster Setup**: Teams can integrate QA checks within five minutes, leveraging the monorepo’s
-     shared configs.
-3. **Client Engagement**
-   - **Fork & Publish**: Clients can fork `@OUR_ORG/CLIENT_NAME_QA` to maintain specialized QA rules
-     or tests, yet still benefit from our baseline standards.
-4. **Automation & Scalability**
-   - **CI/CD Enforcement**: Merges to `main` are consistently validated by automated tests, coverage
-     checks, and security scans.
