@@ -70,7 +70,7 @@ importers:
         version: 1.6.1(react@19.1.0)
       '@conform-to/zod':
         specifier: ^1.3.0
-        version: 1.6.1(zod@3.25.57)
+        version: 1.6.1(zod@3.25.63)
       '@react-aria/utils':
         specifier: ^3.28.2
         version: 3.29.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -87,8 +87,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       zod:
-        specifier: ^3.25.57
-        version: 3.25.57
+        specifier: ^3.25.63
+        version: 3.25.63
     devDependencies:
       '@kurocado-studio/internal':
         specifier: workspace:*
@@ -7906,8 +7906,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  zod@3.25.57:
-    resolution: {integrity: sha512-6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==}
+  zod@3.25.63:
+    resolution: {integrity: sha512-3ttCkqhtpncYXfP0f6dsyabbYV/nEUW+Xlu89jiXbTBifUfjaSqXOG6JnQPLtqt87n7KAmnMqcjay6c0Wq0Vbw==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -8301,10 +8301,10 @@ snapshots:
       '@conform-to/dom': 1.6.1
       react: 19.1.0
 
-  '@conform-to/zod@1.6.1(zod@3.25.57)':
+  '@conform-to/zod@1.6.1(zod@3.25.63)':
     dependencies:
       '@conform-to/dom': 1.6.1
-      zod: 3.25.57
+      zod: 3.25.63
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -16882,6 +16882,6 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod@3.25.57: {}
+  zod@3.25.63: {}
 
   zwitch@2.0.4: {}
