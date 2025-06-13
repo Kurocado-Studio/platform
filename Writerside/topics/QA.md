@@ -1,9 +1,5 @@
 # QA
 
-|     |                                                     |
-| --- | --------------------------------------------------- |
-| NPM | <https://www.npmjs.com/package/@kurocado-studio/qa> |
-
 Kurocado Studio’s **QA** solution ensures consistent and high-quality standards across all internal
 and client-facing projects. It provides testing libraries and automated checks that streamline QA
 processes for both developers and stakeholders.
