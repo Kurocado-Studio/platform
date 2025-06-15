@@ -7,6 +7,7 @@
   "compilerOptions": {
     "types": ["vitest/globals"],
     "skipLibCheck": true,
+    "moduleResolution": "node",
     "rootDir": ".",
     "baseUrl": "./",
     "jsx": "preserve"
