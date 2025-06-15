@@ -65,22 +65,3 @@ secure sign-ups, logins, and role-based access control (RBAC).
 4. **Client Forking & Customization**
    - Document how clients can fork or overlay custom logic, or configurations for their own identity
      needs (e.g., `@CLIENT_ORG/iam`).
-
-## Success Criteria
-
-1. **Security & Reliability**
-
-   - **Zero Critical Vulnerabilities**: Regularly scan with security tools; no open severe CVEs.
-
-2. **Developer Adoption**
-
-   - **Reduced Integration Time**: Teams can implement basic sign-up and login flows within 15
-     minutes using the provided modules.
-   - **Client Engagement**: External clients find it easy to adopt or fork the IAM system,
-     customizing it for their branding or domain.
-
-3. **Continuous Improvement**
-   - **Versioned Releases**: Frequent updates (patches and minor versions) to address bugs,
-     enhancements, and new identity provider integrations.
-   - **Feedback Loop**: Encourage issues and pull requests, ensuring consistent iteration based on
-     user or client feedback.
