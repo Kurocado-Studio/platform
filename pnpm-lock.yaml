@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(5q2fxe64etb3be5auoqhzajjae)
+        version: 2.5.2(fgfpeu76nxe3oubjb5ck75frzy)
       commitlint:
         specifier: ^19.8.1
         version: 19.8.1(@types/node@24.0.1)(typescript@5.8.3)
@@ -21,8 +21,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^16.1.0
-        version: 16.1.0
+        specifier: ^16.1.2
+        version: 16.1.2
       prettier:
         specifier: 3.5.3
         version: 3.5.3
@@ -34,7 +34,7 @@ importers:
     devDependencies:
       '@kurocado-studio/styleguide':
         specifier: ^2.5.2
-        version: 2.5.2(5q2fxe64etb3be5auoqhzajjae)
+        version: 2.5.2(fgfpeu76nxe3oubjb5ck75frzy)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -5392,8 +5392,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.1.0:
-    resolution: {integrity: sha512-HkpQh69XHxgCjObjejBT3s2ILwNjFx8M3nw+tJ/ssBauDlIpkx2RpqWSi1fBgkXLSSXnbR3iEq1NkVtpvV+FLQ==}
+  lint-staged@16.1.2:
+    resolution: {integrity: sha512-sQKw2Si2g9KUZNY3XNvRuDq4UJqpHwF0/FQzZR2M7I5MvtpWvibikCjUVJzZdGE0ByurEl3KQNvsGetd1ty1/Q==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -8890,7 +8890,7 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@kurocado-studio/styleguide@2.5.2(5q2fxe64etb3be5auoqhzajjae)':
+  '@kurocado-studio/styleguide@2.5.2(fgfpeu76nxe3oubjb5ck75frzy)':
     dependencies:
       '@babel/eslint-parser': 7.27.0(@babel/core@7.27.4)(eslint@9.28.0(jiti@2.4.2))
       '@commitlint/cli': 19.8.1(@types/node@24.0.1)(typescript@5.8.3)
@@ -8927,7 +8927,7 @@ snapshots:
       eslint-plugin-vitest: 0.5.4(@typescript-eslint/eslint-plugin@8.29.1(@typescript-eslint/parser@8.29.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.2.3(@types/debug@4.1.12)(@types/node@24.0.1)(jiti@2.4.2)(jsdom@26.0.0)(yaml@2.8.0))
       globals: 16.0.0
       husky: 9.1.7
-      lint-staged: 16.1.0
+      lint-staged: 16.1.2
       lodash-es: 4.17.21
       prettier: 3.5.3
       prettier-plugin-packagejson: 2.5.10(prettier@3.5.3)
@@ -14048,7 +14048,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.1.0:
+  lint-staged@16.1.2:
     dependencies:
       chalk: 5.4.1
       commander: 14.0.0
