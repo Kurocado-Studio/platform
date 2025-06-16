@@ -3,14 +3,14 @@ import { render, screen } from '@kurocado-studio/qa/web';
 import React from 'react';
 import type { Mock } from 'vitest';
 
-import type { TextFieldProps } from 'src/types';
+import type { TextFieldProps } from 'src/react/types';
 
-import { HtmlForm, useAriaTextField } from '../src';
-import { mockFieldMetadata, mockFormMetadata } from '../src/utils';
+import { HtmlForm, useTextField } from '../../index';
+import { mockFieldMetadata, mockFormMetadata } from '../utils';
 
 function UnitTestAriaTextField(props: TextFieldProps): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =
-    useAriaTextField(props);
+    useTextField(props);
 
   return (
     <div>
@@ -30,7 +30,7 @@ vi.mock('@conform-to/react', async () => {
   };
 });
 
-describe('useAriaTextField Hook - Accessibility Tests', () => {
+describe('useTextField Hook - Accessibility Tests', () => {
   const useFieldMock = useField as Mock<typeof useField>;
 
   beforeEach(() => {

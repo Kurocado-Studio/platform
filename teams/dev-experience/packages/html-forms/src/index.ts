@@ -1,3 +1,3 @@
-export * from 'src/hooks/useAriaTextField';
-export * from 'src/components/HtmlForm';
-export type * from 'src/types';
+export * from 'src/react/hooks/useTextField';
+export * from 'src/react/components/HtmlForm';
+export type * from 'src/react/types';
