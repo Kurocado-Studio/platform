@@ -139,8 +139,8 @@ importers:
   teams/dev-experience/packages/html-forms:
     dependencies:
       '@conform-to/dom':
-        specifier: ^1.3.0
-        version: 1.6.1
+        specifier: ^1.7.0
+        version: 1.7.0
       '@conform-to/react':
         specifier: ^1.7.0
         version: 1.7.0(react@19.1.0)
@@ -676,9 +676,6 @@ packages:
   '@commitlint/types@19.8.1':
     resolution: {integrity: sha512-/yCrWGCoA1SVKOks25EGadP9Pnj0oAIHGpl2wH2M2Y46dPM2ueb8wyCVOD7O3WCTkaJ0IkKvzhl1JY7+uCT2Dw==}
     engines: {node: '>=v18'}
-
-  '@conform-to/dom@1.6.1':
-    resolution: {integrity: sha512-9JaMBM6hD8uBu6VIggXScQAxpKUFGNFydiZHUKbW5nXIvqptLjiPPf1DXHrO0tQpl9EH+BWQ8rXFuVX8L3cYcw==}
 
   '@conform-to/dom@1.7.0':
     resolution: {integrity: sha512-u/k39to4Tz5nJ514XE1APL55reAJG4r7vxL9lMatoAKBQ1bVk3q9q8Z0ZVKZcgOx5L+u6qyewbFvZyuj7GNYOg==}
@@ -8418,8 +8415,6 @@ snapshots:
     dependencies:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
-
-  '@conform-to/dom@1.6.1': {}
 
   '@conform-to/dom@1.7.0': {}
 
