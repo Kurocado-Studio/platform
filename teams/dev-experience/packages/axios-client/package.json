@@ -24,7 +24,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./react": "./dist/react/exports.js",
+    "./vue": "./dist/vue/exports.js",
+    "./node": "./dist/node/exports.js"
   },
   "files": [
     "dist"
