@@ -4,8 +4,9 @@ import { get } from 'lodash-es';
 import { useRef } from 'react';
 import { useTextField as useAriaTextField } from 'react-aria';
 
-import type { TextFieldApi, TextFieldMeta, TextFieldProps } from '../types';
-import { composeAriaValidityState } from '../utils';
+import { InputAutoCapitalize, TextType } from '../../../domain';
+import type { TextFieldApi, TextFieldMeta, TextFieldProps } from '../../types';
+import { composeAriaValidityState } from '../../utils';
 
 export const useTextField = <
   FieldSchema = string,
@@ -19,14 +20,14 @@ export const useTextField = <
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const [meta] = useField(name, formMeta);
+  const [meta] = useField(name || '', formMeta);
 
   const conformInputControl = useInputControl({
     name: meta.name,
     formId: meta.formId,
   });
 
-  const required = get(config, ['isRequired'], false);
+  const required = get(config, ['required'], false);
 
   const metaErrors = Array.isArray(meta.errors) ? meta.errors : [];
 
@@ -50,11 +51,15 @@ export const useTextField = <
     'aria-details': get(config, ['aria-details']),
     'aria-errormessage': errorMessage,
     'aria-label': labelOrFallback,
+    'aria-required': required,
     'aria-labelledby': labelOrFallback,
-    autoCapitalize: get(config, ['autoCapitalize'], 'off'),
+    autoCapitalize: get(config, ['autoCapitalize'], InputAutoCapitalize.OFF),
     defaultValue: get(config, ['defaultValue'], meta.initialValue as string),
     errorMessage,
+    required,
     htmlFor: labelOrFallback,
+    type: get(config, ['type'], TextType.TEXT),
+    placeholder: get(config, ['placeholder']),
     isInvalid: get(config, ['isInvalid'], !meta.valid),
     label,
     name: get(meta, ['name'], name),
@@ -76,6 +81,7 @@ export const useTextField = <
   const combinedInputProps = mergeProps(
     {
       ...inputProps,
+      required,
       'aria-invalid': !meta.valid,
       ref: inputRef,
     },

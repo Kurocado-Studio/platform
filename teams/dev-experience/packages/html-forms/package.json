@@ -23,7 +23,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "setup": "pnpm install",
@@ -61,6 +63,7 @@
     "@react-aria/utils": "^3.28.2",
     "lodash-es": "^4.17.21",
     "react-aria": "^3.41.1",
+    "uuid": "^11.1.0",
     "zod": "^3.25.64"
   },
   "peerDependencies": {

@@ -2,7 +2,7 @@ import { FormProvider, useForm } from '@conform-to/react';
 import React from 'react';
 
 export type HtmlFormProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 } & Parameters<typeof useForm>[0];
 

@@ -3,24 +3,9 @@ import { render, screen } from '@kurocado-studio/qa/web';
 import React from 'react';
 import type { Mock } from 'vitest';
 
-import type { TextFieldProps } from 'src/react/types';
-
-import { HtmlForm, useTextField } from '../../index';
-import { mockFieldMetadata, mockFormMetadata } from '../utils';
-
-function UnitTestAriaTextField(props: TextFieldProps): React.ReactNode {
-  const { labelProps, inputProps, errorMessageProps, descriptionProps } =
-    useTextField(props);
-
-  return (
-    <div>
-      <label {...labelProps}>{labelProps.children}</label>
-      <input {...inputProps} />
-      {descriptionProps?.children ? <div {...descriptionProps} /> : null}
-      {errorMessageProps?.children ? <div {...errorMessageProps} /> : null}
-    </div>
-  );
-}
+import { HtmlForm } from '../../form';
+import { mockFieldMetadata, mockFormMetadata } from '../../utils';
+import { DemoTextField } from '../components/DemoTextField';
 
 vi.mock('@conform-to/react', async () => {
   return {
@@ -50,7 +35,7 @@ describe('useTextField Hook - Accessibility Tests', () => {
 
     render(
       <HtmlForm>
-        <UnitTestAriaTextField name='test' label='Test Label' />
+        <DemoTextField name='test' label='Test Label' />
       </HtmlForm>,
     );
 
@@ -71,7 +56,7 @@ describe('useTextField Hook - Accessibility Tests', () => {
 
     render(
       <HtmlForm>
-        <UnitTestAriaTextField
+        <DemoTextField
           name='test'
           label='Test Label'
           description='This is a description'
@@ -101,7 +86,7 @@ describe('useTextField Hook - Accessibility Tests', () => {
 
     render(
       <HtmlForm>
-        <UnitTestAriaTextField name='test' label='Test Label' />
+        <DemoTextField name='test' label='Test Label' />
       </HtmlForm>,
     );
 

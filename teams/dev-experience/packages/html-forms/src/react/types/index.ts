@@ -2,6 +2,8 @@ import type { FieldName, FormId } from '@conform-to/react';
 import type { LabelHTMLAttributes, ReactNode } from 'react';
 import type React from 'react';
 
+import { type ITextField } from '../../domain';
+
 export interface AdditionalAriaTextFieldProps {
   htmlFor: string;
   required?: boolean;
@@ -38,22 +40,11 @@ export type TextFieldProps<
   FormSchema extends Record<string, unknown> = Record<string, unknown>,
   FormError extends string[] = string[],
 > = {
-  description?: string;
   errorMessage?: string;
-  autoCapitalize?:
-    | 'none'
-    | 'off'
-    | 'on'
-    | 'sentences'
-    | 'words'
-    | 'characters'
-    | undefined;
   onChange?: React.Dispatch<
     React.SetStateAction<string | Array<string> | undefined>
   >;
-  name: FieldName<FieldSchema, FormSchema, FormError> | string;
-  label?: string;
-  type?: string;
-};
+  name?: FieldName<FieldSchema, FormSchema, FormError> | ITextField['name'];
+} & Partial<ITextField>;
 
 export type ValidityStateProps = ValidityState;

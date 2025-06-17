@@ -3,12 +3,12 @@ import { renderHook } from '@kurocado-studio/qa/web';
 import { useTextField } from 'react-aria';
 import type { Mock } from 'vitest';
 
-import { HtmlForm } from '../../index';
+import { HtmlForm } from '../../form';
 import {
   composeAriaValidityState,
   mockFieldMetadata,
   mockFormMetadata,
-} from '../utils';
+} from '../../utils';
 
 vi.mock('@conform-to/react', async () => {
   return {
@@ -77,6 +77,7 @@ describe('useTextField Hook - Unit Tests', () => {
     });
     expect(result.current.inputProps).toEqual({
       name: 'test',
+      required: false,
       ref: { current: null },
       'aria-invalid': false,
     });
