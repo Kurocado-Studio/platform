@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@conform-to/dom": "^1.7.0",
-    "@conform-to/react": "^1.7.0",
+    "@conform-to/react": "^1.7.2",
     "@conform-to/zod": "^1.7.2",
     "@react-aria/utils": "^3.28.2",
     "lodash-es": "^4.17.21",
