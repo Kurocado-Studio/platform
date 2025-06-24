@@ -34,7 +34,7 @@
     "@kurocado-studio/styleguide": "^2.5.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.4",
     "copyfiles": "^2.4.1",
     "semantic-release": "^24.2.5",
     "semantic-release-monorepo": "^8.0.2",
