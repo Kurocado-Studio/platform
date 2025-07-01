@@ -55,7 +55,7 @@
     "vitest-axe": "^0.1.0"
   },
   "dependencies": {
-    "@conform-to/dom": "^1.7.2",
+    "@conform-to/dom": "^1.8.0",
     "@conform-to/react": "^1.7.2",
     "@conform-to/zod": "^1.7.2",
     "@react-aria/utils": "^3.28.2",
