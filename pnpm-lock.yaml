@@ -139,8 +139,8 @@ importers:
   teams/dev-experience/packages/html-forms:
     dependencies:
       '@conform-to/dom':
-        specifier: ^1.8.0
-        version: 1.8.0
+        specifier: ^1.8.1
+        version: 1.8.1
       '@conform-to/react':
         specifier: ^1.8.0
         version: 1.8.0(react@19.1.0)
