@@ -142,8 +142,8 @@ importers:
         specifier: ^1.8.2
         version: 1.8.2
       '@conform-to/react':
-        specifier: ^1.8.1
-        version: 1.8.1(react@19.1.0)
+        specifier: ^1.8.2
+        version: 1.8.2(react@19.1.0)
       '@conform-to/zod':
         specifier: ^1.8.2
         version: 1.8.2(zod@4.0.5)
@@ -690,14 +690,11 @@ packages:
     resolution: {integrity: sha512-/yCrWGCoA1SVKOks25EGadP9Pnj0oAIHGpl2wH2M2Y46dPM2ueb8wyCVOD7O3WCTkaJ0IkKvzhl1JY7+uCT2Dw==}
     engines: {node: '>=v18'}
 
-  '@conform-to/dom@1.8.1':
-    resolution: {integrity: sha512-Sg4Jz31ZyiqbFHAKOmG+sVHtukku2Xmxv9ObYzj/TrKMXF1R9qN3ShucAIZWtRaw9l9vZGiqpDnSyfevmiBxuQ==}
-
   '@conform-to/dom@1.8.2':
     resolution: {integrity: sha512-5eDqI9366+23Fl/E5zxebuy2FCebJKpSrdE/c6PZQ5Ul59BYQ17pBmkLkvxAKjPXW+Qq77BJyjGjuklwmqN08A==}
 
-  '@conform-to/react@1.8.1':
-    resolution: {integrity: sha512-+bm+j0MOeOxrhrjWeoLmpmt+m1djZmPM/qE+AH5+8RewuC6GyXEXPyWAyES9bw9mZJ/WqInVS6Ljrf4gQ0I0zA==}
+  '@conform-to/react@1.8.2':
+    resolution: {integrity: sha512-AJuHH4YY64o+VP3qsXd7bqlqCJYefTcEVj6mOiQr/m9iQV785gPtGE31jdmipvQ3ZHQE0Lp4e4th7kN/xo46qg==}
     peerDependencies:
       react: '>=18'
 
@@ -8456,13 +8453,11 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@conform-to/dom@1.8.1': {}
-
   '@conform-to/dom@1.8.2': {}
 
-  '@conform-to/react@1.8.1(react@19.1.0)':
+  '@conform-to/react@1.8.2(react@19.1.0)':
     dependencies:
-      '@conform-to/dom': 1.8.1
+      '@conform-to/dom': 1.8.2
       react: 19.1.0
 
   '@conform-to/zod@1.8.2(zod@4.0.5)':
