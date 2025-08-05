@@ -60,7 +60,7 @@
     "@conform-to/zod": "^1.8.2",
     "@react-aria/utils": "^3.28.2",
     "lodash-es": "^4.17.21",
-    "react-aria": "^3.41.1",
+    "react-aria": "^3.42.0",
     "zod": "^4.0.5"
   },
   "peerDependencies": {
