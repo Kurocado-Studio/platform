@@ -2,12 +2,12 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
-  entry: ['./src/react/index.ts'],
+  entry: ['./src/domain/index.ts', './src/react/index.ts'],
   format: ['esm'],
   dts: true,
   clean: true,
   splitting: true,
   treeshake: true,
-  external: ['react'],
+  external: ['react', 'lightningcss'],
   ...options,
 }));
