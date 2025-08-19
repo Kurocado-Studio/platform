@@ -1,98 +1,64 @@
-# Case Study
+# Kurocado Studio Platform
 
-**“Kurocado Studio Platform – Turning Engineering Foundations Into a Developer Product”**
+| Links      |                                                 |
+| ---------- | ----------------------------------------------- |
+| Repository | [](https://github.com/Kurocado-Studio/platform) |
 
-## Overview
+**Turn engineering foundations into installable developer products.**
 
-**Kurocado Studio Platform** is a developer-first initiative to turn the repetitive foundations of
-frontend development—like CI/CD, QA, IAM, and design systems—into a modular, installable platform.
+A modular, DX-first system built in TypeScript that transforms the repetitive scaffolding of
+frontend development—CI/CD, QA, IAM, and developer utilities—into reusable, open-source modules.
 
-Built in **TypeScript**, and designed with a **“Platform as a Product”** mindset, the system enables
-engineers to:
+## Why This Platform
 
-- Install only what they need (`npm i @kurocado-studio/{module}`)
-- Integrate CI/CD, QA, or IAM in under 5 minutes
-- Maintain best practices across projects via shared configuration and tooling
+Developers shouldn’t spend days setting up pipelines, authentication, or testing harnesses. With the
+Kurocado Studio Platform, you can:
 
----
+- Set up CI/CD and QA in minutes.
+- Add authentication flows with drop-in modules.
+- Keep repos aligned with zero-drift configurations.
+- Scale from startups to enterprise with built-in security.
 
-## Why I Built This
+This isn’t boilerplate—it’s a **Platform-as-a-Product**.
 
-While working across startups and product teams, I kept rebuilding the same engineering scaffolding:
+## What’s Included
 
-- CI/CD pipelines
-- Auth flows
-- Testing harnesses
-- Lint/format/config tooling
+Install only what you need:
 
-This platform was born out of a desire to **productize** that boilerplate—turning it into a
-DX‑driven experience I could **open source**, **maintain**, and eventually **monetize or scale**
-with partners and sponsors.
+- [**QA Module**](QA.md) — Vitest + React Testing Library with accessibility-first defaults.
+- [**IAM Module**](IAM.md) — Auth0, RBAC, reusable guards and providers.
+- [**DevOps Workflows**](CI-CD-Workflows.md) — GitHub Actions for linting, testing, and automated
+  releases.
+- [**DX Utilities**](DevExp.md) — Axios wrappers, error handlers, form helpers, and more.
 
----
+## Built on Top of the Style Guide
 
-## What’s in the Platform
+The **[Kurocado Studio Engineering Style Guide](https://github.com/Kurocado-Studio/styleguide)** is
+not a platform module but the foundation that underpins all projects. It establishes:
 
-Each part of the platform is versioned, documented, and distributed via NPM. All repos are public
-under the [`@kurocado-studio`](https://www.npmjs.com/org/kurocado-studio) namespace.
+- TypeScript best practices
+- ESLint and Prettier configuration
+- Commit conventions
+- Zero-drift code hygiene
 
-### Engineering Styleguide
+By separating the Style Guide into its own project, any repository—inside or outside the
+platform—can adopt the same standards consistently.
 
-**Purpose:** Centralize TypeScript best practices, Prettier config, ESLint rules, and commit
-conventions.
+This ensures that every module built on top of the platform inherits a unified, professional
+baseline.
 
-- Built with
-  [`Kurocado-Studio engineering style-guide`](https://github.com/Kurocado-Studio/styleguide)
-- Includes test and formatting checks on commit and CI
-- Encourages “zero-drift” TypeScript hygiene
+## Key Benefits
 
-### QA Module
+- Faster onboarding — new projects spin up in under 5 minutes.
+- Zero-drift standards — shared configs and CI keep repos consistent.
+- Composable — pick and install only what you need.
+- Open-source ready — all modules are published on NPM.
 
-**Purpose:** Drop-in testing framework using `Vitest` and `React Testing Library`.
+## Strategic Value
 
-- Pre-wired with `userEvent` for accessibility
-- Includes reusable test utils and Jest-style mocks
-- CI-tested via GitHub Actions
+This platform is both a technical foundation and a business differentiator:
 
-### IAM Module
-
-**Purpose:** Auth module with built-in support for Auth0 and scalable patterns for RBAC.
-
-- Auth strategy abstraction
-- Reusable guards and context providers
-- Published via NPM for install on any frontend project
-
-### DevOps Workflows
-
-**Purpose:** GitHub Actions that enforce standards and automate releases.
-
-- `lint.yml`, `test.yml`, `release.yml`, `dependabot.yml`
-- Follows semantic-release standards
-- Designed to support multiple repos and mono-repos alike
-
-### Developer Experience (DX) Utilities
-
-**Purpose:** Utilities that improve developer productivity.
-
-- Custom axios wrappers, error handlers
-- Form helpers using `@conform-to/react`
-- Framework-agnostic utilities
-
-## Results & Traction
-
-- **85% faster onboarding**: New projects get set up in under 5 minutes.
-- **Zero-drift standards**: Shared styleguide and CI keep repos aligned.
-- **Scalable**: Ready to support React 19 & Remix setups.
-- **Public GitHub usage**: Multiple public modules are already available and installable.
-
----
-
-## What's Next
-
-- **Community Adoption**: Start onboarding other devs & open source contributors.
-- **Sponsorship & R\&D**: Exploring GitHub Sponsors + dev shop monetization model.
-- **Platform Expansion**:
-
-  - Vue 3 and Next.js support
-  - Feature flags and DangerJS integration
-  - Dashboard UI for managing modules visually
+- Transparency — open-source modules make coding standards visible.
+- Efficiency — milestone + 20% buffer model supported by reusable scaffolding.
+- Differentiation — freemium approach.
+- Scalability — supports startups, enterprises, and government-level security needs.

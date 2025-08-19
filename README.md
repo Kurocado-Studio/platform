@@ -62,7 +62,23 @@ ESLint config, Prettier, and commit conventions.
 
    ```yaml
    # .github/workflows/ci.yml
-   uses: kurocado-studio/platform/.github/workflows/test.yml@main
+   name: CI/CD Pull Request Pipeline
+
+   permissions:
+     contents: write
+     pull-requests: write
+
+   on:
+     pull_request:
+       lint:
+       uses: kurocado-studio/platform/.github/workflows/workflow.lint.yml@main
+       secrets:
+         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+       test:
+         uses: kurocado-studio/platform/.github/workflows/workflow.test.yml@main
+         secrets:
+           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    ```
 
 3. **Add auth module** to your frontend app:
@@ -73,16 +89,8 @@ ESLint config, Prettier, and commit conventions.
 
 ## Roadmap
 
-- [ ] Support for **Vue 3**, **Next.js**, and **Astro**
-- [ ] Integrated **feature flags** and **DangerJS**
+- [ ] Support for **Next.js**
+- [ ] Integrated **DangerJS**
 - [ ] **Visual dashboard** to manage modules across projects
 - [ ] Community docs and contributor onboarding
 - [ ] Launch on GitHub Sponsors
-
-## Contributing
-
-We welcome contributors! Coming soon:
-
-- Contribution guide
-- Maintainer handbook
-- Public roadmap and module proposals
