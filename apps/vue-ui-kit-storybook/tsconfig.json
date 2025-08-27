@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "src/*": ["./src/*"],
+      "@ui-domain/*": ["../../domains/design/ui-kit/src/*"],
+      "@ui-vue-research-and-development/*": [
+        "../../packages/design/vue-ui-kit/src/*"
+      ]
+    }
+  },
+  "include": [
+    "./.storybook/**/*",
+    "./stories/**/*",
+    "./tailwind.config.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": ["dist", "build", "node_modules"]
+}

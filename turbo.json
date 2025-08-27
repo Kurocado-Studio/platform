@@ -4,14 +4,24 @@
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^internal:build", "^build"]
     },
-    "pre:setup": {
-      "dependsOn": ["^pre:setup"],
+    "internal:build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^internal:build"],
+      "cache": false
+    },
+    "internal:build:domain": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^internal:build:domain"],
       "cache": false
     },
     "setup": {
-      "dependsOn": ["^pre:setup", "^build"],
+      "dependsOn": ["^internal:build","^internal:build:domain", "^setup", "^build"],
+      "cache": false
+    },
+    "internal": {
+      "dependsOn": ["^internal"],
       "cache": false
     },
     "prettier:fix": {
@@ -20,6 +30,10 @@
     },
     "prettier:check": {
       "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^setup", "^build"],
       "cache": false
     },
     "test": {
@@ -34,20 +48,40 @@
       "dependsOn": ["^setup", "^build"],
       "cache": false
     },
+    "dev:internal": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
     "dev": {
-      "dependsOn": ["^setup", "^build"],
+      "dependsOn": ["^internal:build", "^setup", "^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev:storybook": {
+      "dependsOn": ["^internal:build", "^setup", "^build"],
       "cache": false,
       "persistent": true
     },
     "clean": {
       "cache": false
     },
-    "preview-storybook": {
+    "internal:preflight": {
       "dependsOn": ["^build"],
       "cache": false
     },
-    "typecheck": {
-      "dependsOn": ["^setup", "^build"],
+    "internal:config": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "vite:watch": {
+      "dependsOn": ["^setup"],
+      "cache": false
+    },
+    "storybook": {
+      "dependsOn": ["dev:watch"]
+    },
+    "preview-storybook": {
+      "dependsOn": ["^build"],
       "cache": false
     }
   }

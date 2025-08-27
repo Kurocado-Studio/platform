@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import '@kurocado-studio/ui-kit-domain/styles.css';
+
+@plugin '@tailwindcss/typography';
+
+@source "./components/**/*.{js,ts,jsx,tsx,vue,mdx,stories.tsx,stories.mdx}";
+@source "./context/**/*.{js,ts,jsx,tsx,mdx,vue,stories.tsx,stories.mdx}";

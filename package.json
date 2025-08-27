@@ -7,7 +7,7 @@
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --concurrency=20",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
@@ -16,7 +16,7 @@
     "prettier:fix": "turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "setup": "pnpm i && turbo run setup",
+    "setup": "pnpm clean && pnpm i && turbo run setup",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },
