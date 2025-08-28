@@ -16,10 +16,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "internal:build": "pnpm install && rm -rf dist && tsup --dts",
-    "internal:dev": "rm -rf dist && tsup --watch --dts",
-    "internal:clean": "rm -rf .turbo node_modules dist",
-    "build": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
+    "internal:build:domain": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
     "build:vite": "rm -rf dist && vite build --mode production",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",

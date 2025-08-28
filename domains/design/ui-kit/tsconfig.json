@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": [
-    "@kurocado-studio/qa-domain/web/tsconfig.qa",
+    "@kurocado-studio/qa/web/tsconfig.qa",
     "@internal/config/tsconfig.web"
   ],
   "compilerOptions": {

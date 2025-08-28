@@ -15,13 +15,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "src/*": ["./src/*"],
-      "@ui-domain/*": ["../../domains/design/ui-kit/src/*"],
-      "@ui-vue-research-and-development/*": [
-        "../../packages/design/vue-ui-kit/src/*"
-      ]
-    }
   },
   "include": [
     "./.storybook/**/*",

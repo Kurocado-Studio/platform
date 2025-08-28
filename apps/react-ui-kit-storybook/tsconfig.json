@@ -20,17 +20,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "paths": {
-      "src/*": ["./src/*"],
-      "@ui-domain/*": ["../../internal/ui-domain/src/*"],
-      "@ui-react-research-and-development/*": [
-        "../../packages/ui-react-research-and-development/src/*"
-      ],
-      "@ui-research-and-development/*": [
-        "../../packages/ui-research-and-development/src/*"
-      ]
-    }
+    "skipLibCheck": true
   },
   "include": ["./.storybook/**/*", "./tailwind.config.ts", "./stories/**/*"],
   "exclude": ["dist", "build", "node_modules"]

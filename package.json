@@ -4,10 +4,10 @@
   "type": "module",
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run internal:build && turbo run build",
     "clean": "turbo run clean && rm -rf .turbo node_modules",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
-    "dev": "turbo run dev --concurrency=20",
+    "dev": "turbo run build && turbo run dev --concurrency=20",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@kurocado-studio/styleguide": "^2.5.2",
+    "@kurocado-studio/qa": "workspace:*",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
     "husky": "^9.1.7",

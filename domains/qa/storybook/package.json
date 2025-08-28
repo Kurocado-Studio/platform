@@ -17,7 +17,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "internal:build:domain": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
+    "build": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
     "build:vite": "rm -rf dist && vite build --mode production",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",
@@ -38,10 +38,11 @@
   "peerDependencies": {
     "@eslint/js": "^9.19.0",
     "@faker-js/faker": "^9.6.0",
+    "@internal/config": "workspace:*",
     "@remix-run/node": "^2.15.3",
     "@remix-run/testing": "^2.15.3",
-    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -73,7 +74,6 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@internal/config": "workspace:*",
     "@types/react": "19.1.6",
     "commitlint": "19.8.1",
     "copyfiles": "2.4.1",

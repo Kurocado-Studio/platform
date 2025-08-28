@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "scripts": {
-    "internal:build:domain": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
+    "build": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
@@ -43,9 +43,28 @@
   "engines": {
     "node": ">=20"
   },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": ">= 8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./react": "./dist/remix/index.js",
+    "./remix/tsconfig.qa": "./dist/remix/tsconfig.qa.json",
+    "./npm/tsconfig.qa": "./dist/npm/tsconfig.qa.json",
+    "./nestjs/tsconfig.qa": "./dist/nestjs/tsconfig.qa.json",
+    "./remix/setup": "./dist/remix/setup.remix.js",
+    "./npm/setup": "./dist/npm/setup.npm.js",
+    "./nestjs/setup": "./dist/nestjs/setup.nestjs.js"
+  },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@kurocado-studio/qa-domain": "workspace:*",
+    "@kurocado-studio/qa": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.2.0",
@@ -65,24 +84,5 @@
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4",
     "vitest-axe": "^0.1.0"
-  },
-  "overrides": {
-    "conventional-changelog-conventionalcommits": ">= 8.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./react": "./dist/remix/index.js",
-    "./remix/tsconfig.qa": "./dist/remix/tsconfig.qa.json",
-    "./npm/tsconfig.qa": "./dist/npm/tsconfig.qa.json",
-    "./nestjs/tsconfig.qa": "./dist/nestjs/tsconfig.qa.json",
-    "./remix/setup": "./dist/remix/setup.remix.js",
-    "./npm/setup": "./dist/npm/setup.npm.js",
-    "./nestjs/setup": "./dist/nestjs/setup.nestjs.js"
   }
 }
