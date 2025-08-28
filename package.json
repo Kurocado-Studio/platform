@@ -4,10 +4,10 @@
   "type": "module",
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "build": "turbo run internal:build && turbo run build",
-    "clean": "turbo run clean && rm -rf .turbo node_modules",
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf .turbo node_modules pnpm-lock.yaml",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
-    "dev": "turbo run build && turbo run dev --concurrency=20",
+    "dev": "turbo run dev --concurrency=20",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
@@ -16,7 +16,7 @@
     "prettier:fix": "turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "setup": "pnpm clean && pnpm i && turbo run setup",
+    "setup": "pnpm clean && pnpm i",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },

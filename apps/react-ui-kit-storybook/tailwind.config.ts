@@ -1,3 +1,4 @@
+import {} from '@kurocado-studio/react-ui-kit'
 
 export const content = [
   '../../internal/ui-domain/dist/**/*.{js}',

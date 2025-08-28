@@ -16,7 +16,9 @@
       "import": "./dist/exports.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsup",
     "clean": "rm -rf .turbo node_modules dist",
@@ -50,6 +52,7 @@
   },
   "devDependencies": {
     "@internal/config": "workspace:*",
+    "@kurocado-studio/qa": "workspace:*",
     "@storybook/react": "^8.6.13",
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",
