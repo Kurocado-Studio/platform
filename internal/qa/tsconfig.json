@@ -1,0 +1,25 @@
+{
+  "include": ["src", "test", "tsup.config.ts"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "prettier.config.js",
+    "coverage",
+    "node_modules",
+    "dist",
+    "eslint.config.js"
+  ]
+}
