@@ -1,14 +1,12 @@
 import { faker } from '@kurocado-studio/qa';
 
+import { OktaUserAdapter, OrgUser, OrgUserToken } from '../../src';
+
 import {
-
-  OktaUserAdapter,
-  OrgUser,
-  OrgUserToken,
-} from '../../src';
-
-import {type AuthOktaUser,
-    type AuthOktaUserAdapter,type AuthOktaToken} from "../types/types";
+  type AuthOktaUser,
+  type AuthOktaUserAdapter,
+  type AuthOktaToken,
+} from '../types/types';
 
 describe('OktaUserAdapter', () => {
   let adapter: AuthOktaUserAdapter;

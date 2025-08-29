@@ -1,6 +1,5 @@
 import { get } from 'lodash-es';
 
-import { OktaUser, OrgUser, OrgUserToken } from '../models/models';
 import type {
   AuthOktaToken,
   AuthOktaUser,
@@ -9,6 +8,7 @@ import type {
   UserAdapter,
   UserToken,
 } from '../types/types';
+import { OktaUser, OrgUser, OrgUserToken } from '../models/models';
 
 export class OktaUserAdapter implements AuthOktaUserAdapter {
   public static create = (): AuthOktaUserAdapter => new OktaUserAdapter();

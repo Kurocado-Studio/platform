@@ -1,8 +1,8 @@
-import { json } from '@remix-run/node';
-import { createRemixStub } from '@remix-run/testing';
 import { type RenderResult, render } from '@testing-library/react';
-import React from 'react';
+import { createRemixStub } from '@remix-run/testing';
+import { json } from '@remix-run/node';
 import { axe } from 'vitest-axe';
+import React from 'react';
 
 export function renderComponent(
   ...options: Parameters<typeof render>

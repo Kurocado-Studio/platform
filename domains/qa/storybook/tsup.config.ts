@@ -1,6 +1,6 @@
 /* eslint-disable import/no-default-export */
-import { execSync } from 'node:child_process';
 import { type Options, defineConfig } from 'tsup';
+import { execSync } from 'node:child_process';
 
 const tsupOptions: Options = {
   clean: true,

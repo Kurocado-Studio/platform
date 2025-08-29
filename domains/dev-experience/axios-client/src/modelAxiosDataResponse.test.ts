@@ -5,8 +5,8 @@ import type {
 } from 'axios';
 
 import { modelAxiosDataResponse } from './modelAxiosDataResponse';
-import type { UseAxiosParams } from './types';
 import { mockAxiosInstance } from './utils/mocks';
+import type { UseAxiosParams } from './types';
 
 describe('modelAxiosDataResponse', () => {
   type RawResponse = { id: string; name: string };

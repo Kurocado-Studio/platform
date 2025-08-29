@@ -1,6 +1,6 @@
 import type { AxiosInstance, AxiosRequestConfig } from 'axios';
-import axios from 'axios';
 import { get } from 'lodash-es';
+import axios from 'axios';
 
 export const createAxiosInstance = (
   config?: Partial<AxiosRequestConfig>,

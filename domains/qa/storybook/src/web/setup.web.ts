@@ -1,11 +1,11 @@
-import '@testing-library/jest-dom';
+import * as matchers from 'vitest-axe/matchers.js';
 import '@testing-library/jest-dom/vitest';
-import 'fast-text-encoding';
-import { get } from 'lodash-es';
-import { expect, vi } from 'vitest';
 // the extension is needed as Vitest (through Node) does not automatically resolve on other ESModules
 import 'vitest-axe/extend-expect.js';
-import * as matchers from 'vitest-axe/matchers.js';
+import { expect, vi } from 'vitest';
+import '@testing-library/jest-dom';
+import { get } from 'lodash-es';
+import 'fast-text-encoding';
 
 // @see https://github.com/vitest-dev/vitest/issues/4043#issuecomment-2383567554
 class ESBuildAndJSDOMCompatibleTextEncoder extends TextEncoder {

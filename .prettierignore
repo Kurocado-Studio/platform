@@ -5,8 +5,10 @@
 **/*.xml
 **/.husky
 **/eslint.config.js
+**/prettier.config.js
 **/.DS_Store
 **/.commitlintrc.js
+**/package.json
 **/.idea
 **/.npmrc
 **/.prettierignore
