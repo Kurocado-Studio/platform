@@ -62,9 +62,11 @@
     "./npm/setup": "./dist/npm/setup.npm.js",
     "./nestjs/setup": "./dist/nestjs/setup.nestjs.js"
   },
+  "peerDependencies": {
+    "@kurocado-studio/qa": "workspace:*"
+  },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@kurocado-studio/qa": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.2.0",

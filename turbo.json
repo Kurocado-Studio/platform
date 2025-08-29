@@ -18,9 +18,8 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": [
-        "setup",
-        "internal:build",
-        "internal:build:domain",
+        "^internal:build",
+        "^internal:build:qa",
         "^build"
       ]
     },

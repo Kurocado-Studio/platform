@@ -18,7 +18,9 @@
     "./tsconfig.web": "./dist/tsconfig.web.json",
     "./qa/web/setup": "./dist/setup.web.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "internal:build": "pnpm install && rm -rf dist && tsup --dts",
     "internal:dev": "rm -rf dist && tsup --watch --dts",
@@ -26,7 +28,7 @@
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
+    "prettier:fix": "NODE_OPTIONS=--trace-warnings prettier --check . --write",
     "typecheck": "tsc --noEmit --pretty"
   },
   "devDependencies": {

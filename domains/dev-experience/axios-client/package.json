@@ -51,9 +51,11 @@
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.5.17"
   },
+  "peerDependencies": {
+    "@kurocado-studio/qa": "workspace:*"
+  },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@kurocado-studio/qa": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.2.0",

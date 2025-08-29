@@ -2,6 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @config "../tailwind.config.ts";
+@source "../node_modules/@kurocado-studio/react-ui-kit";
 @custom-variant dark (&:is(.dark *));
 
 @theme {

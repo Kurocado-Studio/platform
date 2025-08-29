@@ -1,9 +1,4 @@
-// import {
-//   cardBodyClasses,
-//   cardComponentWrapperClasses,
-//   cardFooterClasses,
-//   cardHeaderClasses,
-// } from '@kurocado-studio/ui-kit-domain';
+import {card} from '@kurocado-studio/ui-kit-domain';
 import type React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -19,7 +14,7 @@ function CardHeader<T extends keyof React.JSX.IntrinsicElements = 'div'>({
 }: CardProps<T>): React.JSX.Element {
   return (
     <MotionElement<T>
-      className={twMerge( className)}
+      className={twMerge(card.cardHeaderClasses, className)}
       {...rest}
     >
       {children}
@@ -34,7 +29,7 @@ function CardFooter<T extends keyof React.JSX.IntrinsicElements = 'div'>({
 }: CardProps<T>): React.ReactNode {
   return (
     <MotionElement<T>
-      className={twMerge( className)}
+      className={twMerge(card.cardFooterClasses, className)}
       {...rest}
     >
       {children}
@@ -49,7 +44,7 @@ function CardBody<T extends keyof React.JSX.IntrinsicElements = 'div'>({
 }: CardProps<T>): React.ReactNode {
   return (
     <MotionElement<T>
-      className={twMerge( className)}
+      className={twMerge(card.cardBodyClasses, className)}
       {...rest}
     >
       {children}
@@ -62,9 +57,10 @@ export function Card<T extends keyof React.JSX.IntrinsicElements = 'div'>({
   className,
   ...rest
 }: CardProps<T>): React.ReactNode {
+
   return (
     <MotionElement<T>
-      className={twMerge( className)}
+      className={twMerge(card.cardComponentWrapperClasses, className)}
       {...rest}
     >
       {children}

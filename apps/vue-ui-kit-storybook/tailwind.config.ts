@@ -1,5 +1,3 @@
-
-
 export const content = [
   '../../internal/ui-domain/dist/**/*.{js}',
   '../../packages/ui-vue-research-and-development/dist/**/*.{js}',
