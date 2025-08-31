@@ -6,4 +6,4 @@
  *
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
  */
-export { prettierConfig as default } from '@kurocado-studio/styleguide';
+export { prettierConfig as default } from '@internal/config';

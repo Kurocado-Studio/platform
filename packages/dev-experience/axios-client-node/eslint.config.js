@@ -1,6 +1,5 @@
 import {
-  defineESLintConfig,
-  eslintReactConfig,
+  defineBaseNodeEslintConfig
 } from '@internal/config';
 
-export default defineESLintConfig(eslintReactConfig);
+export default defineBaseNodeEslintConfig();

@@ -1,6 +1,1 @@
-import { semanticReleaseInternalConfig } from '@internal/config';
-
-export default {
-  ...semanticReleaseInternalConfig,
-  extends: 'semantic-release-monorepo',
-};
+export { semanticReleaseNpmMonorepoConfig as default } from '@internal/config';

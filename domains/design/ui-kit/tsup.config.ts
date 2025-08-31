@@ -2,7 +2,7 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
-  entry: ['./src/index.ts'],
+  entry: ['./src/index.ts', "./src/tailwind.css"],
   format: ['esm'],
   dts: true,
   clean: true,

@@ -30,9 +30,7 @@
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
     "lodash-es": "^4.17.21",

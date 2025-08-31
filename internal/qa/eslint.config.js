@@ -6,4 +6,4 @@
  *
  * Explore our open-source projects: {@link https://github.com/kurocado-studio}
  */
-export { eslintNodeConfig as default } from '@kurocado-studio/styleguide';
+export { eslintNodeConfig as default } from '@internal/config';

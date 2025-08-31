@@ -17,7 +17,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "internal:build": "pnpm install && rm -rf dist && tsup --dts",
+    "build": "pnpm install && rm -rf dist && tsup --dts",
     "internal:dev:qa": "rm -rf dist && tsup --watch --dts",
     "internal:clean": "rm -rf .turbo node_modules dist",
     "build:vite": "rm -rf dist && vite build --mode production",
@@ -34,7 +34,6 @@
     "node_modules/@vitest/coverage-v8"
   ],
   "peerDependencies": {
-    "@kurocado-studio/styleguide": "workspace:*",
     "@eslint/js": "^9.19.0",
     "@faker-js/faker": "^9.6.0",
     "@remix-run/node": "^2.15.3",
@@ -72,7 +71,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@kurocado-studio/styleguide": "^2.5.2",
+    "@internal/config": "workspace:*",
     "@types/react": "19.1.6",
     "commitlint": "19.8.1",
     "copyfiles": "2.4.1",

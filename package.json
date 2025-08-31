@@ -21,11 +21,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "prettier-plugin-packagejson": "^2.5.8",
-    "prettier-plugin-sort-imports": "^1.8.6",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "@kurocado-studio/styleguide": "^2.5.2",
+    "@internal/config":"workspace:*",
     "@kurocado-studio/qa": "workspace:*",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
@@ -36,7 +32,7 @@
   },
   "lint-staged": {
     "*": ["prettier --write"],
-    "{apps,packages}.{ts,tsx}": [
+    "**/*.{ts,tsx}": [
       "prettier --write",
       "turbo run lint:fix --",
       "turbo run lint --"

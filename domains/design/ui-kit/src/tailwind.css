@@ -1,3 +1,4 @@
 @import 'tailwindcss';
 
-/*@source "./domain!**!*.{js,ts,jsx,tsx,mdx,stories.tsx,stories.mdx}";*/
+@source './components/**/*.{ts,tsx}';
+@source '../node_modules/@kurocado-studio/ui-kit-domain/dist/**/*.js';
