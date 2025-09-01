@@ -7,7 +7,7 @@
 **/eslint.config.js
 **/prettier.config.js
 **/.DS_Store
-**/.commitlintrc.cjs
+.commitlintrc.mjs
 **/package.json
 **/.idea
 **/.npmrc
