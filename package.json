@@ -21,7 +21,6 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@internal/config": "workspace:*",
     "@kurocado-studio/qa": "workspace:*",
     "@kurocado-studio/styleguide": "2.6.0-develop.3",
     "commitlint": "^19.8.1",
