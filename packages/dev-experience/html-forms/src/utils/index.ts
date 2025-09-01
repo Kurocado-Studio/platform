@@ -1,3 +1,3 @@
-export * from './a11yTestUtils';
+export * from './a11yTestUtilities';
 export * from './composeAriaValidityState';
-export * from './mockConformUtils';
+export * from './mockConformUtilities';

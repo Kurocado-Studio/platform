@@ -1,6 +1,11 @@
-import Card from './Card.vue';
-import CardBody from './CardBody.vue';
-import CardFooter from './CardFooter.vue';
-import CardHeader from './CardHeader.vue';
 
-export { Card, CardBody, CardFooter, CardHeader };
+
+
+
+
+
+
+export {default as Card} from './Card.vue';
+export {default as CardBody} from './CardBody.vue';
+export {default as CardFooter} from './CardFooter.vue';
+export {default as CardHeader} from './CardHeader.vue';

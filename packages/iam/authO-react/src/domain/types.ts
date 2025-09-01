@@ -6,7 +6,7 @@ export interface AuthOktaUserAdapter {
 }
 
 export interface UserAdapter {
-  toAuthOktaUser: (user: User) => AuthOktaUser;
+  toAuthOktaUser: (user: Partial<User>) => AuthOktaUser;
 }
 
 export interface UserAccessTokenSilentlyOptions {
@@ -17,6 +17,7 @@ export interface UserAccessTokenSilentlyOptions {
     redirect_uri?: string;
     scope?: string;
     audience?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   timeoutInSeconds?: number;
@@ -74,6 +75,7 @@ export interface AuthOktaUser {
   address: string;
   updated_at: string;
   sub: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 

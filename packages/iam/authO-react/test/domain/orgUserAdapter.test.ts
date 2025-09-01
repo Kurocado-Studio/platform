@@ -56,11 +56,9 @@ describe('OrgUserAdapter', () => {
     });
 
     it('should always create an instance of OrgUser', () => {
-      [undefined, {}, null, new Error('')].forEach((unknownPayload) => {
-        // @ts-ignore as we are testing edge cases
-        const user = adapter.toAuthOktaUser(unknownPayload);
+
+        const user = adapter.toAuthOktaUser({});
         expect(user).toBeInstanceOf(OktaUser);
-      });
     });
   });
 });

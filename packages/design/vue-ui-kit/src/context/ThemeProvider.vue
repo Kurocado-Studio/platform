@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {
-  type ThemeProviderProps,
+  type ThemeProviderProperties,
   ThemeProviderSymbol,
   composeThemeProvider,
 } from '@kurocado-studio/ui-kit-domain';
@@ -46,7 +46,7 @@ function setThemeVariable(variableName: string, variableValue: string): void {
   }
 }
 
-const providerValue: ThemeProviderProps = {
+const providerValue: ThemeProviderProperties = {
   setTheme: handleVariablesMap,
   setThemeVariable,
   toggleLightDarkTheme,

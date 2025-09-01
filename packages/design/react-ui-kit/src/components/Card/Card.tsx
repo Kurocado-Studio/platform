@@ -2,16 +2,16 @@ import {card} from '@kurocado-studio/ui-kit-domain';
 import type React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { MotionElement, type MotionElementProps } from '../motion';
+import { MotionElement, type MotionElementProperties } from '../motion';
 
-export type CardProps<T extends keyof React.JSX.IntrinsicElements = 'div'> =
-  MotionElementProps<T>;
+export type CardProperties<T extends keyof React.JSX.IntrinsicElements = 'div'> =
+  MotionElementProperties<T>;
 
 function CardHeader<T extends keyof React.JSX.IntrinsicElements = 'div'>({
   children,
   className,
   ...rest
-}: CardProps<T>): React.JSX.Element {
+}: CardProperties<T>): React.JSX.Element {
   return (
     <MotionElement<T>
       className={twMerge(card.cardHeaderClasses, className)}
@@ -26,7 +26,7 @@ function CardFooter<T extends keyof React.JSX.IntrinsicElements = 'div'>({
   children,
   className,
   ...rest
-}: CardProps<T>): React.ReactNode {
+}: CardProperties<T>): React.ReactNode {
   return (
     <MotionElement<T>
       className={twMerge(card.cardFooterClasses, className)}
@@ -41,7 +41,7 @@ function CardBody<T extends keyof React.JSX.IntrinsicElements = 'div'>({
   children,
   className,
   ...rest
-}: CardProps<T>): React.ReactNode {
+}: CardProperties<T>): React.ReactNode {
   return (
     <MotionElement<T>
       className={twMerge(card.cardBodyClasses, className)}
@@ -56,7 +56,7 @@ export function Card<T extends keyof React.JSX.IntrinsicElements = 'div'>({
   children,
   className,
   ...rest
-}: CardProps<T>): React.ReactNode {
+}: CardProperties<T>): React.ReactNode {
 
   return (
     <MotionElement<T>

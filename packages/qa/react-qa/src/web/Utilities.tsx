@@ -17,15 +17,15 @@ export async function auditComponentA11y(
   return axe(container);
 }
 
-export const renderWithRemix = (
-  Component?: React.FunctionComponent,
-  loaderData?: any,
+export const renderWithRemix = <T extends Record<string, unknown>>(
+  Component?: React.ComponentType<T> | null,
+  loaderData?: Record<string, unknown>,
 ): RenderResult => {
   const RemixStub = createRemixStub([
     {
       path: '/',
-      // @ts-ignore mismatch in types
-      Component,
+      // @ts-expect-error types mismatch
+      Component: Component as React.ComponentType,
       loader() {
         return json(loaderData || {});
       },

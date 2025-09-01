@@ -4,7 +4,7 @@ import * as React from 'react';
 import { type Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {
-  type AuthProviderProps,
+  type AuthProviderProperties,
   AuthSilentlyContext,
   type AuthSilentlyContextState,
   AuthSilentlyProvider,
@@ -14,10 +14,10 @@ import {
 } from '../../src';
 
 function TestAuthAccessSilentlyProvider(
-  props: AuthProviderProps,
+  properties: AuthProviderProperties,
 ): React.ReactNode {
   return (
-    <AuthSilentlyProvider {...props}>
+    <AuthSilentlyProvider {...properties}>
       {({ isLoading }) =>
         isLoading ? <h1>Loading...</h1> : <h1>Hello User!</h1>
       }
@@ -28,7 +28,7 @@ function TestAuthAccessSilentlyProvider(
 describe('AuthAccessSilentlyProvider', () => {
   let logoutMock: Mock;
   let mockContext: AuthSilentlyContextState;
-  let auth0ProviderParams: AuthProviderProps;
+  let auth0ProviderParameters: AuthProviderProperties;
   let domainName: string;
   let clientId: string;
   let domain: string;
@@ -38,7 +38,7 @@ describe('AuthAccessSilentlyProvider', () => {
     domain = faker.string.uuid();
     domainName = faker.internet.domainName();
 
-    auth0ProviderParams = {
+    auth0ProviderParameters = {
       clientId,
       domain,
       authorizationParams: {
@@ -56,7 +56,7 @@ describe('AuthAccessSilentlyProvider', () => {
 
   describe('initial render', () => {
     it('lets the user know the provider is trying to login the user', () => {
-      render(<TestAuthAccessSilentlyProvider {...auth0ProviderParams} />);
+      render(<TestAuthAccessSilentlyProvider {...auth0ProviderParameters} />);
       expect(screen.getByText(/Loading.../i)).toBeDefined();
     });
   });

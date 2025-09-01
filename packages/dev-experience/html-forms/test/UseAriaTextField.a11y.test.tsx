@@ -3,21 +3,21 @@ import { render, screen } from '@kurocado-studio/qa/web';
 import React from 'react';
 import type { Mock } from 'vitest';
 
-import type { TextFieldProps } from 'src/types';
+import type { TextFieldProperties } from 'src/types';
 
 import { HtmlForm, useAriaTextField } from '../src';
 import { mockFieldMetadata, mockFormMetadata } from '../src/utils';
 
-function UnitTestAriaTextField(props: TextFieldProps): React.ReactNode {
+function UnitTestAriaTextField(properties: TextFieldProperties): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =
-    useAriaTextField(props);
+    useAriaTextField(properties);
 
   return (
     <div>
       <label {...labelProps}>{labelProps.children}</label>
       <input {...inputProps} />
-      {descriptionProps?.children ? <div {...descriptionProps} /> : null}
-      {errorMessageProps?.children ? <div {...errorMessageProps} /> : null}
+      {descriptionProps?.children ? <div {...descriptionProps} /> : undefined}
+      {errorMessageProps?.children ? <div {...errorMessageProps} /> : undefined}
     </div>
   );
 }

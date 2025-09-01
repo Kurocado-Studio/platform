@@ -6,7 +6,7 @@ import type {
 
 import { modelAxiosDataResponse } from './modelAxiosDataResponse';
 import { mockAxiosInstance } from './utils/mocks';
-import type { UseAxiosParams } from './types';
+import type { UseAxiosParameters } from './types';
 
 describe('modelAxiosDataResponse', () => {
   type RawResponse = { id: string; name: string };
@@ -23,7 +23,7 @@ describe('modelAxiosDataResponse', () => {
   });
 
   it('should return raw response data when no deserializer is provided', async () => {
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
@@ -42,11 +42,11 @@ describe('modelAxiosDataResponse', () => {
   });
 
   it('should return deserialized data when deserializer is provided', async () => {
-    const payload: UseAxiosParams<RawResponse, TransformedResponse> = {
+    const payload: UseAxiosParameters<RawResponse, TransformedResponse> = {
       axiosInstance: mockAxiosInstance,
       options: {
-        deserializer: (res) => ({
-          displayName: `${res.data.name}#${res.data.id}`,
+        deserializer: (response) => ({
+          displayName: `${response.data.name}#${response.data.id}`,
         }),
       },
     };
@@ -66,7 +66,7 @@ describe('modelAxiosDataResponse', () => {
   });
 
   it('should propagate errors thrown by the axiosInstance', async () => {
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 

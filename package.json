@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@kurocado-studio/qa": "workspace:*",
-    "@kurocado-studio/styleguide": "2.6.0-develop.3",
+    "@kurocado-studio/styleguide": "2.6.0-develop.6",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
     "husky": "^9.1.7",
@@ -44,6 +44,9 @@
     "node": ">=20"
   },
   "overrides": {
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.10",
+    "vite": "5.2.8",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   }

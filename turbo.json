@@ -24,16 +24,16 @@
       ]
     },
     "typecheck": {
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": ["^typecheck"]
     },
     "test": {
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": ["setup", "^test"]
     },
     "lint": {
       "dependsOn": ["setup"]
     },
     "lint:fix": {
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": ["setup"]
     },
     "prettier:fix": {
       "dependsOn": ["setup"]
@@ -46,11 +46,11 @@
       "persistent": true
     },
     "dev": {
-      "dependsOn": ["setup", "^build"],
+      "dependsOn": ["setup"],
       "persistent": true
     },
     "dev:storybook": {
-      "dependsOn": ["setup", "^build"],
+      "dependsOn": ["setup"],
       "persistent": true
     },
     "vite:watch": {

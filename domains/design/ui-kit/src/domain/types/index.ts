@@ -7,7 +7,7 @@ export type Theme = Record<string, Record<string, unknown>>;
 
 export type LightDarkThemeToggleHandler = () => void;
 
-export interface ThemeProviderProps {
+export interface ThemeProviderProperties {
   setTheme: (theme: Record<string, unknown>) => void;
   setThemeVariable: (variableName: string, variableValue: string) => void;
   toggleLightDarkTheme: LightDarkThemeToggleHandler;

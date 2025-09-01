@@ -14,7 +14,7 @@ export function handleSetThemeVariable(options: {
   const styles = getComputedStyle(document.documentElement);
   const cssVariableValue = styles.getPropertyValue(variableName);
 
-  if (!cssVariableValue.trim().length) return;
+  if (cssVariableValue.trim().length === 0) return;
 
   return {
     variableName,

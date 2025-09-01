@@ -1,3 +1,5 @@
-import ThemeProvider from './ThemeProvider.vue';
 
-export { ThemeProvider };
+
+
+
+export {default as ThemeProvider} from './ThemeProvider.vue';

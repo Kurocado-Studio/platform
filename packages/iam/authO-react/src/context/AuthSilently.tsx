@@ -31,7 +31,7 @@ export const AuthSilentlyContext =
 export const useAuthSilentlyContext = (): AuthSilentlyContextState =>
   React.useContext(AuthSilentlyContext);
 
-export interface AuthProviderProps extends UserAccessTokenSilentlyOptions {
+export interface AuthProviderProperties extends UserAccessTokenSilentlyOptions {
   children: React.FC<{
     isLoading: boolean;
     isAuthenticated: boolean;
@@ -43,10 +43,10 @@ export interface AuthProviderProps extends UserAccessTokenSilentlyOptions {
 
 function AuthSilently({
   children,
-  ...restAuthProviderOpts
-}: AuthProviderProps): React.ReactNode {
+  ...restAuthProviderOptions
+}: AuthProviderProperties): React.ReactNode {
   const { isLoading, isAuthenticated, logout, user, userToken } =
-    useAccessTokenSilently(restAuthProviderOpts);
+    useAccessTokenSilently(restAuthProviderOptions);
 
   const handleLogout: AuthSilentlyContextState['handleLogout'] = useCallback(
     (options) => {
@@ -80,11 +80,11 @@ function AuthSilently({
 
 export function AuthSilentlyProvider({
   children,
-  ...restAuthProviderOpts
-}: AuthProviderProps): React.JSX.Element {
+  ...restAuthProviderOptions
+}: AuthProviderProperties): React.JSX.Element {
   return (
-    <Auth0Provider {...restAuthProviderOpts}>
-      <AuthSilently {...restAuthProviderOpts}>{children}</AuthSilently>
+    <Auth0Provider {...restAuthProviderOptions}>
+      <AuthSilently {...restAuthProviderOptions}>{children}</AuthSilently>
     </Auth0Provider>
   );
 }

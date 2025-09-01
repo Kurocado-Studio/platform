@@ -11,7 +11,7 @@ export default defineConfig({
   minify: true,
   target: 'esnext',
   clean: true,
-  inject: ['./reactShim.js'],
+  inject: ['./react-shim.js'],
   onSuccess: async (): Promise<void> => {
     const stdio = 'inherit';
     execSync('copyfiles -u 1 "src/ui-domain/{styles,fonts}/**/*" dist', {

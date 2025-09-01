@@ -2,7 +2,7 @@ import { get } from 'lodash-es';
 
 import { type VitestConfig, vitestConfig } from '../common/vitestConfig';
 
-export interface VitestNpm extends VitestConfig {}
+export type VitestNpm = VitestConfig
 
 export const vitestNpm: VitestNpm = {
   ...vitestConfig,
@@ -11,7 +11,7 @@ export const vitestNpm: VitestNpm = {
     ...get(vitestConfig, ['test'], {}),
     coverage: {
       ...get(vitestConfig, ['test', 'coverage'], {}),
-      // @ts-ignore type-mismatch
+      // @ts-expect-error type-mismatch
       include: ['src/**/*.{ts,tsx}'],
     },
     tsconfig: './tsconfig.json',

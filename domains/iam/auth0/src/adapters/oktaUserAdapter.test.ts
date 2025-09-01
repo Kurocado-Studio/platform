@@ -58,21 +58,19 @@ describe('OktaUserAdapter', () => {
     });
 
     it('should always create an instance of OrgUser', () => {
-      [undefined, {}, null, new Error('')].forEach((unknownPayload) => {
-        // @ts-ignore as we are testing edge cases
+      for (const unknownPayload of [undefined, {}, undefined, new Error('error')]) {
         const user = adapter.toUser(unknownPayload);
         expect(user).toBeInstanceOf(OrgUser);
-      });
+      }
     });
   });
 
   describe('toUserToken', () => {
     it('should always create an instance of OrgUserToken', () => {
-      [undefined, {}, null, new Error('')].forEach((unknownPayload) => {
-        // @ts-ignore as we are testing edge cases
+      for (const unknownPayload of [undefined, {}, undefined, new Error('error')]) {
         const tokenPayload = adapter.toUserToken(unknownPayload);
         expect(tokenPayload).toBeInstanceOf(OrgUserToken);
-      });
+      }
     });
 
     it('should transform a AuthOktaToken object into a OrgUserToken object', () => {

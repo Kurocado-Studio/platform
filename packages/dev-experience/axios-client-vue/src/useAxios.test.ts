@@ -1,9 +1,5 @@
-/* eslint-disable import/order */
-/**
- * TODO: fix mismatch between ESLint sort order still
- */
 import { modelAxiosDataResponse, mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
-import type { UseAxiosParams } from '@kurocado-studio/axios-client-domain';
+import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
 import { useAxios } from './useAxios';
 
 vi.mock('@kurocado-studio/axios-client-domain', async () => {
@@ -13,7 +9,7 @@ vi.mock('@kurocado-studio/axios-client-domain', async () => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((e) => new Error(`Wrapped: ${(e as Error).message}`)),
+      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
     },
   };
 });
@@ -33,7 +29,7 @@ describe('useAxios (Vue)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValue(result);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
@@ -52,7 +48,7 @@ describe('useAxios (Vue)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockRejectedValue(error);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
@@ -71,7 +67,7 @@ describe('useAxios (Vue)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValue(result);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 

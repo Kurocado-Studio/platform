@@ -1,13 +1,13 @@
 import type { AxiosRequestConfig } from 'axios';
 import { get } from 'lodash-es';
 
-import type { UseAxiosParams } from './types';
+import type { UseAxiosParameters } from './types';
 
 export async function modelAxiosDataResponse<
   T extends Record<string, unknown>,
   K extends Record<string, unknown> | undefined = undefined,
 >(
-  payload: UseAxiosParams<T, K>,
+  payload: UseAxiosParameters<T, K>,
   config: AxiosRequestConfig<K extends undefined ? T : K>,
 ): Promise<K extends undefined ? T : K> {
   const response = await payload.axiosInstance(config);

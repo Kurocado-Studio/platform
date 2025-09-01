@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 /// <reference types="@testing-library/jest-dom" />
 // global.d.ts
-interface ImportMetaEnv {
+interface ImportMetaEnvironment {
   readonly VITE_AUTH_DOMAIN: string;
   readonly VITE_AUTH_CLIENT_ID: string;
   readonly VITE_AUTH_AUDIENCE: string;
@@ -9,5 +9,5 @@ interface ImportMetaEnv {
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnvironment;
 }

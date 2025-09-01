@@ -29,7 +29,7 @@ export type AxiosNodeFunction<T, K = undefined> = (
   options: AxiosRequestConfig<K extends undefined ? T : K>,
 ) => Promise<K extends undefined ? T : K>;
 
-export type UseAxiosParams<T, K = undefined> = {
+export type UseAxiosParameters<T, K = undefined> = {
   axiosInstance: AxiosInstance;
   options?: {
     deserializer?: (response: AxiosResponse<T>) => K extends undefined ? T : K;

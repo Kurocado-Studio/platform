@@ -41,7 +41,7 @@ describe('useAccessTokenSilently', () => {
 
   it('should call getAccessTokenSilently onload', async () => {
     mockUseAuth0.mockReturnValue({
-      error: null,
+      error: undefined,
       getAccessTokenSilently: mockGetAccessTokenSilently,
       isAuthenticated: false,
       isLoading: false,
@@ -66,13 +66,13 @@ describe('useAccessTokenSilently', () => {
     mockLoginWithRedirect.mockResolvedValue({});
 
     mockUseAuth0.mockReturnValue({
-      error: null,
+      error: undefined,
       getAccessTokenSilently: mockGetAccessTokenSilently,
       isAuthenticated: false,
       isLoading: false,
       loginWithRedirect: mockLoginWithRedirect,
       logout: vi.fn(),
-      user: null,
+      user: undefined,
     });
 
     const { result } = renderHook(() => useAccessTokenSilently(options));

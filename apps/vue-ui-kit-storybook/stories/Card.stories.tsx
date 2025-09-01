@@ -26,10 +26,10 @@ const template = `
 `;
 
 export const Default: Story = {
-  render: (args: Record<string, unknown>) => ({
+  render: (properties: Record<string, unknown>) => ({
     components: { Card, CardBody },
     setup() {
-      return { args };
+      return { args: properties };
     },
     template,
   }),

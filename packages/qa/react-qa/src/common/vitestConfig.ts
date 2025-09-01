@@ -1,7 +1,7 @@
 import tsconfigPaths from 'vite-tsconfig-paths';
 import type { ViteUserConfig } from 'vitest/config';
 
-export interface VitestConfig extends ViteUserConfig {}
+export type VitestConfig = ViteUserConfig;
 
 export const vitestConfig: VitestConfig = {
   plugins: [tsconfigPaths()],

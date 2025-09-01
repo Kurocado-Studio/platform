@@ -2,7 +2,7 @@ import { get } from 'lodash-es';
 
 import { type VitestConfig, vitestConfig } from '../common/vitestConfig';
 
-export interface VitestWeb extends VitestConfig {}
+export type VitestWeb= VitestConfig
 
 export const vitestReact: VitestWeb = {
   ...vitestConfig,
@@ -11,7 +11,7 @@ export const vitestReact: VitestWeb = {
     ...get(vitestConfig, ['test'], {}),
     coverage: {
       ...get(vitestConfig, ['test', 'coverage'], {}),
-      // @ts-ignore type-mismatch
+      // @ts-expect-error type-mismatch
       include: ['app/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
       exclude: ['test/**/*.{ts,tsx}', '**/*.d.ts'],
     },

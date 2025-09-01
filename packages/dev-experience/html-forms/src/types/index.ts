@@ -2,12 +2,12 @@ import type { FieldName, FormId } from '@conform-to/react';
 import type { LabelHTMLAttributes, ReactNode } from 'react';
 import type React from 'react';
 
-export interface AdditionalAriaTextFieldProps {
+export interface AdditionalAriaTextFieldProperties {
   htmlFor: string;
   required?: boolean;
 }
 
-export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
+export type LabelProperties = LabelHTMLAttributes<HTMLLabelElement> & {
   htmlFor: string;
   required?: boolean;
   children?: ReactNode;
@@ -21,7 +21,7 @@ export interface TextFieldApi {
   };
   isInvalid: boolean;
   labelProps: React.LabelHTMLAttributes<HTMLLabelElement> &
-    AdditionalAriaTextFieldProps;
+    AdditionalAriaTextFieldProperties;
   validationDetails: ValidityState;
   validationErrors: Array<string>;
 }
@@ -33,7 +33,7 @@ export interface TextFieldMeta<
   formId?: FormId<FormSchema, FormError>;
 }
 
-export type TextFieldProps<
+export type TextFieldProperties<
   FieldSchema = string,
   FormSchema extends Record<string, unknown> = Record<string, unknown>,
   FormError extends string[] = string[],
@@ -56,4 +56,4 @@ export type TextFieldProps<
   type?: string;
 };
 
-export type ValidityStateProps = ValidityState;
+export type ValidityStateProperties = ValidityState;

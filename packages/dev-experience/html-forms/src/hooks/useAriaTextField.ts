@@ -4,7 +4,7 @@ import { get } from 'lodash-es';
 import { useRef } from 'react';
 import { useTextField } from 'react-aria';
 
-import type { TextFieldApi, TextFieldMeta, TextFieldProps } from 'src/types';
+import type { TextFieldApi, TextFieldMeta, TextFieldProperties } from 'src/types';
 import { composeAriaValidityState } from 'src/utils/composeAriaValidityState';
 
 export const useAriaTextField = <
@@ -12,12 +12,12 @@ export const useAriaTextField = <
   FormSchema extends Record<string, unknown> = Record<string, unknown>,
   FormError extends string[] = string[],
 >(
-  config: TextFieldProps<FieldSchema, FormSchema, FormError>,
+  config: TextFieldProperties<FieldSchema, FormSchema, FormError>,
   formMeta?: TextFieldMeta<FormSchema, FormError>,
 ): TextFieldApi => {
   const { name, label } = config;
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputReference = useRef<HTMLInputElement>(null);
 
   const [meta] = useField(name, formMeta);
 
@@ -39,13 +39,13 @@ export const useAriaTextField = <
       ? combinedErrors.join(', ')
       : undefined;
 
-  const fallbackLabelRef = useRef(
+  const fallbackLabelReference = useRef(
     `label-${meta.descriptionId ?? `descriptionId-fallback-${name}`}`,
   );
 
-  const labelOrFallback = config.label ?? fallbackLabelRef.current;
+  const labelOrFallback = config.label ?? fallbackLabelReference.current;
 
-  const ariaTextFieldProps = {
+  const ariaTextFieldProperties = {
     'aria-describedby': meta.descriptionId,
     'aria-details': get(config, ['aria-details']),
     'aria-errormessage': errorMessage,
@@ -70,23 +70,23 @@ export const useAriaTextField = <
     errorMessageProps,
     descriptionProps,
     validationErrors,
-    ...restTextFieldProps
-  } = useTextField(ariaTextFieldProps, inputRef);
+    ...restTextFieldProperties
+  } = useTextField(ariaTextFieldProperties, inputReference);
 
-  const combinedInputProps = mergeProps(
+  const combinedInputProperties = mergeProps(
     {
       ...inputProps,
       'aria-invalid': !meta.valid,
-      ref: inputRef,
+      ref: inputReference,
     },
     {
-      ref: inputRef,
+      ref: inputReference,
       'aria-invalid': get(inputProps, ['aria-invalid'], false),
     },
   );
 
   const validationDetails = composeAriaValidityState(
-    restTextFieldProps.validationDetails,
+    restTextFieldProperties.validationDetails,
   );
 
   return {
@@ -96,7 +96,7 @@ export const useAriaTextField = <
       htmlFor: labelOrFallback,
       required,
     },
-    inputProps: combinedInputProps,
+    inputProps: combinedInputProperties,
     descriptionProps: {
       ...descriptionProps,
       children: config.description,

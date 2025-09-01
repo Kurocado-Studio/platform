@@ -9,33 +9,31 @@ import * as matchers from 'vitest-axe/matchers.js';
 
 // @see https://github.com/vitest-dev/vitest/issues/4043#issuecomment-2383567554
 class ESBuildAndJSDOMCompatibleTextEncoder extends TextEncoder {
-  constructor() {
-    super();
-  }
-
   encode(input: string): Uint8Array {
     if (typeof input !== 'string') {
       throw new TypeError('`input` must be a string');
     }
 
     const decodedURI = decodeURIComponent(encodeURIComponent(input));
-    const arr = new Uint8Array(decodedURI.length);
+    const bufferUint8Array  = new Uint8Array(decodedURI.length);
+    // Type string can only be iterated through when using the --downlevelIteration flag
+    // eslint-disable-next-line
     const chars = decodedURI.split('');
-    for (let i = 0; i < chars.length; i++) {
-      arr[i] = get(decodedURI, [i], '').charCodeAt(0);
+    for (let index = 0; index < chars.length; index++) {
+      bufferUint8Array[index] = get(decodedURI, [index], '').codePointAt(0);
     }
-    return arr;
+    return bufferUint8Array;
   }
 }
 
-if (typeof window !== 'undefined') {
-  Object.defineProperty(window, 'scrollTo', {
+if (globalThis.window !== undefined) {
+  Object.defineProperty(globalThis, 'scrollTo', {
     value: () => {},
     writable: true,
   });
 }
 
-Object.defineProperty(global, 'TextEncoder', {
+Object.defineProperty(globalThis, 'TextEncoder', {
   value: ESBuildAndJSDOMCompatibleTextEncoder,
   writable: true,
 });

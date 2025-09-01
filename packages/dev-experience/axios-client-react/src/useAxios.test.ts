@@ -1,11 +1,11 @@
-/* eslint-disable import/order */
+ 
 /**
  * TODO: fix mismatch between ESLint sort order still
  */
 import { act, renderHook, waitFor } from '@kurocado-studio/qa/web';
 
 import { modelAxiosDataResponse, mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
-import type { UseAxiosParams } from '@kurocado-studio/axios-client-domain';
+import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
 import { useAxios } from './useAxios';
 
 vi.mock('@kurocado-studio/axios-client-domain', async () => {
@@ -15,7 +15,7 @@ vi.mock('@kurocado-studio/axios-client-domain', async () => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((e) => new Error(`Wrapped: ${(e as Error).message}`)),
+      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
     },
   };
 });
@@ -35,12 +35,12 @@ describe('useAxios (React)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValue(result);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
     const { result: hookResult } = renderHook(() => useAxios(payload));
-    const [_, request] = hookResult.current;
+    const [, request] = hookResult.current;
 
     act(() => {
       request(config);
@@ -61,12 +61,12 @@ describe('useAxios (React)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockRejectedValue(error);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
     const { result: hookResult } = renderHook(() => useAxios(payload));
-    const [_, request] = hookResult.current;
+    const [, request] = hookResult.current;
 
     act(() => {
       request(config);
@@ -87,12 +87,12 @@ describe('useAxios (React)', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValue(result);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
     const { result: hookResult } = renderHook(() => useAxios(payload));
-    const [_, request] = hookResult.current;
+    const [, request] = hookResult.current;
 
     act(() => {
       request(config);

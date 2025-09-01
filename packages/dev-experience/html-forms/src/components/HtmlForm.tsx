@@ -1,18 +1,18 @@
 import { FormProvider, useForm } from '@conform-to/react';
 import React from 'react';
 
-export type HtmlFormProps = {
+export type HtmlFormProperties = {
   children: React.ReactNode;
   className?: string;
 } & Parameters<typeof useForm>[0];
 
-export function HtmlForm(props: HtmlFormProps): React.ReactNode {
-  const [htmlFormProps] = useForm(props);
+export function HtmlForm(properties: HtmlFormProperties): React.ReactNode {
+  const [htmlFormProperties] = useForm(properties);
 
   return (
-    <FormProvider context={htmlFormProps.context}>
-      <form {...htmlFormProps} className={props.className}>
-        {props.children}
+    <FormProvider context={htmlFormProperties.context}>
+      <form {...htmlFormProperties} className={properties.className}>
+        {properties.children}
       </form>
     </FormProvider>
   );

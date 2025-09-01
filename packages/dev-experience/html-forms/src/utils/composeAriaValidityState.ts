@@ -1,22 +1,22 @@
 import { get } from 'lodash-es';
 
-import type { ValidityStateProps } from '../types';
+import type { ValidityStateProperties } from '../types';
 
 export const composeAriaValidityState = (
-  validityStateProps?: Partial<ValidityStateProps>,
-): ValidityStateProps => {
+  validityStateProperties?: Partial<ValidityStateProperties>,
+): ValidityStateProperties => {
   return {
-    ...validityStateProps,
-    badInput: get(validityStateProps, ['badInput'], false),
-    customError: get(validityStateProps, ['customError'], false),
-    patternMismatch: get(validityStateProps, ['patternMismatch'], false),
-    rangeOverflow: get(validityStateProps, ['rangeOverflow'], false),
-    rangeUnderflow: get(validityStateProps, ['rangeUnderflow'], false),
-    stepMismatch: get(validityStateProps, ['stepMismatch'], false),
-    tooLong: get(validityStateProps, ['tooLong'], false),
-    tooShort: get(validityStateProps, ['tooShort'], false),
-    typeMismatch: get(validityStateProps, ['typeMismatch'], false),
-    valid: get(validityStateProps, ['valid'], true),
-    valueMissing: get(validityStateProps, ['valueMissing'], false),
+    ...validityStateProperties,
+    badInput: get(validityStateProperties, ['badInput'], false),
+    customError: get(validityStateProperties, ['customError'], false),
+    patternMismatch: get(validityStateProperties, ['patternMismatch'], false),
+    rangeOverflow: get(validityStateProperties, ['rangeOverflow'], false),
+    rangeUnderflow: get(validityStateProperties, ['rangeUnderflow'], false),
+    stepMismatch: get(validityStateProperties, ['stepMismatch'], false),
+    tooLong: get(validityStateProperties, ['tooLong'], false),
+    tooShort: get(validityStateProperties, ['tooShort'], false),
+    typeMismatch: get(validityStateProperties, ['typeMismatch'], false),
+    valid: get(validityStateProperties, ['valid'], true),
+    valueMissing: get(validityStateProperties, ['valueMissing'], false),
   };
 };

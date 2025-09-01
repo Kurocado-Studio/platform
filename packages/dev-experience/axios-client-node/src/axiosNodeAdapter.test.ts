@@ -3,7 +3,7 @@
  */
 import { describe, expect, it, vi } from 'vitest';
 
-import type {UseAxiosParams} from "@kurocado-studio/axios-client-domain";
+import type {UseAxiosParameters} from "@kurocado-studio/axios-client-domain";
 import  {mockAxiosInstance, modelAxiosDataResponse} from "@kurocado-studio/axios-client-domain";
 import { axiosNodeAdapter } from './axiosNodeAdapter';
 
@@ -16,7 +16,7 @@ vi.mock('@kurocado-studio/axios-client-domain', async (importOriginal) => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((e) => new Error(`Wrapped: ${(e as Error).message}`)),
+      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
     },
   };
 });
@@ -36,7 +36,7 @@ describe('axiosNodeAdapter', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockResolvedValue(result);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 
@@ -53,7 +53,7 @@ describe('axiosNodeAdapter', () => {
       modelAxiosDataResponse as unknown as ReturnType<typeof vi.fn>
     ).mockRejectedValue(error);
 
-    const payload: UseAxiosParams<RawResponse> = {
+    const payload: UseAxiosParameters<RawResponse> = {
       axiosInstance: mockAxiosInstance,
     };
 

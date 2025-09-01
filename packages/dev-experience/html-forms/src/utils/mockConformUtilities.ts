@@ -12,7 +12,7 @@ export const mockFieldMetadata = <
 >(
   config?: Partial<FieldMetadata<FieldSchema, FormSchema, FormError>>,
 ): FieldMetadata<FieldSchema, FormSchema, FormError> => {
-  // @ts-ignore we are mocking this
+  // @ts-expect-error we are mocking this
   return {
     ...(config ? { ...config } : {}),
     allErrors: get(config, ['allErrors'], {}),
@@ -38,7 +38,7 @@ export const mockFormMetadata = <
 ): FormMetadata<FormSchema, FormError> => {
   return {
     allErrors: get(config, ['allErrors'], {}),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     context: {},
     descriptionId: '',
     dirty: false,
@@ -47,26 +47,26 @@ export const mockFormMetadata = <
     getFieldset: get(config, ['getFieldset'], vi.fn()),
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     insert: get(config, ['insert'], vi.fn()),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     remove: vi.fn(),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     reorder: vi.fn(),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     update: vi.fn(),
     valid: false,
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     validate: vi.fn(),
-    // @ts-ignore we are mocking this
+    // @ts-expect-error we are mocking this
     value: get(config, ['value']),
   };
 };

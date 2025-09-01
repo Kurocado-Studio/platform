@@ -1,15 +1,15 @@
 import {
-    ThemeProviderProps,
+    type ThemeProviderProperties,
     composeThemeProvider
 } from '@kurocado-studio/ui-kit-domain';
 import React from 'react';
 
-interface ThemeProps {
+interface ThemeProperties {
     cssVariables?: Record<string, unknown>;
   children?: React.ReactNode;
 }
 
-const ThemeContext = React.createContext<ThemeProviderProps>({
+const ThemeContext = React.createContext<ThemeProviderProperties>({
   setThemeVariable: () => {},
   toggleLightDarkTheme: () => {},
   setTheme: () => {},
@@ -18,28 +18,28 @@ const ThemeContext = React.createContext<ThemeProviderProps>({
 export function ThemeProvider({
                                   cssVariables,
   children,
-}: ThemeProps): React.ReactNode {
+}: ThemeProperties): React.ReactNode {
   const themeProvider = React.useMemo(() => composeThemeProvider(), []);
-  const styleElRef = React.useRef<HTMLStyleElement | null>(null);
+  const styleElementReference = React.useRef<HTMLStyleElement | null | undefined>(undefined);
 
   const cssVariablesMap: Record<string, unknown> = cssVariables || {}
 
   const handleVariablesMap = React.useCallback(
     (cssVariablesPayload: Record<string, unknown>) => {
-      styleElRef.current = themeProvider.handleVariablesMap(
-        styleElRef.current,
+      styleElementReference.current = themeProvider.handleVariablesMap(
+        styleElementReference.current,
         cssVariablesPayload,
       );
     },
     [themeProvider],
   );
 
-  const toggleLightDarkTheme: ThemeProviderProps['toggleLightDarkTheme'] =
+  const toggleLightDarkTheme: ThemeProviderProperties['toggleLightDarkTheme'] =
     React.useCallback(() => {
       themeProvider.handleToggleLightDarkTheme();
     }, [themeProvider]);
 
-  const setThemeVariable: ThemeProviderProps['setThemeVariable'] =
+  const setThemeVariable: ThemeProviderProperties['setThemeVariable'] =
     React.useCallback(
       (variableName, variableValue) => {
         const payload = themeProvider.handleSetThemeVariable({
@@ -55,7 +55,7 @@ export function ThemeProvider({
       [cssVariablesMap, handleVariablesMap, themeProvider],
     );
 
-  const providerValue: ThemeProviderProps = React.useMemo(
+  const providerValue: ThemeProviderProperties = React.useMemo(
     () => ({
       setTheme: handleVariablesMap,
       setThemeVariable,
@@ -67,8 +67,8 @@ export function ThemeProvider({
   React.useEffect(() => {
     handleVariablesMap(cssVariablesMap);
     return () => {
-      styleElRef.current?.remove();
-      styleElRef.current = null;
+      styleElementReference.current?.remove();
+      styleElementReference.current = undefined;
     };
   }, [handleVariablesMap, cssVariablesMap]);
 
@@ -79,5 +79,5 @@ export function ThemeProvider({
   );
 }
 
-export const useThemeContext = (): ThemeProviderProps =>
+export const useThemeContext = (): ThemeProviderProperties =>
   React.useContext(ThemeContext);

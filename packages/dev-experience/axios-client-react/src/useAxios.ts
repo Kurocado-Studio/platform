@@ -4,7 +4,7 @@ import {
   ApiRequestError,
   type AxiosDataState,
   type AxiosRequestFunction,
-  type UseAxiosParams,
+  type UseAxiosParameters,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
 
@@ -12,14 +12,14 @@ type UseAxios = <
   T extends Record<string, unknown>,
   K extends Record<string, unknown> | undefined = undefined,
 >(
-  options: UseAxiosParams<T, K>,
+  options: UseAxiosParameters<T, K>,
 ) => [AxiosDataState<K extends undefined ? T : K>, AxiosRequestFunction<T, K>];
 
 export const useAxios: UseAxios = <
   T extends Record<string, unknown>,
   K extends Record<string, unknown> | undefined = undefined,
 >(
-  payload: UseAxiosParams<T, K>,
+  payload: UseAxiosParameters<T, K>,
 ) => {
   const [data, setData] = React.useState<
     (K extends undefined ? T : K) | undefined

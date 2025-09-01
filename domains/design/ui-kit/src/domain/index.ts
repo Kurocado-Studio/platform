@@ -1,6 +1,8 @@
-import kurocadoTheme from './theme/theme.json';
+import defaultTheme from './theme/theme.json';
 
-export * from './types';
+const kurocadoTheme = defaultTheme
+export type {ThemeProviderProperties} from './types'
+export type * from './types';
 export { kurocadoTheme };
 export * from './provider';
 export * from './components/card';

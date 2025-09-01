@@ -49,7 +49,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       labelProps: { htmlFor: 'test' },
       inputProps: {
         name: 'test',
-        ref: { current: null },
+        ref: { current: undefined },
         'aria-invalid': false,
       },
       isInvalid: true,
@@ -77,7 +77,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
     });
     expect(result.current.inputProps).toEqual({
       name: 'test',
-      ref: { current: null },
+      ref: { current: undefined },
       'aria-invalid': false,
     });
     expect(result.current.descriptionProps).toEqual({
@@ -114,7 +114,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       inputProps: {
         name: 'test',
         'aria-invalid': true,
-        ref: { current: null },
+        ref: { current: undefined },
       },
       isInvalid: true,
       errorMessageProps: {
@@ -162,7 +162,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       labelProps: { htmlFor: 'test' },
       inputProps: {
         name: 'test',
-        ref: { current: null },
+        ref: { current: undefined },
         'aria-invalid': false,
       },
       isInvalid: true,
@@ -205,7 +205,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       labelProps: { htmlFor: 'test' },
       inputProps: {
         name: 'test',
-        ref: { current: null },
+        ref: { current: undefined },
         'aria-describedby': 'desc-id',
       },
       isInvalid: false,
@@ -253,7 +253,7 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       labelProps: { htmlFor: 'test' },
       inputProps: {
         name: 'test',
-        ref: { current: null },
+        ref: { current: undefined },
         'aria-invalid': true,
         'aria-errormessage': 'error-id',
       },
