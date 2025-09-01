@@ -16,7 +16,7 @@ pnpm i -D commitlint
 
 ## Configure Commitlint
 
-To use our Commitlint configuration, add the following `.commitlintrc.mjs` file at the root of your
+To use our Commitlint configuration, add the following `.commitlintrc.cjs` file at the root of your
 project.
 
 ```javascript
