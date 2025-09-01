@@ -21,8 +21,9 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@internal/config":"workspace:*",
+    "@internal/config": "workspace:*",
     "@kurocado-studio/qa": "workspace:*",
+    "@kurocado-studio/styleguide": "2.6.0-develop.3",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
     "husky": "^9.1.7",
@@ -31,7 +32,9 @@
     "turbo": "^2.5.6"
   },
   "lint-staged": {
-    "*": ["prettier --write"],
+    "*": [
+      "prettier --write"
+    ],
     "**/*.{ts,tsx}": [
       "prettier --write",
       "turbo run lint:fix --",
