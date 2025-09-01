@@ -1,7 +1,7 @@
 import {card} from '@kurocado-studio/ui-kit-domain';
 import type React from 'react';
 import { twMerge } from 'tailwind-merge';
-p
+
 import { MotionElement, type MotionElementProps } from '../motion';
 
 export type CardProps<T extends keyof React.JSX.IntrinsicElements = 'div'> =
