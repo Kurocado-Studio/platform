@@ -1,1 +1,3 @@
-export { commitLintConfig as default } from '@internal/ccnfig';
+const { commitLintConfig } = require('@internal/config');
+
+module.exports = commitLintConfig;
