@@ -14,7 +14,8 @@
     ".": {
       "types": "./dist/exports.d.ts",
       "import": "./dist/exports.js"
-    }
+    },
+    "./styles.css": "./dist/exports.css"
   },
   "files": [
     "dist"
