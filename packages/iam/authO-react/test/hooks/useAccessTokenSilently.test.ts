@@ -7,9 +7,13 @@ import {
   useAccessTokenSilently,
 } from '../../src';
 
-vi.mock('@authO-react/authO-react-react', () => ({
-  useAuth0: vi.fn(),
-}));
+vi.mock('@auth0/auth0-react', async () => {
+  const actual = await vi.importActual('@auth0/auth0-react')
+ return {
+    ...actual,
+   useAuth0: vi.fn(),
+ }
+});
 
 const options: UserAccessTokenSilentlyOptions = {
   cacheMode: 'on',
@@ -26,7 +30,7 @@ describe('useAccessTokenSilently', () => {
   let mockUseAuth0: Mock;
 
   beforeEach(() => {
-    mockUseAuth0 = useAuth0 as Mock;
+    mockUseAuth0 = vi.mocked(useAuth0);
     mockLoginWithRedirect = vi.fn();
     mockGetAccessTokenSilently = vi.fn();
   });

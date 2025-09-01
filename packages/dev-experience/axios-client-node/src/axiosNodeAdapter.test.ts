@@ -1,19 +1,19 @@
-/* eslint-disable import/order */
 /**
  * TODO: fix mismatch between ESLint sort order still
  */
 import { describe, expect, it, vi } from 'vitest';
 
-import type { UseAxiosParams } from '../../../../../domains/dev-experience/domain';
-import { modelAxiosDataResponse } from '../../../../../domains/dev-experience/domain';
-import { mockAxiosInstance } from '../../../../../domains/dev-experience/domain/utils/mocks';
+import type {UseAxiosParams} from "@kurocado-studio/axios-client-domain";
+import  {mockAxiosInstance, modelAxiosDataResponse} from "@kurocado-studio/axios-client-domain";
 import { axiosNodeAdapter } from './axiosNodeAdapter';
 
-vi.mock('../domain', () => {
-  const domain = vi.importActual('../domain');
+vi.mock('@kurocado-studio/axios-client-domain', async (importOriginal) => {
+  const actual: Record<string, unknown> = await importOriginal()
+  const domain = vi.importActual('@kurocado-studio/axios-client-domain');
 
   return {
     ...domain,
+    ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
       create: vi.fn((e) => new Error(`Wrapped: ${(e as Error).message}`)),

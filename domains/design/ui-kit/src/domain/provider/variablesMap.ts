@@ -1,19 +1,17 @@
 export const HTMLStyleElementId = 'KUROCADO_STUDIO_CSS_VARIABLES_MAP';
 
 export function handleVariablesMap(
-  htmlStyleElementRef: HTMLStyleElement | null,
+  htmlStyleElementReference: HTMLStyleElement | undefined| null,
   cssVariablesPayload: Record<string, unknown>,
 ): HTMLStyleElement {
-  let styleElRef: HTMLStyleElement | null = htmlStyleElementRef
-    ? htmlStyleElementRef
-    : (document.getElementById(HTMLStyleElementId) as HTMLStyleElement);
+  let styleElementReference: HTMLStyleElement | null  = htmlStyleElementReference ?? (document.querySelector(HTMLStyleElementId) as HTMLStyleElement);
 
-  if (!styleElRef) {
-    styleElRef = document.createElement('style');
-    styleElRef.id = HTMLStyleElementId;
+  if (!styleElementReference) {
+    styleElementReference = document.createElement('style');
+    styleElementReference.id = HTMLStyleElementId;
   }
 
-  styleElRef.textContent = `:root {
+  styleElementReference.textContent = `:root {
     ${Object.entries(cssVariablesPayload)
       .map(([variableName, variableValue]) =>
         typeof variableValue === 'string'
@@ -23,6 +21,6 @@ export function handleVariablesMap(
       .join('\n')}
   }`;
 
-  document.head.appendChild(styleElRef);
-  return styleElRef;
+  document.head.append(styleElementReference);
+  return styleElementReference;
 }

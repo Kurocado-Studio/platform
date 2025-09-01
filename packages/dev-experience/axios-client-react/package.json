@@ -30,8 +30,8 @@
     "dist"
   ],
   "scripts": {
+    "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts",
-
     "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
     "prettier:check": "prettier --check .",
@@ -42,8 +42,8 @@
     "typecheck": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "axios": "^1.10.0",
     "@kurocado-studio/axios-client-domain": "workspace:*",
+    "axios": "^1.10.0",
     "lodash-es": "^4.17.21",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
@@ -67,6 +67,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "tsup": "^8.0.2",
     "typescript": "5.8.3",
+    "vite": "5.2.8",
     "vitest": "^3.2.4",
     "vitest-axe": "^0.1.0"
   }

@@ -11,7 +11,7 @@ export type ThemeVariableHandler = (options: {
   | undefined;
 
 export type VariablesMapHandler = (
-  htmlStyleElementRef: HTMLStyleElement | null,
+  htmlStyleElementReference: HTMLStyleElement | undefined | null,
   cssVariablesPayload: Record<string, unknown>,
 ) => HTMLStyleElement;
 

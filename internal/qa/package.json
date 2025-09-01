@@ -38,8 +38,8 @@
     "@faker-js/faker": "^9.6.0",
     "@remix-run/node": "^2.15.3",
     "@remix-run/testing": "^2.15.3",
-    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -81,7 +81,8 @@
     "react-dom": "19.1.0",
     "semantic-release": "^24.2.7",
     "tsup": "^8.3.6",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "5.2.8"
   },
   "overrides": {
     "conventional-changelog-conventionalcommits": ">= 8.0.0"

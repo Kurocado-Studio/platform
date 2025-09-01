@@ -23,12 +23,10 @@ export const useAxios: UseAxios = <
 ) => {
   const [data, setData] = React.useState<
     (K extends undefined ? T : K) | undefined
-  >(undefined);
+  >();
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState<undefined | ApiRequestError>(
-    undefined,
-  );
+  const [error, setError] = React.useState<undefined | ApiRequestError>();
 
   const resetState: () => void = React.useCallback(() => {
     setIsLoading(false);
@@ -48,8 +46,8 @@ export const useAxios: UseAxios = <
         );
 
         setData(deserializedData);
-      } catch (e: unknown) {
-        setError(ApiRequestError.create(e));
+      } catch (error: unknown) {
+        setError(ApiRequestError.create(error));
       } finally {
         setIsLoading(false);
       }

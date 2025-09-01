@@ -27,7 +27,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsup --dts",
     "test": "vitest run --coverage",
@@ -66,6 +68,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "tsup": "^8.0.2",
     "typescript": "5.8.3",
+    "vite": "5.2.8",
     "vitest": "^3.2.4",
     "vitest-axe": "^0.1.0"
   }

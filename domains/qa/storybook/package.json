@@ -26,7 +26,6 @@
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
-
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
   },
@@ -83,7 +82,8 @@
     "react-dom": "19.1.0",
     "semantic-release": "^24.2.7",
     "tsup": "^8.3.6",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "5.2.8"
   },
   "overrides": {
     "conventional-changelog-conventionalcommits": ">= 8.0.0"

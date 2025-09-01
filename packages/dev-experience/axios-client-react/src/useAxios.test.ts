@@ -4,13 +4,12 @@
  */
 import { act, renderHook, waitFor } from '@kurocado-studio/qa/web';
 
-import { modelAxiosDataResponse } from '@kurocado-studio/axios-client-domain';
+import { modelAxiosDataResponse, mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
 import type { UseAxiosParams } from '@kurocado-studio/axios-client-domain';
-import { mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
 import { useAxios } from './useAxios';
 
-vi.mock('../domain', async () => {
-  const actual = await vi.importActual('../domain');
+vi.mock('@kurocado-studio/axios-client-domain', async () => {
+  const actual = await vi.importActual('@kurocado-studio/axios-client-domain');
 
   return {
     ...actual,

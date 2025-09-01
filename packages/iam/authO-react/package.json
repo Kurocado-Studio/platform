@@ -16,13 +16,13 @@
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --check . --write",
-
     "build:vite": "rm -rf dist && vite build --mode production",
     "dev:vite": "vite build --watch --mode development",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
@@ -61,6 +61,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "tsup": "^8.3.6",
     "typescript": "^5.8.3",
+    "vite": "5.2.8",
     "vite-plugin-checker": "^0.8.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4",
