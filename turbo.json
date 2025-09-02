@@ -20,10 +20,10 @@
       "dependsOn": ["^internal:build", "^internal:build:qa", "^build"]
     },
     "typecheck": {
-      "dependsOn": ["setup", "^test"]
+      "dependsOn": ["setup", "test"]
     },
     "test": {
-      "dependsOn": ["setup", "^test"]
+      "dependsOn": ["setup", "test"]
     },
     "lint": {
       "dependsOn": ["setup", "build"]
