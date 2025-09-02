@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@kurocado-studio/qa/web/tsconfig.qa",
+    "@internal/config/tsconfig.web"
+  ],
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": "./",
+    "jsx": "preserve"
+  },
+  "include": [
+    "src",
+    "setup.web.ts",
+    "tailwind.config.ts",
+    "test",
+    "tsup.config.ts",
+    "vitest.config.ts",
+    "src/globals.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "build"]
+}

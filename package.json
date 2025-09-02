@@ -5,33 +5,38 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "turbo run build",
-    "clean": "turbo run clean && rm -rf .turbo node_modules",
+    "clean": "turbo run clean && rm -rf .turbo node_modules pnpm-lock.yaml",
     "commitlint": "pnpm exec commitlint --edit .git/COMMIT_EDITMSG",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --concurrency=20",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky install",
-    "prettier:check": "turbo run prettier:check",
-    "prettier:fix": "turbo run prettier:fix",
+    "prettier:check": "prettier --check . --ignore-path .prettierignore && turbo run prettier:check",
+    "prettier:fix": "prettier --check --write . --ignore-path .prettierignore && turbo run prettier:fix",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "setup": "pnpm i && turbo run setup",
+    "setup": "pnpm clean && pnpm i && turbo run setup",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@kurocado-studio/styleguide": "^2.5.2",
+    "@internal/config": "workspace:*",
+    "@kurocado-studio/qa": "workspace:*",
+    "@kurocado-studio/styleguide": "2.6.0-develop.10",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
     "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "turbo": "^2.5.6"
   },
   "lint-staged": {
-    "*": ["prettier --write"],
-    "{apps,packages}.{ts,tsx}": [
+    "*": [
+      "prettier --write"
+    ],
+    "**/*.{ts,tsx}": [
       "prettier --write",
       "turbo run lint:fix --",
       "turbo run lint --"
@@ -41,6 +46,9 @@
     "node": ">=20"
   },
   "overrides": {
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.10",
+    "vite": "5.2.8",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   }

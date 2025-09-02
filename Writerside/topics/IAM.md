@@ -7,12 +7,10 @@ secure sign-ups, logins, and role-based access control (RBAC).
 ## Objectives
 
 1. **Streamlined Authentication & Authorization**
-
    - Provide pre-configured modules (e.g., **[@kurocado-studio/auth-zero](Auth0-by-Okta.md)**) to
      handle sign-in flows and user sessions without repetitive boilerplate.
 
 2. **Centralized User Management**
-
    - Offer a unified interface for managing user accounts, roles, and permissions across multiple
      projects and services.
 
@@ -23,7 +21,6 @@ secure sign-ups, logins, and role-based access control (RBAC).
 ## Use Cases
 
 1. **Internal Systems & Microservices**
-
    - Simplify authentication flows within Kurocado Studio’s internal tools (e.g., dashboards,
      internal APIs) by relying on a single source of truth for user data.
 
@@ -51,15 +48,12 @@ secure sign-ups, logins, and role-based access control (RBAC).
 ## Key Milestones
 
 1. **Auth0 Module MVP**
-
    - Publish the core `packages/auth0` module with default login flows & universal login support.
 
 2. **Extended Provider Support**
-
    - Provide a flexible, pluggable architecture for future identity providers.
 
 3. **Access Control**
-
    - Introduce more granular role-based access control (RBAC).
 
 4. **Client Forking & Customization**
