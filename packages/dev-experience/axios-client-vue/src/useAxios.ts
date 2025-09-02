@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/named
 import {
   ApiRequestError,
   type AxiosRequestFunction,
@@ -6,6 +5,7 @@ import {
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
 import { set } from 'lodash-es';
+// eslint-disable-next-line import/named
 import { type Ref, ref } from 'vue';
 
 type StateReferences<T extends Record<string, unknown>> = {
