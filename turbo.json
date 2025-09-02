@@ -16,7 +16,10 @@
       "outputs": ["dist/**"],
       "dependsOn": ["^internal:build:domain"]
     },
-    "setup": {},
+    "setup": {
+      "dependsOn": ["internal:build", "internal:build:qa", "^build"],
+      "cache": false
+    },
     "build": {
       "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],

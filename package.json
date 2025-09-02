@@ -16,7 +16,7 @@
     "prettier:fix": "prettier --check --write . --ignore-path .prettierignore",
     "preview-storybook": "turbo run preview-storybook",
     "semantic-release": "pnpm -r --workspace-concurrency=1 exec -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "setup": "pnpm clean && pnpm i && pnpm build",
+    "setup": "pnpm clean && pnpm i && turbo run setup",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test"
   },
