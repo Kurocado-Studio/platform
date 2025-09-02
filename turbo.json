@@ -36,27 +36,27 @@
     },
     "typecheck": {
       "cache": false,
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": []
     },
     "test": {
       "cache": false,
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": []
     },
     "lint": {
       "cache": false,
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": []
     },
     "lint:fix": {
       "cache": false,
-      "dependsOn": ["setup"]
+      "dependsOn": []
     },
     "prettier:fix": {
       "cache": false,
-      "dependsOn": ["setup"]
+      "dependsOn": []
     },
     "prettier:check": {
       "cache": false,
-      "dependsOn": ["setup", "^build"]
+      "dependsOn": []
     },
     "dev:internal": {
       "dependsOn": ["setup"],
