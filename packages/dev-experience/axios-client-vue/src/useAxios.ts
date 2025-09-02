@@ -40,12 +40,8 @@ export function useAxios<
       error.value = undefined;
 
       data.value = await modelAxiosDataResponse<T, K>(payload, config);
-    } catch (error: unknown) {
-      set(
-        error as Record<string, unknown>,
-        ['value'],
-        ApiRequestError.create(error),
-      );
+    } catch (requestError: unknown) {
+      set(error, ['value'], ApiRequestError.create(requestError));
     } finally {
       isLoading.value = false;
     }
