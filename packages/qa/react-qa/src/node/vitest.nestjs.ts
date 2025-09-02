@@ -18,11 +18,10 @@ export const vitestNestjs: VitestNestjs = {
     ...get(vitestConfig, ['test'], {}),
     coverage: {
       ...get(vitestConfig, ['test', 'coverage'], {}),
-      // @ts-expect-error type-mismatch
+      provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['test/**/*.{ts,tsx}', '**/*.d.ts'],
     },
-    tsconfig: './tsconfig.json',
     environment: 'node',
     setupFiles: ['./setup.node.ts'],
   },
