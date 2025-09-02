@@ -2,39 +2,49 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "internal:build": {
+      "cache": false,
       "outputs": ["dist/**"],
       "dependsOn": ["^internal:build"]
     },
     "internal:build:qa": {
+      "cache": false,
       "outputs": ["dist/**"],
       "dependsOn": ["^internal:build:qa"]
     },
     "internal:build:domain": {
+      "cache": false,
       "outputs": ["dist/**"],
       "dependsOn": ["^internal:build:domain"]
     },
     "setup": {},
     "build": {
+      "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^internal:build", "^internal:build:qa", "^build"]
     },
     "typecheck": {
+      "cache": false,
       "dependsOn": ["setup", "^build", "build"]
     },
     "test": {
+      "cache": false,
       "dependsOn": ["setup", "^build", "build"]
     },
     "lint": {
+      "cache": false,
       "dependsOn": ["setup", "^build", "build"]
     },
     "lint:fix": {
+      "cache": false,
       "dependsOn": ["setup"]
     },
     "prettier:fix": {
+      "cache": false,
       "dependsOn": ["setup"]
     },
     "prettier:check": {
+      "cache": false,
       "dependsOn": ["setup", "^build", "build"]
     },
     "dev:internal": {
