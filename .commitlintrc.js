@@ -1,1 +1,1 @@
-export { commitLintConfig as default } from '@internal/config';
+export { commitlint as default } from '@kurocado-studio/styleguide';
