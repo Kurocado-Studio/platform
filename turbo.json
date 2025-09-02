@@ -9,27 +9,30 @@
     "internal:build:qa": {
       "cache": false,
       "outputs": ["dist/**"],
-      "dependsOn": ["^internal:build:qa"]
+      "dependsOn": ["@internal/config#internal:build", "^internal:build:qa"]
     },
     "internal:build:domain": {
       "cache": false,
       "outputs": ["dist/**"],
-      "dependsOn": ["^internal:build:domain"]
+      "dependsOn": [
+        "@kurocado-studio/qa#internal:build:qa",
+        "^internal:build:domain"
+      ]
     },
     "setup": {
-      "dependsOn": [
-        "@internal/config#internal:build",
-        "@kurocado-studio/qa#internal:build:qa",
-        "^build"
-      ],
+      "dependsOn": ["@kurocado-studio/qa#internal:build:qa", "^build"],
       "cache": false
     },
-
     "build": {
       "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^internal:build", "^internal:build:qa", "^build"]
+      "dependsOn": [
+        "@kurocado-studio/qa#internal:build:qa",
+        "^internal:build",
+        "^internal:build:domain",
+        "^build"
+      ]
     },
     "typecheck": {
       "cache": false,

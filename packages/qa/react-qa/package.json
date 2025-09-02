@@ -17,12 +17,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
-    "build:module": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
-    "internal:build:qa": "pnpm build:module",
-    "build:vite": "rm -rf dist && vite build --mode production",
+    "internal:build:qa": "rm -rf dist && tsup --dts && copyfiles -u 1 src/tsconfig/*.json dist",
     "clean": "rm -rf .turbo node_modules dist",
     "internal:dev": "tsup --watch",
-    "dev:vite": "vite build --watch --mode development",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "prettier:check": "prettier --check .",
