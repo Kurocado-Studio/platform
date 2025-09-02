@@ -77,7 +77,8 @@ describe('useAriaTextField Hook - Unit Tests', () => {
     });
     expect(result.current.inputProps).toEqual({
       name: 'test',
-      ref: { current: undefined },
+      // eslint-disable-next-line unicorn/no-null
+      ref: { current: null },
       'aria-invalid': false,
     });
     expect(result.current.descriptionProps).toEqual({
