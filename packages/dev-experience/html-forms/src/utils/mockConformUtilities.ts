@@ -44,7 +44,6 @@ export const mockFormMetadata = <
     allErrors: get(config, ['allErrors'], {}),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     context: {},
     descriptionId: '',
     dirty: false,
@@ -55,40 +54,32 @@ export const mockFormMetadata = <
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     insert: get(config, ['insert'], vi.fn()),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     remove: vi.fn(),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     reorder: vi.fn(),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     update: vi.fn(),
     valid: false,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     validate: vi.fn(),
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // @ts-expect-error we are mocking this
     value: get(config, ['value']),
   };
 };
