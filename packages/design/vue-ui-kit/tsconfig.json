@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["@internal/config/tsconfig.web"],
+  "compilerOptions": {
+    "types": ["vitest/globals", "node"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "jsx": "preserve"
+  },
+  "include": [
+    "src",
+    "src/**/*.vue",
+    "src/**/*.d.ts",
+    "tailwind.config.ts",
+    "test",
+    "tsup.config.ts",
+    "vitest.config.ts",
+    "vite.config.ts",
+    "setup.web.ts",
+    "../../node_modules/.pnpm/@types+react@19.1.4/node_modules/@types/react/global.d.ts"
+  ],
+  "exclude": ["dist", "build", "node_modules"]
+}

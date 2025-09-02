@@ -1,53 +1,92 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build": {
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^build"]
+    "internal:build": {
+      "cache": false,
+      "outputs": ["dist/**"],
+      "dependsOn": ["^internal:build"]
     },
-    "pre:setup": {
-      "dependsOn": ["^pre:setup"],
-      "cache": false
+    "internal:build:qa": {
+      "cache": false,
+      "outputs": ["dist/**"],
+      "dependsOn": ["@internal/config#internal:build", "^internal:build:qa"]
+    },
+    "internal:build:domain": {
+      "cache": false,
+      "outputs": ["dist/**"],
+      "dependsOn": [
+        "@kurocado-studio/qa#internal:build:qa",
+        "^internal:build:domain"
+      ]
     },
     "setup": {
-      "dependsOn": ["^pre:setup", "^build"],
+      "dependsOn": ["@kurocado-studio/qa#internal:build:qa", "^build"],
       "cache": false
     },
-    "prettier:fix": {
-      "dependsOn": ["^setup"],
-      "cache": false
-    },
-    "prettier:check": {
-      "dependsOn": ["^setup"],
-      "cache": false
-    },
-    "test": {
-      "dependsOn": ["^setup", "^build"],
-      "cache": false
-    },
-    "lint": {
-      "dependsOn": ["^setup", "^build"],
-      "cache": false
-    },
-    "lint:fix": {
-      "dependsOn": ["^setup", "^build"],
-      "cache": false
-    },
-    "dev": {
-      "dependsOn": ["^setup", "^build"],
+    "build": {
       "cache": false,
-      "persistent": true
-    },
-    "clean": {
-      "cache": false
-    },
-    "preview-storybook": {
-      "dependsOn": ["^build"],
-      "cache": false
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", "storybook-static/**"],
+      "dependsOn": [
+        "@kurocado-studio/qa#internal:build:qa",
+        "^internal:build",
+        "^internal:build:domain",
+        "^build"
+      ]
     },
     "typecheck": {
-      "dependsOn": ["^setup", "^build"],
+      "cache": false,
+      "dependsOn": []
+    },
+    "test": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "lint": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "lint:fix": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "prettier:fix": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "prettier:check": {
+      "cache": false,
+      "dependsOn": []
+    },
+    "dev:internal": {
+      "dependsOn": ["setup"],
+      "persistent": true
+    },
+    "dev": {
+      "dependsOn": ["setup"],
+      "persistent": true
+    },
+    "dev:storybook": {
+      "dependsOn": ["setup"],
+      "persistent": true
+    },
+    "vite:watch": {
+      "dependsOn": ["setup"],
+      "persistent": true
+    },
+    "storybook": {
+      "dependsOn": ["vite:watch"]
+    },
+    "preview-storybook": {
+      "dependsOn": ["^build"]
+    },
+    "internal:preflight": {
+      "dependsOn": ["^build"]
+    },
+    "internal:config": {
+      "dependsOn": ["^build"]
+    },
+    "clean": {
       "cache": false
     }
   }
