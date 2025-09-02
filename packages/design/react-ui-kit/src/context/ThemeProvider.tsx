@@ -1,11 +1,11 @@
 import {
-    type ThemeProviderProperties,
-    composeThemeProvider
+  type ThemeProviderProperties,
+  composeThemeProvider,
 } from '@kurocado-studio/ui-kit-domain';
 import React from 'react';
 
 interface ThemeProperties {
-    cssVariables?: Record<string, unknown>;
+  cssVariables?: Record<string, unknown>;
   children?: React.ReactNode;
 }
 
@@ -16,13 +16,15 @@ const ThemeContext = React.createContext<ThemeProviderProperties>({
 });
 
 export function ThemeProvider({
-                                  cssVariables,
+  cssVariables,
   children,
 }: ThemeProperties): React.ReactNode {
   const themeProvider = React.useMemo(() => composeThemeProvider(), []);
-  const styleElementReference = React.useRef<HTMLStyleElement | null | undefined>(undefined);
+  const styleElementReference = React.useRef<
+    HTMLStyleElement | null | undefined
+  >(undefined);
 
-  const cssVariablesMap: Record<string, unknown> = cssVariables || {}
+  const cssVariablesMap: Record<string, unknown> = cssVariables || {};
 
   const handleVariablesMap = React.useCallback(
     (cssVariablesPayload: Record<string, unknown>) => {

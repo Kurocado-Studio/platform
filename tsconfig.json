@@ -11,8 +11,8 @@
     { "path": "packages/dev-experience/axios-client-react" },
     { "path": "packages/dev-experience/axios-client-vue" },
     { "path": "packages/dev-experience/html-forms" },
-    { "path": "packages/iam/authO-react"},
-    { "path": "packages/qa/react-qa" },
+    { "path": "packages/iam/authO-react" },
+    { "path": "packages/qa/react-qa" }
   ],
   "extends": "./tsconfig.base.json"
 }

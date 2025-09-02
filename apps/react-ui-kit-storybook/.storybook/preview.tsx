@@ -1,11 +1,11 @@
 /* eslint unicorn/filename-case: 0 */
 /* eslint import/no-default-export: 0 */
 import { ThemeProvider } from '@kurocado-studio/react-ui-kit';
-import React, { type FC, useEffect } from 'react';
-import cssVariables from '../cssVariables.json';
 import { themes } from '@storybook/theming';
 import { get } from 'lodash-es';
+import React, { type FC, useEffect } from 'react';
 
+import cssVariables from '../cssVariables.json';
 import './tailwind.css';
 
 const LIGHT_THEME = 'Light setup';

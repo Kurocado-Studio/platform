@@ -8,11 +8,11 @@ import {
 } from '../../src';
 
 vi.mock('@auth0/auth0-react', async () => {
-  const actual = await vi.importActual('@auth0/auth0-react')
- return {
+  const actual = await vi.importActual('@auth0/auth0-react');
+  return {
     ...actual,
-   useAuth0: vi.fn(),
- }
+    useAuth0: vi.fn(),
+  };
 });
 
 const options: UserAccessTokenSilentlyOptions = {

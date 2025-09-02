@@ -1,4 +1,3 @@
- 
 import { type Options, defineConfig } from 'tsup';
 import { execSync } from 'node:child_process';
 

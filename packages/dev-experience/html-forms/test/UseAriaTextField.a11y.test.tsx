@@ -8,7 +8,9 @@ import type { TextFieldProperties } from 'src/types';
 import { HtmlForm, useAriaTextField } from '../src';
 import { mockFieldMetadata, mockFormMetadata } from '../src/utils';
 
-function UnitTestAriaTextField(properties: TextFieldProperties): React.ReactNode {
+function UnitTestAriaTextField(
+  properties: TextFieldProperties,
+): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =
     useAriaTextField(properties);
 

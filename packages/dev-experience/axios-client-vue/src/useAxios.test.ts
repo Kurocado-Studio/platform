@@ -1,5 +1,9 @@
-import { modelAxiosDataResponse, mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
+import {
+  mockAxiosInstance,
+  modelAxiosDataResponse,
+} from '@kurocado-studio/axios-client-domain';
 import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
+
 import { useAxios } from './useAxios';
 
 vi.mock('@kurocado-studio/axios-client-domain', async () => {
@@ -9,7 +13,9 @@ vi.mock('@kurocado-studio/axios-client-domain', async () => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
+      create: vi.fn(
+        (error) => new Error(`Wrapped: ${(error as Error).message}`),
+      ),
     },
   };
 });

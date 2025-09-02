@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import {
   ApiRequestError,
   type AxiosDataState,
@@ -7,6 +5,7 @@ import {
   type UseAxiosParameters,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
+import * as React from 'react';
 
 type UseAxios = <
   T extends Record<string, unknown>,

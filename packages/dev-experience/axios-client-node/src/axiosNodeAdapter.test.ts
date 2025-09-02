@@ -1,14 +1,17 @@
 /**
  * TODO: fix mismatch between ESLint sort order still
  */
+import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
+import {
+  mockAxiosInstance,
+  modelAxiosDataResponse,
+} from '@kurocado-studio/axios-client-domain';
 import { describe, expect, it, vi } from 'vitest';
 
-import type {UseAxiosParameters} from "@kurocado-studio/axios-client-domain";
-import  {mockAxiosInstance, modelAxiosDataResponse} from "@kurocado-studio/axios-client-domain";
 import { axiosNodeAdapter } from './axiosNodeAdapter';
 
 vi.mock('@kurocado-studio/axios-client-domain', async (importOriginal) => {
-  const actual: Record<string, unknown> = await importOriginal()
+  const actual: Record<string, unknown> = await importOriginal();
   const domain = vi.importActual('@kurocado-studio/axios-client-domain');
 
   return {
@@ -16,7 +19,9 @@ vi.mock('@kurocado-studio/axios-client-domain', async (importOriginal) => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
+      create: vi.fn(
+        (error) => new Error(`Wrapped: ${(error as Error).message}`),
+      ),
     },
   };
 });

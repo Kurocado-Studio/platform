@@ -59,16 +59,15 @@ describe('OktaUserAdapter', () => {
     });
 
     it('should always create an instance of OrgUser', () => {
-        const user = adapter.toUser({});
-        expect(user).toBeInstanceOf(OrgUser);
+      const user = adapter.toUser({});
+      expect(user).toBeInstanceOf(OrgUser);
     });
   });
 
   describe('toUserToken', () => {
     it('should always create an instance of OrgUserToken', () => {
-
-        const tokenPayload = adapter.toUserToken({});
-        expect(tokenPayload).toBeInstanceOf(OrgUserToken);
+      const tokenPayload = adapter.toUserToken({});
+      expect(tokenPayload).toBeInstanceOf(OrgUserToken);
     });
 
     it('should transform a AuthOktaToken object into a OrgUserToken object', () => {

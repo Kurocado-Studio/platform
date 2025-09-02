@@ -5,7 +5,15 @@ import {
   composeThemeProvider,
 } from '@kurocado-studio/ui-kit-domain';
 import { set } from 'lodash-es';
-import { onBeforeUnmount, onMounted, provide, ref, toRef, watch, type Ref } from 'vue';
+import {
+  type Ref,
+  onBeforeUnmount,
+  onMounted,
+  provide,
+  ref,
+  toRef,
+  watch,
+} from 'vue';
 
 const props = defineProps<{
   cssVariables?: Record<string, unknown>;
@@ -18,16 +26,18 @@ const themeProvider = composeThemeProvider();
 const styleElRef = ref<HTMLStyleElement | null>(null);
 
 // Always a concrete object; start with {} or the provided value
-const cssVariablesMap: Ref<Record<string, unknown>> = ref(cssVariables.value ?? {});
+const cssVariablesMap: Ref<Record<string, unknown>> = ref(
+  cssVariables.value ?? {},
+);
 
 // Keep cssVariablesMap in sync if the prop changes
 watch(
-    cssVariables,
-    (next) => {
-      cssVariablesMap.value = next ?? {};
-      handleVariablesMap(cssVariablesMap.value);
-    },
-    { immediate: true, deep: true }
+  cssVariables,
+  (next) => {
+    cssVariablesMap.value = next ?? {};
+    handleVariablesMap(cssVariablesMap.value);
+  },
+  { immediate: true, deep: true },
 );
 
 function handleVariablesMap(theme: Record<string, unknown>): void {
@@ -39,7 +49,10 @@ function toggleLightDarkTheme(): void {
 }
 
 function setThemeVariable(variableName: string, variableValue: string): void {
-  const payload = themeProvider.handleSetThemeVariable({ variableName, variableValue });
+  const payload = themeProvider.handleSetThemeVariable({
+    variableName,
+    variableValue,
+  });
   if (payload) {
     set(cssVariablesMap.value, [payload.variableName], payload.variableValue);
     handleVariablesMap(cssVariablesMap.value);

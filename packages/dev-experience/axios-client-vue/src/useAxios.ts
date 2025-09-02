@@ -1,13 +1,12 @@
 // eslint-disable-next-line import/named
-import { type Ref, ref } from 'vue';
-
 import {
   ApiRequestError,
   type AxiosRequestFunction,
   type UseAxiosParameters,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
-import {set} from "lodash-es";
+import { set } from 'lodash-es';
+import { type Ref, ref } from 'vue';
 
 type StateReferences<T extends Record<string, unknown>> = {
   data: Ref<T | undefined>;
@@ -42,7 +41,11 @@ export function useAxios<
 
       data.value = await modelAxiosDataResponse<T, K>(payload, config);
     } catch (error: unknown) {
-      set(error as Record<string, unknown>, ['value'], ApiRequestError.create(error))
+      set(
+        error as Record<string, unknown>,
+        ['value'],
+        ApiRequestError.create(error),
+      );
     } finally {
       isLoading.value = false;
     }

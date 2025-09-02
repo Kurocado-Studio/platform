@@ -15,7 +15,7 @@ class ESBuildAndJSDOMCompatibleTextEncoder extends TextEncoder {
     }
 
     const decodedURI = decodeURIComponent(encodeURIComponent(input));
-    const bufferUint8Array  = new Uint8Array(decodedURI.length);
+    const bufferUint8Array = new Uint8Array(decodedURI.length);
     // Type string can only be iterated through when using the --downlevelIteration flag
     // eslint-disable-next-line
     const chars = decodedURI.split('');

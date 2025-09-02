@@ -1,10 +1,12 @@
 export const HTMLStyleElementId = 'KUROCADO_STUDIO_CSS_VARIABLES_MAP';
 
 export function handleVariablesMap(
-  htmlStyleElementReference: HTMLStyleElement | undefined| null,
+  htmlStyleElementReference: HTMLStyleElement | undefined | null,
   cssVariablesPayload: Record<string, unknown>,
 ): HTMLStyleElement {
-  let styleElementReference: HTMLStyleElement | null  = htmlStyleElementReference ?? (document.querySelector(HTMLStyleElementId) as HTMLStyleElement);
+  let styleElementReference: HTMLStyleElement | null =
+    htmlStyleElementReference ??
+    (document.querySelector(HTMLStyleElementId) as HTMLStyleElement);
 
   if (!styleElementReference) {
     styleElementReference = document.createElement('style');

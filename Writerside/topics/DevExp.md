@@ -13,17 +13,14 @@ organization.
 ## Objectives
 
 1. **Frictionless Development Workflows**
-
    - Provide easy-to-use libraries that reduce boilerplate and manual setup, allowing developers to
      focus on features rather than configuration.
 
 2. **Consistent & Maintainable Code**
-
    - Standardize how APIs are called, forms are handled, and state is managed, ensuring all teams
      produce quality, uniform code.
 
 3. **Reusability & Extensibility**
-
    - Encourage the sharing of common solutions—like React hooks—across different projects, while
      still allowing customization for unique needs.
 
@@ -34,12 +31,10 @@ organization.
 ## Use Cases
 
 1. **Internal Team Adoption**
-
    - Kurocado Studio’s internal teams will rely on this Dev Experience solution as the definitive
      reference for utility libraries—ensuring new features can be developed quickly and uniformly.
 
 2. **External Contributor Alignment**
-
    - External developers or freelancers working with Kurocado Studio can incorporate the same
      libraries and patterns, avoiding inconsistent approaches or duplicate effort.
 
@@ -64,20 +59,17 @@ organization.
 ## Key Milestones
 
 1. **Foundational Utilities**
-
    - Publish core axios wrapper, basic React hooks (e.g., useFetch), and initial form-handling
      utilities.
    - Provide fundamental documentation and example usage in a sample application.
 
 2. **Expansion & Refinement**
-
    - Extend libraries to handle more complex use cases (e.g., file uploads, concurrency control, or
      advanced validation).
    - Optimize developer ergonomics by improving TypeScript definitions, error boundaries, or dev
      tooling integration.
 
 3. **Client Forking & Customization**
-
    - Document how clients can fork and adapt these utilities or create their own versions.
    - Provide guidelines for merging upstream changes to maintain a shared baseline while respecting
      client-specific logic.
@@ -85,21 +77,18 @@ organization.
 ## Goals
 
 1. **Developer Efficiency**
-
    - **Reduced Boilerplate**: Projects using these libraries should require fewer lines of
      repetitive code (e.g., form handling or API calls).
    - **Ease of Adoption**: Teams can integrate and deploy these utilities within minutes, cutting
      down on project setup time.
 
 2. **Consistency & Quality**
-
    - **Shared Patterns**: All new Kurocado Studio projects incorporate standardized API call
      patterns and form handling, minimizing code fragmentation.
    - **Improved Code Reviews**: By unifying approaches (e.g., error handling), reviewers focus on
      logic instead of style or architecture differences.
 
 3. **Client Collaboration**
-
    - **Successful Forking**: Clients adopt or customize our Dev Experience without significant
      engineering overhead.
    - **Unified Upstream**: Clients can easily pull in new updates from the main repository, ensuring

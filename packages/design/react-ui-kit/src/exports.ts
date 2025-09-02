@@ -1,5 +1,6 @@
-export { kurocadoTheme } from '@kurocado-studio/ui-kit-domain'
-import './tailwind.css'
+import './tailwind.css';
+
+export { kurocadoTheme } from '@kurocado-studio/ui-kit-domain';
 
 export * from './components/Card/Card';
 export * from './components/motion';

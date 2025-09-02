@@ -1,11 +1,13 @@
- 
 /**
  * TODO: fix mismatch between ESLint sort order still
  */
+import {
+  mockAxiosInstance,
+  modelAxiosDataResponse,
+} from '@kurocado-studio/axios-client-domain';
+import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
 import { act, renderHook, waitFor } from '@kurocado-studio/qa/web';
 
-import { modelAxiosDataResponse, mockAxiosInstance } from '@kurocado-studio/axios-client-domain';
-import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
 import { useAxios } from './useAxios';
 
 vi.mock('@kurocado-studio/axios-client-domain', async () => {
@@ -15,7 +17,9 @@ vi.mock('@kurocado-studio/axios-client-domain', async () => {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
     ApiRequestError: {
-      create: vi.fn((error) => new Error(`Wrapped: ${(error as Error).message}`)),
+      create: vi.fn(
+        (error) => new Error(`Wrapped: ${(error as Error).message}`),
+      ),
     },
   };
 });

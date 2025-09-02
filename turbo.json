@@ -17,11 +17,7 @@
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": [
-        "^internal:build",
-        "^internal:build:qa",
-        "^build"
-      ]
+      "dependsOn": ["^internal:build", "^internal:build:qa", "^build"]
     },
     "typecheck": {
       "dependsOn": ["^typecheck"]

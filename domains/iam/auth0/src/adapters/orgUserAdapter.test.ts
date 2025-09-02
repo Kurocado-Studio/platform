@@ -56,9 +56,8 @@ describe('OrgUserAdapter', () => {
     });
 
     it('should always create an instance of OrgUser', () => {
-        const user = adapter.toAuthOktaUser({});
-        expect(user).toBeInstanceOf(OktaUser);
-
+      const user = adapter.toAuthOktaUser({});
+      expect(user).toBeInstanceOf(OktaUser);
     });
   });
 });

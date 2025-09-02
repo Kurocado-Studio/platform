@@ -1,11 +1,12 @@
 import { type MotionProps, motion } from 'framer-motion';
 import type React from 'react';
 
-export type MotionElementProperties<Tag extends keyof React.JSX.IntrinsicElements> =
-  React.JSX.IntrinsicElements[Tag] &
-    MotionProps & {
-      as?: Tag;
-    };
+export type MotionElementProperties<
+  Tag extends keyof React.JSX.IntrinsicElements,
+> = React.JSX.IntrinsicElements[Tag] &
+  MotionProps & {
+    as?: Tag;
+  };
 
 export function MotionElement<
   Tag extends keyof React.JSX.IntrinsicElements = 'div',

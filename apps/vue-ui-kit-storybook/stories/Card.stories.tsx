@@ -1,7 +1,7 @@
 /* eslint import/no-default-export: 0 */
 import { Card, CardBody } from '@kurocado-studio/vue-ui-kit';
-import type { Meta, StoryObj } from '@storybook/vue3';
 import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta = {
   title: 'Components/Card',

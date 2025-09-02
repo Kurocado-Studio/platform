@@ -1,8 +1,8 @@
 /* eslint unicorn/filename-case: 0 */
 /* eslint import/no-default-export: 0 */
 import { ThemeProvider } from '@kurocado-studio/vue-ui-kit';
-import type { Preview } from '@storybook/vue3';
 import { themes } from '@storybook/theming';
+import type { Preview } from '@storybook/vue3';
 import { get } from 'lodash-es';
 
 import './tailwind.css';

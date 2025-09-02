@@ -2,7 +2,7 @@ import { get } from 'lodash-es';
 
 import { type VitestConfig, vitestConfig } from '../common/vitestConfig';
 
-export type VitestWeb= VitestConfig
+export type VitestWeb = VitestConfig;
 
 export const vitestReact: VitestWeb = {
   ...vitestConfig,

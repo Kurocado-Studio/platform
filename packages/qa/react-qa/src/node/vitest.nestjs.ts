@@ -1,9 +1,10 @@
 import { get } from 'lodash-es';
 import swc from 'unplugin-swc';
 import type { PluginOption } from 'vite';
+
 import { type VitestConfig, vitestConfig } from '../common/vitestConfig';
 
-export type VitestNestjs = VitestConfig
+export type VitestNestjs = VitestConfig;
 
 export const vitestNestjs: VitestNestjs = {
   ...vitestConfig,

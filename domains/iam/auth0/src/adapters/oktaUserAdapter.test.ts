@@ -1,11 +1,10 @@
 import { faker } from '@kurocado-studio/qa';
 
 import { OktaUserAdapter, OrgUser, OrgUserToken } from '../../src';
-
 import {
+  type AuthOktaToken,
   type AuthOktaUser,
   type AuthOktaUserAdapter,
-  type AuthOktaToken,
 } from '../types/types';
 
 describe('OktaUserAdapter', () => {
@@ -58,7 +57,12 @@ describe('OktaUserAdapter', () => {
     });
 
     it('should always create an instance of OrgUser', () => {
-      for (const unknownPayload of [undefined, {}, undefined, new Error('error')]) {
+      for (const unknownPayload of [
+        undefined,
+        {},
+        undefined,
+        new Error('error'),
+      ]) {
         const user = adapter.toUser(unknownPayload);
         expect(user).toBeInstanceOf(OrgUser);
       }
@@ -67,7 +71,12 @@ describe('OktaUserAdapter', () => {
 
   describe('toUserToken', () => {
     it('should always create an instance of OrgUserToken', () => {
-      for (const unknownPayload of [undefined, {}, undefined, new Error('error')]) {
+      for (const unknownPayload of [
+        undefined,
+        {},
+        undefined,
+        new Error('error'),
+      ]) {
         const tokenPayload = adapter.toUserToken(unknownPayload);
         expect(tokenPayload).toBeInstanceOf(OrgUserToken);
       }

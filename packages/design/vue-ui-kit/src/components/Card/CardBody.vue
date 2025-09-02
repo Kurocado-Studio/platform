@@ -10,8 +10,6 @@ import { computed, useAttrs } from 'vue';
 const cardPropsAttributes = useAttrs();
 
 const mergedClass = computed(() => {
-  return twMerge(
-    get(cardPropsAttributes, ['value']) as string | undefined,
-  );
+  return twMerge(get(cardPropsAttributes, ['value']) as string | undefined);
 });
 </script>

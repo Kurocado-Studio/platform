@@ -4,7 +4,11 @@ import { get } from 'lodash-es';
 import { useRef } from 'react';
 import { useTextField } from 'react-aria';
 
-import type { TextFieldApi, TextFieldMeta, TextFieldProperties } from 'src/types';
+import type {
+  TextFieldApi,
+  TextFieldMeta,
+  TextFieldProperties,
+} from 'src/types';
 import { composeAriaValidityState } from 'src/utils/composeAriaValidityState';
 
 export const useAriaTextField = <
