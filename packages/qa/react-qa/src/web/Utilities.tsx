@@ -24,7 +24,6 @@ export const renderWithRemix = <T extends Record<string, unknown>>(
   const RemixStub = createRemixStub([
     {
       path: '/',
-      // @ts-expect-error types mismatch
       Component: Component as React.ComponentType,
       loader() {
         return json(loaderData || {});

@@ -11,12 +11,11 @@ export const vitestReact: VitestWeb = {
     ...get(vitestConfig, ['test'], {}),
     coverage: {
       ...get(vitestConfig, ['test', 'coverage'], {}),
-      // @ts-expect-error type-mismatch
+      provider: 'v8',
       include: ['app/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
       exclude: ['test/**/*.{ts,tsx}', '**/*.d.ts'],
     },
     css: true,
-    tsconfig: './tsconfig.json',
     environment: 'jsdom',
     setupFiles: ['./setup.web.ts'],
   },
