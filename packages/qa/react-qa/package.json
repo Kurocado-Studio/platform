@@ -22,8 +22,8 @@
     "internal:dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
+    "prettier:fix": "prettier --write . --ignore-path ../../../.prettierignore",
+    "prettier:check": "prettier --check . --ignore-path ../../../.prettierignore",
     "typecheck": "tsc --noEmit --pretty",
     "vite:watch": "vite build --watch --mode development"
   },

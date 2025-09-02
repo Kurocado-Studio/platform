@@ -8,8 +8,8 @@
     "clean": "rm -rf .turbo node_modules",
     "dev": "storybook dev -p 6008 --no-open",
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0 --no-warn-ignored",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
+    "prettier:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "prettier:check": "prettier --check . --ignore-path ../../.prettierignore",
     "preview-storybook": "serve storybook-static"
   },
   "dependencies": {
