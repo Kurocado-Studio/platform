@@ -1,9 +1,1 @@
-export default {
-  semi: true,
-  singleQuote: true,
-  printWidth: 80,
-  tabWidth: 2,
-  trailingComma: 'es5',
-  bracketSpacing: true,
-  arrowParens: 'always',
-};
+export { prettierConfig as default } from '@internal/config';
