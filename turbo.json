@@ -20,13 +20,13 @@
       "dependsOn": ["^internal:build", "^internal:build:qa", "^build"]
     },
     "typecheck": {
-      "dependsOn": ["^typecheck"]
+      "dependsOn": ["setup", "^test"]
     },
     "test": {
       "dependsOn": ["setup", "^test"]
     },
     "lint": {
-      "dependsOn": ["setup"]
+      "dependsOn": ["setup", "build"]
     },
     "lint:fix": {
       "dependsOn": ["setup"]
@@ -35,7 +35,7 @@
       "dependsOn": ["setup"]
     },
     "prettier:check": {
-      "dependsOn": ["setup"]
+      "dependsOn": ["setup", "build"]
     },
     "dev:internal": {
       "dependsOn": ["setup"],
