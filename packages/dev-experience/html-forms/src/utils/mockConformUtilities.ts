@@ -12,21 +12,25 @@ export const mockFieldMetadata = <
 >(
   config?: Partial<FieldMetadata<FieldSchema, FormSchema, FormError>>,
 ): FieldMetadata<FieldSchema, FormSchema, FormError> => {
-  // @ts-expect-error we are mocking this
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return {
     ...(config ? { ...config } : {}),
+    ...(config?.initialValue ? { initialValue: config.initialValue } : {}),
+    defaultChecked: get(config, ['defaultChecked'], false),
     allErrors: get(config, ['allErrors'], {}),
+    defaultOptions: get(config, ['defaultOptions'], []),
     descriptionId: get(config, ['descriptionId'], ''),
     dirty: get(config, ['dirty'], false),
     errorId: get(config, ['errorId'], composeRandomId()),
     errors: get(config, ['errors']),
     formId: get(config, ['formId'], composeRandomId()),
     id: get(config, ['id'], composeRandomId()),
-    initialValue: get(config, ['initialValue'], ''),
     key: get(config, ['key']),
     name: get(config, ['name'], `test-name-${composeRandomId()}`),
     valid: get(config, ['valid'], true),
     value: get(config, ['value'], ''),
+    defaultValue: get(config, ['defaultValue']),
   };
 };
 
@@ -38,6 +42,8 @@ export const mockFormMetadata = <
 ): FormMetadata<FormSchema, FormError> => {
   return {
     allErrors: get(config, ['allErrors'], {}),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     context: {},
     descriptionId: '',
@@ -47,25 +53,41 @@ export const mockFormMetadata = <
     getFieldset: get(config, ['getFieldset'], vi.fn()),
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     insert: get(config, ['insert'], vi.fn()),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     remove: vi.fn(),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     reorder: vi.fn(),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     update: vi.fn(),
     valid: false,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     validate: vi.fn(),
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     // @ts-expect-error we are mocking this
     value: get(config, ['value']),
   };
