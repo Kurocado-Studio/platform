@@ -1,5 +1,3 @@
-import {
-  defineBaseNodeEslintConfig
-} from '@internal/config';
+import { defineBaseNodeEslintConfig } from '@internal/config';
 
 export default defineBaseNodeEslintConfig();

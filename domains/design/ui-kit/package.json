@@ -40,9 +40,7 @@
     },
     "./styles.css": "./dist/tailwind.css"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "lodash-es": "^4.17.21",
     "react": "19.1.0",

@@ -1,5 +1,3 @@
-import {
-  defineBaseNodeEslintConfig
-} from '@kurocado-studio/styleguide';
+import { defineBaseNodeEslintConfig } from '@kurocado-studio/styleguide';
 
 export default defineBaseNodeEslintConfig();

@@ -18,9 +18,7 @@
     "./tsconfig.web": "./dist/tsconfig.web.json",
     "./qa/web/setup": "./dist/setup.web.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "internal:build": "pnpm install && rm -rf dist && tsup --dts",
     "internal:dev": "rm -rf dist && tsup --watch --dts",
