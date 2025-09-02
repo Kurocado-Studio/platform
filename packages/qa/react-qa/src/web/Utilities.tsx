@@ -18,13 +18,14 @@ export async function auditComponentA11y(
 }
 
 export const renderWithRemix = <T extends Record<string, unknown>>(
-  Component?: React.ComponentType<T> | null,
+  Component?: React.FunctionComponent<T>,
   loaderData?: Record<string, unknown>,
 ): RenderResult => {
   const RemixStub = createRemixStub([
     {
       path: '/',
-      Component: Component as React.ComponentType,
+       
+      Component,
       loader() {
         return json(loaderData || {});
       },
