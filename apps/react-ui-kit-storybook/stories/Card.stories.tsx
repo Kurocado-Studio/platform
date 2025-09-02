@@ -1,7 +1,7 @@
-import { Card, type CardProps } from '@kurocado-studio/react-ui-kit';
+import { Card, type CardProperties } from '@kurocado-studio/react-ui-kit';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<CardProps> = {
+const meta: Meta<CardProperties> = {
   title: 'Components/Card',
   component: Card,
   argTypes: {
@@ -16,7 +16,7 @@ const meta: Meta<CardProps> = {
   tags: ['autodocs'],
 };
 
-export const WithCardBody: StoryObj<CardProps> = {
+export const WithCardBody: StoryObj<CardProperties> = {
   name: 'With Card Body',
   args: {
     children: (
@@ -28,7 +28,7 @@ export const WithCardBody: StoryObj<CardProps> = {
   tags: ['autodocs'],
 };
 
-export const WithFramerMotionProperties: StoryObj<CardProps> = {
+export const WithFramerMotionProperties: StoryObj<CardProperties> = {
   name: 'With Framer Motion Props',
   args: {
     children: (
@@ -43,7 +43,7 @@ export const WithFramerMotionProperties: StoryObj<CardProps> = {
   tags: ['autodocs'],
 };
 
-export const WithCardHeader: StoryObj<CardProps> = {
+export const WithCardHeader: StoryObj<CardProperties> = {
   name: 'With Card Header',
   args: {
     children: (
@@ -60,7 +60,7 @@ export const WithCardHeader: StoryObj<CardProps> = {
   tags: ['autodocs'],
 };
 
-export const WithCardFooter: StoryObj<CardProps> = {
+export const WithCardFooter: StoryObj<CardProperties> = {
   name: 'With Card Footer',
   args: {
     children: (

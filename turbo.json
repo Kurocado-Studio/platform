@@ -17,9 +17,14 @@
       "dependsOn": ["^internal:build:domain"]
     },
     "setup": {
-      "dependsOn": ["internal:build", "internal:build:qa", "^build"],
+      "dependsOn": [
+        "@internal/config#internal:build",
+        "@kurocado-studio/qa#internal:build:qa",
+        "^build"
+      ],
       "cache": false
     },
+
     "build": {
       "cache": false,
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
