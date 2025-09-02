@@ -25,15 +25,15 @@
     },
     "typecheck": {
       "cache": false,
-      "dependsOn": ["setup", "^build", "build"]
+      "dependsOn": ["setup", "^build"]
     },
     "test": {
       "cache": false,
-      "dependsOn": ["setup", "^build", "build"]
+      "dependsOn": ["setup", "^build"]
     },
     "lint": {
       "cache": false,
-      "dependsOn": ["setup", "^build", "build"]
+      "dependsOn": ["setup", "^build"]
     },
     "lint:fix": {
       "cache": false,
@@ -45,7 +45,7 @@
     },
     "prettier:check": {
       "cache": false,
-      "dependsOn": ["setup", "^build", "build"]
+      "dependsOn": ["setup", "^build"]
     },
     "dev:internal": {
       "dependsOn": ["setup"],
