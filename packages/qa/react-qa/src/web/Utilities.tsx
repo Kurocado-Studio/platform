@@ -24,7 +24,8 @@ export const renderWithRemix = <T extends Record<string, unknown>>(
   const RemixStub = createRemixStub([
     {
       path: '/',
-       
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       Component,
       loader() {
         return json(loaderData || {});
