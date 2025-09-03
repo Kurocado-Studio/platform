@@ -17,7 +17,9 @@
     },
     "./fonts/Mona-Sans.var.woff2": "./dist/lib/domain/fonts/Mona-Sans.var.woff2"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:ui-domain": "pnpm --filter @kurocado-studio/ui-kit-domain build",
     "build": "pnpm build:ui-domain && rm -rf dist && tsup",
@@ -52,6 +54,7 @@
   "devDependencies": {
     "@internal/config": "workspace:*",
     "@kurocado-studio/qa": "workspace:*",
+    "@microsoft/api-extractor": "^7.52.11",
     "@storybook/react": "^8.6.13",
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",
