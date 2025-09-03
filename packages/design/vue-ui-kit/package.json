@@ -19,8 +19,9 @@
   },
   "files": ["dist"],
   "scripts": {
+    "build:ui-domain": "pnpm --filter @kurocado-studio/ui-kit-domain build",
+    "build": "pnpm build:ui-domain && rm -rf dist && tsup",
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
-    "build": "rm -rf dist && tsup",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "clean": "rm -rf .turbo node_modules dist",
     "dev": "rm -rf dist && tsup --watch",

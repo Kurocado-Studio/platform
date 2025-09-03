@@ -3,15 +3,17 @@ import { execSync } from 'node:child_process';
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
+  clean: true,
   entry: ['./src/exports.ts'],
   format: ['esm'],
   dts: true,
   splitting: true,
-  sourcemap: true,
   minify: true,
   target: 'esnext',
-  clean: true,
   inject: ['./react-shim.js'],
+  external: ['react', 'react-dom'],
+  noExternal: ['@kurocado-studio/ui-kit-domain'],
+  sourcemap: false,
   onSuccess: async (): Promise<void> => {
     const stdio = 'inherit';
     execSync('copyfiles -u 1 "src/ui-domain/{styles,fonts}/**/*" dist', {

@@ -15,8 +15,13 @@ export default defineConfig({
   shims: false,
   external: ['vue'],
   esbuildPlugins: [vuePlugin()],
+  noExternal: ['@kurocado-studio/ui-kit-domain'],
   onSuccess: async (): Promise<void> => {
     const stdio = 'inherit';
     execSync('vue-tsc -p tsconfig.vue.json', { stdio });
+    execSync('api-extractor run --local', { stdio });
+    execSync('rm -rf dist/exports.d.ts', { stdio });
+    execSync('rm -rf dist/components', { stdio });
+    execSync('rm -rf dist/context', { stdio });
   },
 });

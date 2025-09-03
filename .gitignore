@@ -11,6 +11,8 @@ dist-ssr
 .cache
 server/dist
 **/dist
+**/temp
+**/tsconfig.build.tsbuildinfo
 **/coverage
 **/build
 **/node_modules
