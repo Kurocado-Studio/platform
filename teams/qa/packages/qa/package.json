@@ -79,7 +79,7 @@
     "eslint": "9.31.0",
     "prettier": "3.6.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.1.1",
     "semantic-release": "^24.2.7",
     "tsup": "^8.3.6",
     "typescript": "^5.8.3"
@@ -106,6 +106,6 @@
     "./web/tsconfig.qa": "./dist/web/tsconfig.qa.json"
   },
   "dependencies": {
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.1"
   }
 }
