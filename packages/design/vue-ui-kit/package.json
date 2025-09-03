@@ -2,7 +2,10 @@
   "name": "@kurocado-studio/vue-ui-kit",
   "version": "0.0.0-semantically-released",
   "sideEffects": false,
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [],
   "author": "@kurocado-studio",
   "license": "MIT",
