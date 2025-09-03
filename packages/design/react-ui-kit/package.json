@@ -21,12 +21,12 @@
     "dist"
   ],
   "scripts": {
-    "build:ui-domain": "pnpm --filter @kurocado-studio/ui-kit-domain build",
+    "build:ui-domain": "pnpm --filter @kurocado-studio/ui-kit-domain internal:build:domain",
     "build:typings": "api-extractor run --local",
     "build": "pnpm build:ui-domain && rm -rf dist && tsup && pnpm build:typings && rm -rf dist/exports.d.ts",
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "clean": "rm -rf .turbo node_modules dist",
-    "dev": "rm -rf dist && tsup --watch",
+    "dev": "tsup --watch",
     "dev:vite": "vite build --watch --mode development",
     "vite:watch": "vite build --watch --mode development",
     "build:vite": "rm -rf dist && vite build --mode production",
