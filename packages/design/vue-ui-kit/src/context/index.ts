@@ -1,1 +1,4 @@
-export { default as ThemeProvider } from './ThemeProvider.vue';
+/* eslint-disable unicorn/prefer-export-from */
+import ThemeProvider from './ThemeProvider.vue';
+
+export { ThemeProvider };

@@ -1,9 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    "@kurocado-studio/qa/web/tsconfig.qa",
-    "@internal/config/tsconfig.web"
-  ],
+  "extends": ["@internal/config/tsconfig.web", "../../../tsconfig.base.json"],
   "compilerOptions": {
     "types": ["vitest/globals"],
     "skipLibCheck": true,
@@ -13,6 +10,7 @@
   },
   "include": [
     "src",
+    "src/**/*.json",
     "setup.web.ts",
     "tailwind.config.ts",
     "test",

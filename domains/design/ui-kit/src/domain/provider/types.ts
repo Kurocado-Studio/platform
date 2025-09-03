@@ -1,4 +1,4 @@
-import { LightDarkThemeToggleHandler } from '../types';
+import { type LightDarkThemeToggleHandler } from '../types';
 
 export type ThemeVariableHandler = (options: {
   variableName: string;

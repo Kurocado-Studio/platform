@@ -1,3 +1,2 @@
-export { ThemeProvider } from './context';
-
+export * from './context';
 export * from './components/Card';

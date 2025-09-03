@@ -8,6 +8,5 @@ export default defineConfig((options) => ({
   clean: true,
   splitting: true,
   treeshake: true,
-  external: ['react'],
   ...options,
 }));
