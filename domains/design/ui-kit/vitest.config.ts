@@ -3,6 +3,6 @@
 import { vitestReact } from '@kurocado-studio/qa/web';
 import { defineConfig } from 'vitest/config';
 
-// TODO: fix ts-expect-error
-// @ts-expect-error while fixing types
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export default defineConfig(vitestReact);
