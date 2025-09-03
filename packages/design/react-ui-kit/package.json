@@ -80,7 +80,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "tailwindcss": "^4.1.11",
     "tsup": "^8.5.0",
-    "typescript": "5.8.3",
+    "typescript": "5.9.2",
     "unplugin-vue": "^7.0.1",
     "vite": "^5.2.8",
     "vite-node": "3.2.4",
