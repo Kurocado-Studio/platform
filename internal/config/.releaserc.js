@@ -1,1 +1,1 @@
-export { semanticReleaseInternalMonorepoConfig as default } from './src';
+export { semanticReleaseInternalMonorepoConfig as default } from '@kurocado-studio/styleguide';
