@@ -17,12 +17,16 @@
     },
     "./styles.css": "./dist/exports.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build:ui-domain": "pnpm --filter @kurocado-studio/ui-kit-domain internal:build:domain",
+    "build:typings": "api-extractor run --local",
+    "build": "pnpm build:ui-domain && rm -rf dist && tsup && pnpm build:typings && rm -rf dist/exports.d.ts",
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
-    "build": "rm -rf dist && tsup",
     "clean": "rm -rf .turbo node_modules dist",
-    "dev": "rm -rf dist && tsup --watch",
+    "dev": "tsup --watch",
     "dev:vite": "vite build --watch --mode development",
     "vite:watch": "vite build --watch --mode development",
     "build:vite": "rm -rf dist && vite build --mode production",
@@ -53,6 +57,7 @@
   "devDependencies": {
     "@internal/config": "workspace:*",
     "@kurocado-studio/qa": "workspace:*",
+    "@microsoft/api-extractor": "^7.52.11",
     "@storybook/react": "^8.6.13",
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",

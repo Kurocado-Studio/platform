@@ -30,7 +30,7 @@
       "dependsOn": [
         "@kurocado-studio/qa#internal:build:qa",
         "^internal:build",
-        "^internal:build:domain",
+        "@kurocado-studio/ui-kit-domain#internal:build:domain",
         "^build"
       ]
     },
@@ -58,24 +58,28 @@
       "cache": false,
       "dependsOn": []
     },
-    "dev:internal": {
-      "dependsOn": ["setup"],
+    "domain:dev": {
+      "dependsOn": [],
+      "persistent": true
+    },
+    "internal:dev": {
+      "dependsOn": [],
       "persistent": true
     },
     "dev": {
-      "dependsOn": ["setup"],
+      "dependsOn": [],
       "persistent": true
     },
     "dev:storybook": {
-      "dependsOn": ["setup"],
+      "dependsOn": [],
       "persistent": true
     },
     "vite:watch": {
-      "dependsOn": ["setup"],
+      "dependsOn": [],
       "persistent": true
     },
     "storybook": {
-      "dependsOn": ["vite:watch"]
+      "dependsOn": []
     },
     "preview-storybook": {
       "dependsOn": ["^build"]

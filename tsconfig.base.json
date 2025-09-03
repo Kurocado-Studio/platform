@@ -1,16 +1,33 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "extends": ["@kurocado-studio/qa/web/tsconfig.qa"],
+  "references": [
+    { "path": "domains/design/ui-kit" },
+    { "path": "domains/dev-experience/axios-client" },
+    { "path": "domains/iam/auth0" },
+    { "path": "domains/qa/storybook" },
+    { "path": "packages/design/react-ui-kit" },
+    { "path": "packages/design/vue-ui-kit" },
+    { "path": "packages/dev-experience/axios-client-node" },
+    { "path": "packages/dev-experience/axios-client-react" },
+    { "path": "packages/dev-experience/axios-client-vue" },
+    { "path": "packages/dev-experience/html-forms" },
+    { "path": "packages/iam/authO-react" },
+    { "path": "packages/qa/react-qa" }
+  ],
   "compilerOptions": {
-    "target": "ES2020",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2020", "DOM"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": ["ES2020", "DOM"],
-    "jsx": "react-jsx",
-    "strict": true,
-    "skipLibCheck": true,
-    "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2020",
+    "verbatimModuleSyntax": true
   }
 }
