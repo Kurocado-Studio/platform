@@ -6,6 +6,12 @@ on:
       branch_name:
         required: true
         type: string
+      prod_env:
+        required: true
+        type: string
+      dev_env:
+        required: true
+        type: string
     secrets:
       GH_TOKEN:
         description: 'Automatically generated token that GitHub provides for every workflow run'
@@ -26,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       inputs.branch_name == 'main' || 
-      inputs.branch_name == 'dev'
+      inputs.branch_name == 'develop'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,7 +40,25 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
 
+      - name: Select env tuple
+        id: envselect
+        run: |
+          if [[ "${{ inputs.branch_name }}" == "main" ]]; then
+            echo "env_pair=${{ inputs.prod_env }}" >> $GITHUB_OUTPUT
+          else
+            echo "env_pair=${{ inputs.dev_env }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Parse env tuple
+        id: parse
+        run: |
+          IFS=',' read -r config app <<< "${{ steps.envselect.outputs.env_pair }}"
+          echo "fly_config=$config" >> $GITHUB_OUTPUT
+          echo "fly_app=$app" >> $GITHUB_OUTPUT
+
       - name: Deploy
         uses: kurocado-studio/platform/.github/actions/deploy@main
         with:
           FLY_API_TOKEN: '${{ secrets.FLY_API_TOKEN }}'
+          FLY_CONFIG: ${{ steps.parse.outputs.fly_config }}
+          FLY_APP_NAME: ${{ steps.parse.outputs.fly_app }}
