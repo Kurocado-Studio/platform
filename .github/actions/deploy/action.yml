@@ -11,6 +11,9 @@ inputs:
   FLY_APP_NAME:
     description: 'Fly app name'
     required: true
+  FLY_ORG:
+    description: 'Fly org'
+    required: true
 
 runs:
   using: 'composite'
@@ -20,6 +23,6 @@ runs:
 
     - name: Deploy to Fly.io
       shell: bash
-      run: flyctl deploy --remote-only --config ${{ inputs.FLY_CONFIG }} --app ${{ inputs.FLY_APP_NAME }}
+      run: flyctl deploy --remote-only --org ${{ inputs.FLY_ORG }} --config ${{ inputs.FLY_CONFIG }} --app ${{ inputs.FLY_APP_NAME }}
       env:
         FLY_API_TOKEN: ${{ inputs.FLY_API_TOKEN }}
