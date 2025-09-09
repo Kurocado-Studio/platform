@@ -27,13 +27,6 @@ on:
         required: true
 
 jobs:
-  Checks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check Branch Name
-        run: |
-          echo "Branch Name: ${{ inputs.branch_name }}"
-
   release:
     runs-on: ubuntu-latest
     if: |
