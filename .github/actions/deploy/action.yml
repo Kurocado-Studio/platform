@@ -8,12 +8,6 @@ inputs:
   FLY_CONFIG:
     description: 'Path to fly.toml for the service'
     required: true
-  FLY_APP_NAME:
-    description: 'Fly app name'
-    required: true
-  FLY_ORG:
-    description: 'Fly org'
-    required: true
 
 runs:
   using: 'composite'

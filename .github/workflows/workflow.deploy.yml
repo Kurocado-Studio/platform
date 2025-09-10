@@ -9,9 +9,6 @@ on:
       prod_env:
         required: true
         type: string
-      fly_org:
-        required: true
-        type: string
       dev_env:
         required: true
         type: string
@@ -43,26 +40,17 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
 
-      - name: Select env tuple
+      - name: Select config
         id: envselect
         run: |
           if [[ "${{ inputs.branch_name }}" == "main" ]]; then
-            echo "env_pair=${{ inputs.prod_env }}" >> $GITHUB_OUTPUT
+            echo "fly_config=${{ inputs.prod_env }}" >> $GITHUB_OUTPUT
           else
-            echo "env_pair=${{ inputs.dev_env }}" >> $GITHUB_OUTPUT
+            echo "fly_config=${{ inputs.dev_env }}" >> $GITHUB_OUTPUT
           fi
-
-      - name: Parse env tuple
-        id: parse
-        run: |
-          IFS=',' read -r config app <<< "${{ steps.envselect.outputs.env_pair }}"
-          echo "fly_config=$config" >> $GITHUB_OUTPUT
-          echo "fly_app=$app" >> $GITHUB_OUTPUT
 
       - name: Deploy
         uses: kurocado-studio/platform/.github/actions/deploy@main
         with:
           FLY_API_TOKEN: '${{ secrets.FLY_API_TOKEN }}'
-          FLY_CONFIG: ${{ steps.parse.outputs.fly_config }}
-          FLY_ORG: ${{ inputs.fly_org }}
-          FLY_APP_NAME: ${{ steps.parse.outputs.fly_app }}
+          FLY_CONFIG: ${{ steps.envselect.outputs.fly_config }}
