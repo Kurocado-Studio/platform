@@ -1,0 +1,14 @@
+name: platform
+id: ari:cloud:compass:bd0a3342-915f-4b2e-9c6f-c1004471898b:component/cd70f7d9-4b7b-4cf5-bcc9-02e9815145d9/08c9bd86-e086-4cf7-b68b-88ec7477da4a
+description: null
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links: []
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:typescript
+  - source:github
+customFields: null
