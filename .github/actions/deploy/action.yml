@@ -23,6 +23,6 @@ runs:
 
     - name: Deploy to Fly.io
       shell: bash
-      run: flyctl deploy --remote-only --org ${{ inputs.FLY_ORG }} --config ${{ inputs.FLY_CONFIG }} --app ${{ inputs.FLY_APP_NAME }}
+      run: flyctl deploy --remote-only --config ${{ inputs.FLY_CONFIG }}
       env:
         FLY_API_TOKEN: ${{ inputs.FLY_API_TOKEN }}
