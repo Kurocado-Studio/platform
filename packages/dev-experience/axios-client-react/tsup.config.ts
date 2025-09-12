@@ -11,6 +11,7 @@ export default defineConfig((options) => ({
   sourcemap: true,
   minify: true,
   target: 'esnext',
+  noExternal: ['@kurocado-studio/axios-client-domain'],
   external: ['react', 'vue'],
   ...options,
 }));

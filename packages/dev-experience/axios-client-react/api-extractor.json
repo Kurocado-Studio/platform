@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "./dist/exports.d.ts",
+  "bundledPackages": ["@kurocado-studio/axios-client-domain"],
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "./dist/index.d.ts"
+  },
+  "compiler": {
+    "tsconfigFilePath": "./tsconfig.json"
+  },
+  "apiReport": { "enabled": false },
+  "docModel": { "enabled": false },
+  "messages": {
+    "extractorMessageReporting": {
+      "ae-missing-release-tag": { "logLevel": "none" },
+      "ae-internal-missing-underscore": { "logLevel": "none" }
+    }
+  }
+}
