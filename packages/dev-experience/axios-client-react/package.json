@@ -18,11 +18,11 @@
   "license": "MIT",
   "main": "dist/exports.js",
   "module": "dist/exports.js",
-  "types": "dist/exports.d.ts",
+  "types": "dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/exports.d.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/exports.js"
     }
   },
