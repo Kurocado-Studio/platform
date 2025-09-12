@@ -1,14 +1,16 @@
-/**
- * TODO: fix mismatch between ESLint sort order still
- */
 import {
-  mockAxiosInstance,
+  createAxiosInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
 import type { UseAxiosParameters } from '@kurocado-studio/axios-client-domain';
 import { act, renderHook, waitFor } from '@kurocado-studio/qa/web';
+import type { AxiosInstance } from 'axios';
+import { type Mock } from 'vitest';
 
 import { useAxios } from './useAxios';
+
+export const mockAxiosInstance = vi.fn() as unknown as Mock<AxiosInstance> &
+  ReturnType<typeof createAxiosInstance>;
 
 vi.mock('@kurocado-studio/axios-client-domain', async () => {
   const actual = await vi.importActual('@kurocado-studio/axios-client-domain');
