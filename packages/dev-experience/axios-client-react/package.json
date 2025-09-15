@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@kurocado-studio/axios-client-domain": "workspace:*",
-    "axios": "^1.10.0",
+    "axios": "^1.12.2",
     "lodash-es": "^4.17.21",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
