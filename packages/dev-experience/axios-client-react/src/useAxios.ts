@@ -7,12 +7,19 @@ import {
 } from '@kurocado-studio/axios-client-domain';
 import * as React from 'react';
 
-type UseAxios = <
+export type AxiosHandler<
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
+> = (
+  ...axiosRequestConfig: Parameters<AxiosRequestFunction<T, K>>
+) => Promise<K extends undefined ? T : K>;
+
+export type UseAxios = <
   T extends Record<string, unknown>,
   K extends Record<string, unknown> | undefined = undefined,
 >(
   options: UseAxiosParameters<T, K>,
-) => [AxiosDataState<K extends undefined ? T : K>, AxiosRequestFunction<T, K>];
+) => [AxiosDataState<K extends undefined ? T : K>, AxiosHandler<T, K>];
 
 export const useAxios: UseAxios = <
   T extends Record<string, unknown>,
@@ -33,8 +40,10 @@ export const useAxios: UseAxios = <
     setError(undefined);
   }, []);
 
-  const axiosRequest: AxiosRequestFunction<T, K> = React.useCallback(
-    async (config) => {
+  const axiosRequest: AxiosHandler<T, K> = React.useCallback(
+    async (...parameters) => {
+      const [config] = parameters;
+
       try {
         setIsLoading(true);
         setError(undefined);
@@ -45,6 +54,8 @@ export const useAxios: UseAxios = <
         );
 
         setData(deserializedData);
+
+        return deserializedData;
       } catch (error: unknown) {
         setError(ApiRequestError.create(error));
       } finally {
