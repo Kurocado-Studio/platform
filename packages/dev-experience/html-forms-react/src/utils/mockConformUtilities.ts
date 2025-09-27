@@ -51,33 +51,25 @@ export const mockFormMetadata = <
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
 
-    // @ts-expect-error on mock mocking
     insert: get(config, ['insert'], vi.fn()),
 
-    // @ts-expect-error on mock mocking
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
 
-    // @ts-expect-error on mock mocking
     remove: vi.fn(),
 
-    // @ts-expect-error on mock mocking
     reorder: vi.fn(),
 
-    // @ts-expect-error on mock mocking
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
 
-    // @ts-expect-error on mock mocking
     update: vi.fn(),
     valid: false,
 
-    // @ts-expect-error on mock mocking
     validate: vi.fn(),
 
-    // @ts-expect-error on mock mocking
     value: get(config, ['value']),
   };
 };
