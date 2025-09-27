@@ -1,5 +1,5 @@
 {
-  "name": "@kurocado-studio/html-forms",
+  "name": "@kurocado-studio/html-forms-react",
   "version": "0.0.0-semantically-released",
   "sideEffects": false,
   "keywords": [],
@@ -23,7 +23,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts",
@@ -62,6 +64,7 @@
     "@react-aria/utils": "^3.30.1",
     "lodash-es": "^4.17.21",
     "react-aria": "^3.42.0",
+    "tailwind-merge": "^3.3.0",
     "zod": "^4.0.5"
   },
   "peerDependencies": {

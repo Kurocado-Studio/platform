@@ -1,4 +1,4 @@
-import { useField, useInputControl } from '@conform-to/react';
+import { useField } from '@conform-to/react';
 import { mergeProps } from '@react-aria/utils';
 import { get } from 'lodash-es';
 import { useRef } from 'react';
@@ -8,8 +8,8 @@ import type {
   TextFieldApi,
   TextFieldMeta,
   TextFieldProperties,
-} from 'src/types';
-import { composeAriaValidityState } from 'src/utils/composeAriaValidityState';
+} from '../types';
+import { composeAriaValidityState } from '../utils';
 
 export const useAriaTextField = <
   FieldSchema = string,
@@ -19,16 +19,11 @@ export const useAriaTextField = <
   config: TextFieldProperties<FieldSchema, FormSchema, FormError>,
   formMeta?: TextFieldMeta<FormSchema, FormError>,
 ): TextFieldApi => {
+  const inputReference = useRef(null);
+
   const { name, label } = config;
 
-  const inputReference = useRef<HTMLInputElement>(null);
-
   const [meta] = useField(name, formMeta);
-
-  const conformInputControl = useInputControl({
-    name: meta.name,
-    formId: meta.formId,
-  });
 
   const required = get(config, ['isRequired'], false);
 
@@ -62,10 +57,7 @@ export const useAriaTextField = <
     isInvalid: get(config, ['isInvalid'], !meta.valid),
     label,
     name: get(meta, ['name'], name),
-    onBlur: get(conformInputControl, ['blur']),
-    onChange: get(conformInputControl, ['change']),
     validationBehavior: get(config, ['validationBehavior'], 'aria'),
-    value: get(conformInputControl, ['value' as string]),
   };
 
   const {
@@ -77,17 +69,12 @@ export const useAriaTextField = <
     ...restTextFieldProperties
   } = useTextField(ariaTextFieldProperties, inputReference);
 
-  const combinedInputProperties = mergeProps(
-    {
-      ...inputProps,
-      'aria-invalid': !meta.valid,
-      ref: inputReference,
-    },
-    {
-      ref: inputReference,
-      'aria-invalid': get(inputProps, ['aria-invalid'], false),
-    },
-  );
+  const combinedInputProperties = mergeProps({
+    ...inputProps,
+    disabled: get(config, ['disabled']),
+    'aria-invalid': get(inputProps, ['aria-invalid'], false),
+    ref: inputReference,
+  });
 
   const validationDetails = composeAriaValidityState(
     restTextFieldProperties.validationDetails,

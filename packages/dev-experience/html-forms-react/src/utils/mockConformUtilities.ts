@@ -12,8 +12,7 @@ export const mockFieldMetadata = <
 >(
   config?: Partial<FieldMetadata<FieldSchema, FormSchema, FormError>>,
 ): FieldMetadata<FieldSchema, FormSchema, FormError> => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+  // @ts-expect-error on mock mocking
   return {
     ...(config ? { ...config } : {}),
     ...(config?.initialValue ? { initialValue: config.initialValue } : {}),
@@ -42,8 +41,7 @@ export const mockFormMetadata = <
 ): FormMetadata<FormSchema, FormError> => {
   return {
     allErrors: get(config, ['allErrors'], {}),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+    // @ts-expect-error on mock mocking
     context: {},
     descriptionId: '',
     dirty: false,
@@ -52,34 +50,34 @@ export const mockFormMetadata = <
     getFieldset: get(config, ['getFieldset'], vi.fn()),
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     insert: get(config, ['insert'], vi.fn()),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     remove: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     reorder: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     update: vi.fn(),
     valid: false,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     validate: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
+
+    // @ts-expect-error on mock mocking
     value: get(config, ['value']),
   };
 };
