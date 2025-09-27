@@ -1,13 +1,20 @@
 import {
   ApiRequestError,
-  type AxiosDataState,
+  type AxiosDataState as MainAxiosDataState,
   type AxiosRequestFunction as MainAxiosRequestFunction,
-  type UseAxiosParameters,
+  type UseAxiosParameters as MainUseAxiosParameters,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
 import * as React from 'react';
 
-export type AxiosState<T extends Record<string, unknown>> = AxiosDataState<T>;
+export type AxiosState<T extends Record<string, unknown>> =
+  MainAxiosDataState<T>;
+
+export type UseAxiosParameters<
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
+> = MainUseAxiosParameters<T, K>;
+
 export type AxiosRequestFunction<
   T extends Record<string, unknown>,
   K extends Record<string, unknown> | undefined = undefined,
