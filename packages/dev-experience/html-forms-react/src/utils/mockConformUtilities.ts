@@ -41,7 +41,6 @@ export const mockFormMetadata = <
 ): FormMetadata<FormSchema, FormError> => {
   return {
     allErrors: get(config, ['allErrors'], {}),
-    // @ts-expect-error on mock mocking
     context: {},
     descriptionId: '',
     dirty: false,
@@ -50,26 +49,18 @@ export const mockFormMetadata = <
     getFieldset: get(config, ['getFieldset'], vi.fn()),
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
-
     insert: get(config, ['insert'], vi.fn()),
-
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
-
     remove: vi.fn(),
-
     reorder: vi.fn(),
-
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
-
     update: vi.fn(),
     valid: false,
-
     validate: vi.fn(),
-
     value: get(config, ['value']),
   };
 };
