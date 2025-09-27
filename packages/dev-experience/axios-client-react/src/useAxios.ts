@@ -1,11 +1,17 @@
 import {
   ApiRequestError,
   type AxiosDataState,
-  type AxiosRequestFunction,
+  type AxiosRequestFunction as MainAxiosRequestFunction,
   type UseAxiosParameters,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-client-domain';
 import * as React from 'react';
+
+export type AxiosState<T extends Record<string, unknown>> = AxiosDataState<T>;
+export type AxiosRequestFunction<
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
+> = MainAxiosRequestFunction<T, K>;
 
 export type AxiosHandler<
   T extends Record<string, unknown>,
@@ -19,7 +25,7 @@ export type UseAxios = <
   K extends Record<string, unknown> | undefined = undefined,
 >(
   options: UseAxiosParameters<T, K>,
-) => [AxiosDataState<K extends undefined ? T : K>, AxiosHandler<T, K>];
+) => [AxiosState<K extends undefined ? T : K>, AxiosHandler<T, K>];
 
 export const useAxios: UseAxios = <
   T extends Record<string, unknown>,
@@ -48,14 +54,11 @@ export const useAxios: UseAxios = <
         setIsLoading(true);
         setError(undefined);
 
-        const deserializedData = await modelAxiosDataResponse<T, K>(
-          payload,
-          config,
-        );
+        const modeledData = await modelAxiosDataResponse<T, K>(payload, config);
 
-        setData(deserializedData);
+        setData(modeledData);
 
-        return deserializedData;
+        return modeledData;
       } catch (error: unknown) {
         setError(ApiRequestError.create(error));
       } finally {
