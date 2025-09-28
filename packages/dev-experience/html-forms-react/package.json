@@ -23,9 +23,7 @@
       "import": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts",
