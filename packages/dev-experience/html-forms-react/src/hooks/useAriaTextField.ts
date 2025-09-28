@@ -42,7 +42,9 @@ export const useAriaTextField = <
       : undefined;
 
   const ariaTextFieldProperties = {
+    'aria-describedby': meta.descriptionId,
     'aria-label': label,
+    'aria-errormessage': errorMessage,
     'aria-labelledby': 'meta.descriptionId',
     autoCapitalize: get(config, ['autoCapitalize'], 'off'),
     defaultValue: get(config, ['defaultValue'], meta.initialValue as string),

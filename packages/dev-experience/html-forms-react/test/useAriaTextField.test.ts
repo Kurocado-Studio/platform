@@ -71,11 +71,13 @@ describe('useAriaTextField Hook - Unit Tests', () => {
 
     expect(result.current).toBeDefined();
     expect(result.current.labelProps).toEqual({
-      htmlFor: 'label-desc-id',
+      htmlFor: 'input-test',
       required: false,
+      id: 'label-test',
       children: undefined,
     });
     expect(result.current.inputProps).toEqual({
+      'aria-labelledby': 'input-test',
       name: 'test',
       // eslint-disable-next-line unicorn/no-null
       ref: { current: null },
