@@ -12,8 +12,7 @@ export const mockFieldMetadata = <
 >(
   config?: Partial<FieldMetadata<FieldSchema, FormSchema, FormError>>,
 ): FieldMetadata<FieldSchema, FormSchema, FormError> => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+  // @ts-expect-error on mock mocking
   return {
     ...(config ? { ...config } : {}),
     ...(config?.initialValue ? { initialValue: config.initialValue } : {}),
@@ -42,7 +41,7 @@ export const mockFormMetadata = <
 ): FormMetadata<FormSchema, FormError> => {
   return {
     allErrors: get(config, ['allErrors'], {}),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     context: {},
     descriptionId: '',
@@ -52,33 +51,33 @@ export const mockFormMetadata = <
     getFieldset: get(config, ['getFieldset'], vi.fn()),
     id: get(config, ['id'], composeRandomId()),
     initialValue: get(config, ['initialValue'], '') as FormValue<FormSchema>,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     insert: get(config, ['insert'], vi.fn()),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     key: get(config, ['insert'], composeRandomId()),
     name: get(config, ['name'], ''),
     noValidate: get(config, ['noValidate'], true),
     onSubmit: get(config, ['onSubmit'], vi.fn()),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     remove: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     reorder: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     reset: vi.fn(),
     status: get(config, ['status'], 'success'),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     update: vi.fn(),
     valid: false,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     validate: vi.fn(),
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //  eslint-disable-next-line
     // @ts-ignore
     value: get(config, ['value']),
   };
