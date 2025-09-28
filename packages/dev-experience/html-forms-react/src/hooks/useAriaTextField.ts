@@ -25,6 +25,9 @@ export const useAriaTextField = <
 
   const [meta] = useField(name, formMeta);
 
+  const inputId = `input-${meta.name}`;
+  const labelId = `label-${meta.name}`;
+
   const required = get(config, ['isRequired'], false);
 
   const metaErrors = Array.isArray(meta.errors) ? meta.errors : [];
@@ -38,22 +41,14 @@ export const useAriaTextField = <
       ? combinedErrors.join(', ')
       : undefined;
 
-  const fallbackLabelReference = useRef(
-    `label-${meta.descriptionId ?? `descriptionId-fallback-${name}`}`,
-  );
-
-  const labelOrFallback = config.label ?? fallbackLabelReference.current;
-
   const ariaTextFieldProperties = {
-    'aria-describedby': meta.descriptionId,
-    'aria-details': get(config, ['aria-details']),
-    'aria-errormessage': errorMessage,
-    'aria-label': labelOrFallback,
-    'aria-labelledby': labelOrFallback,
+    'aria-label': label,
+    'aria-labelledby': 'meta.descriptionId',
     autoCapitalize: get(config, ['autoCapitalize'], 'off'),
     defaultValue: get(config, ['defaultValue'], meta.initialValue as string),
     errorMessage,
-    htmlFor: labelOrFallback,
+    htmlFor: inputId,
+    id: inputId,
     isInvalid: get(config, ['isInvalid'], !meta.valid),
     label,
     name: get(meta, ['name'], name),
@@ -71,6 +66,7 @@ export const useAriaTextField = <
 
   const combinedInputProperties = mergeProps({
     ...inputProps,
+    'aria-labelledby': inputId,
     disabled: get(config, ['disabled']),
     'aria-invalid': get(inputProps, ['aria-invalid'], false),
     ref: inputReference,
@@ -83,8 +79,9 @@ export const useAriaTextField = <
   return {
     labelProps: {
       ...labelProps,
+      id: labelId,
+      htmlFor: inputId,
       children: config.label,
-      htmlFor: labelOrFallback,
       required,
     },
     inputProps: combinedInputProperties,
