@@ -23,7 +23,9 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts",
@@ -63,7 +65,7 @@
     "lodash-es": "^4.17.21",
     "react-aria": "^3.42.0",
     "tailwind-merge": "^3.3.0",
-    "zod": "^4.0.5"
+    "zod": "^3.25.76"
   },
   "peerDependencies": {
     "react": "19.1.0",
