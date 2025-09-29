@@ -59,11 +59,11 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       validationDetails: {} as ValidityState,
     });
 
-    const { useAriaTextField } = await import('../src/hooks/useAriaTextField');
+    const { useTextField } = await import('../src/hooks/useTextField');
 
     const { result } = renderHook(
       () =>
-        useAriaTextField({
+        useTextField({
           name: 'test',
         }),
       { wrapper: HtmlForm },
@@ -129,11 +129,11 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       validationDetails: {} as ValidityState,
     });
 
-    const { useAriaTextField } = await import('../src/hooks/useAriaTextField');
+    const { useTextField } = await import('../src/hooks/useTextField');
 
     const { result } = renderHook(
       () =>
-        useAriaTextField({
+        useTextField({
           name: 'test',
           label: 'Test Field',
         }),
@@ -175,11 +175,11 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       validationDetails: {} as ValidityState,
     });
 
-    const { useAriaTextField } = await import('../src/hooks/useAriaTextField');
+    const { useTextField } = await import('../src/hooks/useTextField');
 
     const { result } = renderHook(
       () =>
-        useAriaTextField({
+        useTextField({
           name: 'test',
         }),
       { wrapper: HtmlForm },
@@ -221,11 +221,11 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       validationDetails: {} as ValidityState,
     });
 
-    const { useAriaTextField } = await import('../src/hooks/useAriaTextField');
+    const { useTextField } = await import('../src/hooks/useTextField');
 
     const { result } = renderHook(
       () =>
-        useAriaTextField({
+        useTextField({
           name: 'test',
           description: 'This is a description',
         }),
@@ -270,11 +270,11 @@ describe('useAriaTextField Hook - Unit Tests', () => {
       validationDetails: {} as ValidityState,
     });
 
-    const { useAriaTextField } = await import('../src/hooks/useAriaTextField');
+    const { useTextField } = await import('../src/hooks/useTextField');
 
     const { result } = renderHook(
       () =>
-        useAriaTextField({
+        useTextField({
           name: 'test',
         }),
       { wrapper: HtmlForm },

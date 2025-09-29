@@ -5,14 +5,14 @@ import type { Mock } from 'vitest';
 
 import type { TextFieldProperties } from 'src/types';
 
-import { HtmlForm, useAriaTextField } from '../src';
+import { HtmlForm, useTextField } from '../src';
 import { mockFieldMetadata, mockFormMetadata } from '../src/utils';
 
 function UnitTestAriaTextField(
   properties: TextFieldProperties,
 ): React.ReactNode {
   const { labelProps, inputProps, errorMessageProps, descriptionProps } =
-    useAriaTextField(properties);
+    useTextField(properties);
 
   return (
     <div>

@@ -2,7 +2,7 @@ import { useField } from '@conform-to/react';
 import { mergeProps } from '@react-aria/utils';
 import { get } from 'lodash-es';
 import { useRef } from 'react';
-import { useTextField } from 'react-aria';
+import { useTextField as useAdobeTextField} from 'react-aria';
 
 import type {
   TextFieldApi,
@@ -11,7 +11,7 @@ import type {
 } from '../types';
 import { composeAriaValidityState } from '../utils';
 
-export const useAriaTextField = <
+export const useTextField = <
   FieldSchema = string,
   FormSchema extends Record<string, unknown> = Record<string, unknown>,
   FormError extends string[] = string[],
@@ -64,7 +64,7 @@ export const useAriaTextField = <
     descriptionProps,
     validationErrors,
     ...restTextFieldProperties
-  } = useTextField(ariaTextFieldProperties, inputReference);
+  } = useAdobeTextField(ariaTextFieldProperties, inputReference);
 
   const combinedInputProperties = mergeProps({
     ...inputProps,
