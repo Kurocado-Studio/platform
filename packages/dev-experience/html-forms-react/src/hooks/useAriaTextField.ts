@@ -11,7 +11,7 @@ import type {
 } from '../types';
 import { composeAriaValidityState } from '../utils';
 
-export const useTextField = <
+export const useAriaTextField = <
   FieldSchema = string,
   FormSchema extends Record<string, unknown> = Record<string, unknown>,
   FormError extends string[] = string[],

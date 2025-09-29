@@ -30,7 +30,7 @@
     "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
     "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --check . --write",
+    "prettier:fix": "prettier --check . --write  --ignore-path ../../.prettierignore",
     "dev": "tsup --watch",
     "lint": "eslint --max-warnings=0 . --no-warn-ignored",
     "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
