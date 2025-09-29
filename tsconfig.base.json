@@ -9,9 +9,9 @@
     { "path": "domains/qa/storybook" },
     { "path": "packages/design/react-ui-kit" },
     { "path": "packages/design/vue-ui-kit" },
-    { "path": "packages/dev-experience/axios-client-node" },
-    { "path": "packages/dev-experience/axios-client-react" },
-    { "path": "packages/dev-experience/axios-client-vue" },
+    { "path": "packages/dev-experience/axios-node"},
+    { "path": "packages/dev-experience/axios-react"},
+    { "path": "packages/dev-experience/axios-vue"},
     { "path": "packages/dev-experience/web-forms-react"},
     { "path": "packages/iam/authO-react" },
     { "path": "packages/qa/react-qa" }
