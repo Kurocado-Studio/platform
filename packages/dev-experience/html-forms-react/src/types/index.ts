@@ -3,7 +3,7 @@ import type { LabelHTMLAttributes, ReactNode } from 'react';
 import type React from 'react';
 
 export interface AdditionalAriaTextFieldProperties {
-  htmlFor: string;
+  htmlFor?: string;
   required?: boolean;
 }
 
