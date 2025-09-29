@@ -1,1 +1,1 @@
-export { commitlint as default } from '@internal/config';
+export { commitLintConfig as default } from '@internal/config';
