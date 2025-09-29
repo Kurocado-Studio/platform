@@ -1,11 +1,7 @@
 {
-  "name": "@kurocado-studio/axios-client-domain",
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "@kurocado-studio/web-forms-react",
   "version": "0.0.0-semantically-released",
   "sideEffects": false,
-  "private": true,
   "keywords": [],
   "author": "@kurocado-studio",
   "homepage": "https://github.com/kurocado-studio/platform",
@@ -29,32 +25,21 @@
   },
   "files": ["dist"],
   "scripts": {
+    "prepublishOnly": "node ../../../scripts/strip-workspaces.js .",
     "build": "rm -rf dist && tsup --dts",
     "test": "vitest run --coverage",
     "clean": "rm -rf .turbo node_modules dist",
-    "prettier:fix": "prettier --write . --ignore-path ../../../.prettierignore",
-    "prettier:check": "prettier --check . --ignore-path ../../../.prettierignore",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --check . --write  --ignore-path ../../.prettierignore",
     "dev": "tsup --watch",
-    "lint": "eslint --max-warnings=0  --no-warn-ignored",
-    "lint:fix": "eslint --max-warnings=0  --fix --no-warn-ignored",
+    "lint": "eslint --max-warnings=0 . --no-warn-ignored",
+    "lint:fix": "eslint --max-warnings=0 . --fix --no-warn-ignored",
     "typecheck": "tsc --noEmit --pretty"
-  },
-  "dependencies": {
-    "axios": "^1.12.2",
-    "lodash-es": "^4.17.21",
-    "postcss": "^8.5.6",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.11",
-    "tailwindcss-animate": "^1.0.7",
-    "vue": "^3.5.17"
-  },
-  "peerDependencies": {
-    "@kurocado-studio/qa": "workspace:*"
   },
   "devDependencies": {
     "@internal/config": "workspace:*",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@kurocado-studio/qa": "workspace:*",
+    "@testing-library/jest-dom": "^6.8.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.2.0",
     "@types/react": "^19.1.1",
@@ -69,5 +54,22 @@
     "vite": "7.1.7",
     "vitest": "^3.2.4",
     "vitest-axe": "^0.1.0"
+  },
+  "dependencies": {
+    "@conform-to/dom": "^1.8.2",
+    "@conform-to/react": "^1.8.2",
+    "@conform-to/zod": "^1.8.2",
+    "@react-aria/utils": "^3.30.1",
+    "lodash-es": "^4.17.21",
+    "react-aria": "^3.42.0",
+    "tailwind-merge": "^3.3.0",
+    "zod": "^3.25.76"
+  },
+  "peerDependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -18,7 +18,9 @@
     "./tsconfig.web": "./dist/tsconfig.web.json",
     "./qa/web/setup": "./dist/setup.web.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "internal:build": "pnpm install && rm -rf dist && tsup --dts",
     "internal:dev": "rm -rf dist && tsup --watch --dts",
@@ -39,7 +41,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "vite": "5.2.8"
+    "vite": "7.1.7"
   },
   "publishConfig": {
     "access": "public"

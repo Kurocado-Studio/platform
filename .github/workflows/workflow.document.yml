@@ -38,6 +38,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
+          clean: true
 
       - name: Check for Writerside Changes
         id: check

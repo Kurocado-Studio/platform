@@ -23,7 +23,6 @@
   "devDependencies": {
     "@internal/config": "workspace:*",
     "@kurocado-studio/qa": "workspace:*",
-    "@kurocado-studio/styleguide": "2.6.0-develop.10",
     "commitlint": "^19.8.1",
     "eslint": "9.31",
     "husky": "^9.1.7",

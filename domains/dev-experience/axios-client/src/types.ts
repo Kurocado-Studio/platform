@@ -2,6 +2,8 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import type { ApiRequestError } from './models';
 
+export type * from 'axios';
+
 export interface ApiErrorResponse {
   statusCode: number;
   message: string;
