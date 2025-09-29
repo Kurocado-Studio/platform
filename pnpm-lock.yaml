@@ -603,7 +603,80 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
 
-  packages/dev-experience/html-forms-react:
+  packages/dev-experience/react-utils:
+    dependencies:
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
+      react:
+        specifier: ^19.1.0
+        version: 19.1.0
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      '@internal/config':
+        specifier: workspace:*
+        version: link:../../../internal/config
+      '@kurocado-studio/qa':
+        specifier: workspace:*
+        version: link:../../qa/react-qa
+      '@testing-library/jest-dom':
+        specifier: ^6.6.3
+        version: 6.8.0
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^24.2.0
+        version: 24.6.0
+      '@types/react':
+        specifier: ^19.1.1
+        version: 19.1.6
+      '@types/react-dom':
+        specifier: ^19.1.2
+        version: 19.1.9(@types/react@19.1.6)
+      '@vitest/coverage-v8':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
+      eslint:
+        specifier: ^9.31.0
+        version: 9.31.0(jiti@2.6.0)
+      prettier:
+        specifier: 3.6.2
+        version: 3.6.2
+      semantic-release:
+        specifier: ^24.2.7
+        version: 24.2.9(typescript@5.8.3)
+      semantic-release-monorepo:
+        specifier: ^8.0.2
+        version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
+      tailwindcss:
+        specifier: ^4.1.11
+        version: 4.1.13
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@4.1.13)
+      tsup:
+        specifier: ^8.0.2
+        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+      vite:
+        specifier: 7.1.7
+        version: 7.1.7(@types/node@24.6.0)(jiti@2.6.0)(yaml@2.8.1)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1)
+      vitest-axe:
+        specifier: ^0.1.0
+        version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
+
+  packages/dev-experience/web-forms-react:
     dependencies:
       '@conform-to/dom':
         specifier: ^1.8.2
@@ -672,79 +745,6 @@ importers:
       semantic-release-monorepo:
         specifier: ^8.0.2
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
-      tsup:
-        specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
-      typescript:
-        specifier: 5.8.3
-        version: 5.8.3
-      vite:
-        specifier: 7.1.7
-        version: 7.1.7(@types/node@24.6.0)(jiti@2.6.0)(yaml@2.8.1)
-      vitest:
-        specifier: ^3.2.4
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1)
-      vitest-axe:
-        specifier: ^0.1.0
-        version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
-
-  packages/dev-experience/react-utils:
-    dependencies:
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      postcss:
-        specifier: ^8.5.6
-        version: 8.5.6
-      react:
-        specifier: ^19.1.0
-        version: 19.1.0
-      react-dom:
-        specifier: ^19.1.0
-        version: 19.1.0(react@19.1.0)
-    devDependencies:
-      '@internal/config':
-        specifier: workspace:*
-        version: link:../../../internal/config
-      '@kurocado-studio/qa':
-        specifier: workspace:*
-        version: link:../../qa/react-qa
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.8.0
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
-      '@types/node':
-        specifier: ^24.2.0
-        version: 24.6.0
-      '@types/react':
-        specifier: ^19.1.1
-        version: 19.1.6
-      '@types/react-dom':
-        specifier: ^19.1.2
-        version: 19.1.9(@types/react@19.1.6)
-      '@vitest/coverage-v8':
-        specifier: ^3.2.4
-        version: 3.2.4(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
-      eslint:
-        specifier: ^9.31.0
-        version: 9.31.0(jiti@2.6.0)
-      prettier:
-        specifier: 3.6.2
-        version: 3.6.2
-      semantic-release:
-        specifier: ^24.2.7
-        version: 24.2.9(typescript@5.8.3)
-      semantic-release-monorepo:
-        specifier: ^8.0.2
-        version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
-      tailwindcss:
-        specifier: ^4.1.11
-        version: 4.1.13
-      tailwindcss-animate:
-        specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.1.13)
       tsup:
         specifier: ^8.0.2
         version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
