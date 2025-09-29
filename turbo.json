@@ -30,7 +30,6 @@
       "dependsOn": [
         "@kurocado-studio/qa#internal:build:qa",
         "^internal:build",
-        "@kurocado-studio/ui-kit-domain#internal:build:domain",
         "^build"
       ]
     },
