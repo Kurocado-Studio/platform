@@ -1,5 +1,5 @@
 {
-  "name": "@kurocado-studio/react-utils",
+  "name": "@kurocado-studio/react-web-utils",
   "publishConfig": {
     "access": "public"
   },
