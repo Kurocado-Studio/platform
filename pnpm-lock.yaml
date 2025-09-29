@@ -603,7 +603,7 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
 
-  packages/dev-experience/react-utils:
+  packages/dev-experience/react-web-utils:
     dependencies:
       lodash-es:
         specifier: ^4.17.21
