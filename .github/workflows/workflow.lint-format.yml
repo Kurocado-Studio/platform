@@ -19,6 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
+          clean: true
 
       - name: Install
         uses: kurocado-studio/platform/.github/actions/install@main
