@@ -2,7 +2,7 @@ import { useField } from '@conform-to/react';
 import { mergeProps } from '@react-aria/utils';
 import { get } from 'lodash-es';
 import { useRef } from 'react';
-import { useTextField as useAdobeTextField} from 'react-aria';
+import { useTextField as useAdobeTextField } from 'react-aria';
 
 import type {
   TextFieldApi,
