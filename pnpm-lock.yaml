@@ -360,7 +360,7 @@ importers:
         specifier: 7.1.7
         version: 7.1.7(@types/node@24.6.0)(jiti@2.6.0)(yaml@2.8.1)
 
-  packages/dev-experience/axios-client-node:
+  packages/dev-experience/axios-node:
     dependencies:
       '@kurocado-studio/axios-client-domain':
         specifier: workspace:*
@@ -442,7 +442,7 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
 
-  packages/dev-experience/axios-client-react:
+  packages/dev-experience/axios-react:
     dependencies:
       '@kurocado-studio/axios-client-domain':
         specifier: workspace:*
@@ -527,7 +527,7 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.6.0)(jiti@2.6.0)(jsdom@26.1.0)(yaml@2.8.1))
 
-  packages/dev-experience/axios-client-vue:
+  packages/dev-experience/axios-vue:
     dependencies:
       '@kurocado-studio/axios-client-domain':
         specifier: workspace:*
