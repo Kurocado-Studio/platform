@@ -22,7 +22,6 @@ export const useAriaTextField = <
   const inputReference = useRef(null);
 
   const { name, label } = config;
-
   const [meta] = useField(name, formMeta);
 
   const inputId = `input-${meta.name}`;
