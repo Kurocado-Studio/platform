@@ -4,7 +4,7 @@ import {
   type AxiosRequestFunction as MainAxiosRequestFunction,
   type UseAxiosParameters as MainUseAxiosParameters,
   modelAxiosDataResponse,
-} from '@kurocado-studio/axios-client-domain';
+} from '@kurocado-studio/axios-domain';
 import * as React from 'react';
 
 export type AxiosState<T extends Record<string, unknown>> =

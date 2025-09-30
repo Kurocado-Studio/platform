@@ -4,7 +4,7 @@ import {
   type AxiosRequestFunction,
   type UseAxiosParameters,
   modelAxiosDataResponse,
-} from '@kurocado-studio/axios-client-domain';
+} from '@kurocado-studio/axios-domain';
 import { set } from 'lodash-es';
 import { type Ref, ref } from 'vue';
 

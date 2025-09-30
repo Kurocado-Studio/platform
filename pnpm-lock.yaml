@@ -71,7 +71,7 @@ importers:
         version: link:../../../internal/config
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -101,7 +101,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -141,7 +141,7 @@ importers:
         version: link:../../../internal/config
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -174,7 +174,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.3.6
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -216,7 +216,7 @@ importers:
         version: 10.4.1
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@testing-library/react':
         specifier: ^16.2.0
         version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -319,7 +319,7 @@ importers:
         version: 24.2.9(typescript@5.8.3)
       tsup:
         specifier: ^8.3.6
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -334,7 +334,7 @@ importers:
         version: 2.6.0-develop.10(rfllbnpmbtcaqtegaglaep2xpm)
       '@testing-library/jest-dom':
         specifier: ^6.8.0
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -352,7 +352,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.5.0
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -362,7 +362,7 @@ importers:
 
   packages/dev-experience/axios-node:
     dependencies:
-      '@kurocado-studio/axios-client-domain':
+      '@kurocado-studio/axios-domain':
         specifier: workspace:*
         version: link:../../../domains/dev-experience/axios-client
       axios:
@@ -398,7 +398,7 @@ importers:
         version: link:../../qa/react-qa
       '@testing-library/jest-dom':
         specifier: ^6.8.0
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -428,7 +428,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -444,7 +444,7 @@ importers:
 
   packages/dev-experience/axios-react:
     dependencies:
-      '@kurocado-studio/axios-client-domain':
+      '@kurocado-studio/axios-domain':
         specifier: workspace:*
         version: link:../../../domains/dev-experience/axios-client
       axios:
@@ -480,10 +480,10 @@ importers:
         version: link:../../qa/react-qa
       '@microsoft/api-extractor':
         specifier: ^7.52.11
-        version: 7.52.13(@types/node@24.6.0)
+        version: 7.52.14(@types/node@24.6.0)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -513,7 +513,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -529,7 +529,7 @@ importers:
 
   packages/dev-experience/axios-vue:
     dependencies:
-      '@kurocado-studio/axios-client-domain':
+      '@kurocado-studio/axios-domain':
         specifier: workspace:*
         version: link:../../../domains/dev-experience/axios-client
       axios:
@@ -559,7 +559,7 @@ importers:
         version: link:../../qa/react-qa
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -589,7 +589,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -626,7 +626,7 @@ importers:
         version: link:../../qa/react-qa
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -662,7 +662,7 @@ importers:
         version: 1.0.7(tailwindcss@4.1.13)
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -717,7 +717,7 @@ importers:
         version: link:../../qa/react-qa
       '@testing-library/jest-dom':
         specifier: ^6.8.0
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -747,7 +747,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.0.2
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -787,7 +787,7 @@ importers:
         version: link:../../qa/react-qa
       '@testing-library/jest-dom':
         specifier: ^6.8.0
-        version: 6.8.0
+        version: 6.9.0
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -820,7 +820,7 @@ importers:
         version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
       tsup:
         specifier: ^8.3.6
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -859,7 +859,7 @@ importers:
         version: 10.4.1
       '@testing-library/jest-dom':
         specifier: ^6.6.3
-        version: 6.8.0
+        version: 6.9.0
       '@testing-library/react':
         specifier: ^16.2.0
         version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -965,7 +965,7 @@ importers:
         version: 24.2.9(typescript@5.8.3)
       tsup:
         specifier: ^8.3.6
-        version: 8.5.0(@microsoft/api-extractor@7.52.13(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.52.14(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1905,11 +1905,11 @@ packages:
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
 
-  '@microsoft/api-extractor-model@7.30.7':
-    resolution: {integrity: sha512-TBbmSI2/BHpfR9YhQA7nH0nqVmGgJ0xH0Ex4D99/qBDAUpnhA2oikGmdXanbw9AWWY/ExBYIpkmY8dBHdla3YQ==}
+  '@microsoft/api-extractor-model@7.30.8':
+    resolution: {integrity: sha512-qtfJXFiUFUZlC6KfCJFunXlDNj5Y7IHIjE67iSuUp6fIqopfymNExww7j4IS2EO9W4ROWqxR59YBJ5tq0J/15g==}
 
-  '@microsoft/api-extractor@7.52.13':
-    resolution: {integrity: sha512-K6/bBt8zZfn9yc06gNvA+/NlBGJC/iJlObpdufXHEJtqcD4Dln4ITCLZpwP3DNZ5NyBFeTkKdv596go3V72qlA==}
+  '@microsoft/api-extractor@7.52.14':
+    resolution: {integrity: sha512-jIo+DWg7t3g46ZymmVnsUzYP8jNSFxzfyzxvDWEkc9nfQ+7wBLZaAYMQruJxfzE6cjF0vzNV6GEN8WX8oXY+1w==}
     hasBin: true
 
   '@microsoft/tsdoc-config@0.16.2':
@@ -2776,8 +2776,16 @@ packages:
   '@rushstack/eslint-patch@1.12.0':
     resolution: {integrity: sha512-5EwMtOqvJMMa3HbmxLlF74e+3/HhwBTMcvt3nqVJgGCozO6hzIPOBlwm8mGVNR9SN2IJpxSnlxczyDjcn7qIyw==}
 
-  '@rushstack/node-core-library@5.14.0':
-    resolution: {integrity: sha512-eRong84/rwQUlATGFW3TMTYVyqL1vfW9Lf10PH+mVGfIb9HzU3h5AASNIw+axnBLjnD0n3rT5uQBwu9fvzATrg==}
+  '@rushstack/node-core-library@5.15.0':
+    resolution: {integrity: sha512-TQvvUMkmMprGmDt+3ySwzrpE+f3MOkMSV1cE0laVKwyutXKE8qbN90C7WGRvGDDFEV8IYjd+5hDZW0jufA6gOA==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
+  '@rushstack/problem-matcher@0.1.0':
+    resolution: {integrity: sha512-PWGg7j/8EJuGbSL7cZcUJmu1jjAMXq9orsm8Y1XSInqs7dgN5rlfz3gl8nKarLSZi5PpO2QmYnaZyu/GWt4mTw==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -2787,16 +2795,16 @@ packages:
   '@rushstack/rig-package@0.5.3':
     resolution: {integrity: sha512-olzSSjYrvCNxUFZowevC3uz8gvKr3WTpHQ7BkpjtRpA3wK+T0ybep/SRUMfr195gBzJm5gaXw0ZMgjIyHqJUow==}
 
-  '@rushstack/terminal@0.16.0':
-    resolution: {integrity: sha512-WEvNuKkoR1PXorr9SxO0dqFdSp1BA+xzDrIm/Bwlc5YHg2FFg6oS+uCTYjerOhFuqCW+A3vKBm6EmKWSHfgx/A==}
+  '@rushstack/terminal@0.17.0':
+    resolution: {integrity: sha512-I+9hC3mmx/lPzR8zcImrKdzg7+WOTt71uyBxrT+502fplFqYoR+lrhTV1/zWpJ/qIkCFq7rI5zn9aEyJYg/uuQ==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@5.0.3':
-    resolution: {integrity: sha512-bgPhQEqLVv/2hwKLYv/XvsTWNZ9B/+X1zJ7WgQE9rO5oiLzrOZvkIW4pk13yOQBhHyjcND5qMOa6p83t+Z66iQ==}
+  '@rushstack/ts-command-line@5.0.4':
+    resolution: {integrity: sha512-afPGMts9EcnfqFeLVrkLIyCu8qaA7boKvnK2nhR6w38zxXmujh92hxAsQMcnsbfKqpgqURKu9X8vlsz9+I5qhw==}
 
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
@@ -2938,8 +2946,8 @@ packages:
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
     engines: {node: '>=18'}
 
-  '@testing-library/jest-dom@6.8.0':
-    resolution: {integrity: sha512-WgXcWzVM6idy5JaftTVC8Vs83NKRmGJz4Hqs4oyOuO2J4r/y79vvKZsb+CaGyCSEbUPI6OsewfPd0G1A0/TUZQ==}
+  '@testing-library/jest-dom@6.9.0':
+    resolution: {integrity: sha512-QHdxYMJ0YPGKYofMc6zYvo7LOViVhdc6nPg/OtM2cf9MQrwEcTxFCs7d/GJ5eSyPkHzOiBkc/KfLdFJBHzldtQ==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
   '@testing-library/react@16.3.0':
@@ -3745,8 +3753,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001745:
-    resolution: {integrity: sha512-ywt6i8FzvdgrrrGbr1jZVObnVv6adj+0if2/omv9cmR2oiZs30zL4DIyaptKcbOrBdOIc74QTMoJvSE2QHh5UQ==}
+  caniuse-lite@1.0.30001746:
+    resolution: {integrity: sha512-eA7Ys/DGw+pnkWWSE/id29f2IcPHVoE8wxtvE5JdvD2V28VTDPy1yEeo11Guz0sJ4ZeGRcm3uaTcAqK1LXaphA==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -4833,8 +4841,8 @@ packages:
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
 
-  generator-function@2.0.0:
-    resolution: {integrity: sha512-xPypGGincdfyl/AiSGa7GjXLkvld9V7GjZlowup9SHIJnQnHLFiLODCd/DqKOp0PBagbHJ68r1KJI9Mut7m4sA==}
+  generator-function@2.0.1:
+    resolution: {integrity: sha512-SFdFmIJi+ybC0vjlHN0ZGVGHc3lgE0DxPAT0djjVg+kjOnSqclqmj0KQ7ykTOLP6YxoqOvuAODGdcHJn+43q3g==}
     engines: {node: '>= 0.4'}
 
   generic-names@4.0.0:
@@ -5232,8 +5240,8 @@ packages:
     resolution: {integrity: sha512-5XHYaSyiqADb4RnZ1Bdad6cPp8Toise4TzEjcOYDHZkTCbKgiUl7WTUCpNWHuxmDt91wnsZBc9xinNzopv3JMQ==}
     engines: {node: '>=18'}
 
-  is-generator-function@1.1.1:
-    resolution: {integrity: sha512-Gn8BWUdrTzf9XUJAvqIYP7QnSC3mKs8QjQdGdJ7HmBemzZo14wj/OVmmAwgxDX/7WhFEjboybL4VhXGIQYPlOA==}
+  is-generator-function@1.1.2:
+    resolution: {integrity: sha512-upqt1SkGkODW9tsGNG5mtXTXtECizwtS2kA161M+gJPc1xdb/Ax629af6YrTwcOeQHbewrPNlE5Dx7kzvXTizA==}
     engines: {node: '>= 0.4'}
 
   is-glob@4.0.3:
@@ -6041,8 +6049,8 @@ packages:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
     engines: {node: '>=18'}
 
-  npm@10.9.3:
-    resolution: {integrity: sha512-6Eh1u5Q+kIVXeA8e7l2c/HpnFFcwrkt37xDMujD5be1gloWa9p6j3Fsv3mByXXmqJHy+2cElRMML8opNT7xIJQ==}
+  npm@10.9.4:
+    resolution: {integrity: sha512-OnUG836FwboQIbqtefDNlyR0gTHzIfwRfE3DuiNewBvnMnWEpB0VEXwBlFVgqpNzIgYo/MHh3d2Hel/pszapAA==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
     bundledDependencies:
@@ -9003,31 +9011,31 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@microsoft/api-extractor-model@7.30.7(@types/node@22.14.1)':
+  '@microsoft/api-extractor-model@7.30.8(@types/node@22.14.1)':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@22.14.1)
+      '@rushstack/node-core-library': 5.15.0(@types/node@22.14.1)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor-model@7.30.7(@types/node@24.6.0)':
+  '@microsoft/api-extractor-model@7.30.8(@types/node@24.6.0)':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@24.6.0)
+      '@rushstack/node-core-library': 5.15.0(@types/node@24.6.0)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.52.13(@types/node@22.14.1)':
+  '@microsoft/api-extractor@7.52.14(@types/node@22.14.1)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.30.7(@types/node@22.14.1)
+      '@microsoft/api-extractor-model': 7.30.8(@types/node@22.14.1)
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@22.14.1)
+      '@rushstack/node-core-library': 5.15.0(@types/node@22.14.1)
       '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.16.0(@types/node@22.14.1)
-      '@rushstack/ts-command-line': 5.0.3(@types/node@22.14.1)
+      '@rushstack/terminal': 0.17.0(@types/node@22.14.1)
+      '@rushstack/ts-command-line': 5.0.4(@types/node@22.14.1)
       lodash: 4.17.21
       minimatch: 10.0.3
       resolve: 1.22.10
@@ -9037,15 +9045,15 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.52.13(@types/node@24.6.0)':
+  '@microsoft/api-extractor@7.52.14(@types/node@24.6.0)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.30.7(@types/node@24.6.0)
+      '@microsoft/api-extractor-model': 7.30.8(@types/node@24.6.0)
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@24.6.0)
+      '@rushstack/node-core-library': 5.15.0(@types/node@24.6.0)
       '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.16.0(@types/node@24.6.0)
-      '@rushstack/ts-command-line': 5.0.3(@types/node@24.6.0)
+      '@rushstack/terminal': 0.17.0(@types/node@24.6.0)
+      '@rushstack/ts-command-line': 5.0.4(@types/node@24.6.0)
       lodash: 4.17.21
       minimatch: 10.0.3
       resolve: 1.22.10
@@ -10407,7 +10415,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.12.0': {}
 
-  '@rushstack/node-core-library@5.14.0(@types/node@22.14.1)':
+  '@rushstack/node-core-library@5.15.0(@types/node@22.14.1)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -10420,7 +10428,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.14.1
 
-  '@rushstack/node-core-library@5.14.0(@types/node@24.6.0)':
+  '@rushstack/node-core-library@5.15.0(@types/node@24.6.0)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -10430,6 +10438,14 @@ snapshots:
       jju: 1.4.0
       resolve: 1.22.10
       semver: 7.5.4
+    optionalDependencies:
+      '@types/node': 24.6.0
+
+  '@rushstack/problem-matcher@0.1.0(@types/node@22.14.1)':
+    optionalDependencies:
+      '@types/node': 22.14.1
+
+  '@rushstack/problem-matcher@0.1.0(@types/node@24.6.0)':
     optionalDependencies:
       '@types/node': 24.6.0
 
@@ -10438,32 +10454,34 @@ snapshots:
       resolve: 1.22.10
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.16.0(@types/node@22.14.1)':
+  '@rushstack/terminal@0.17.0(@types/node@22.14.1)':
     dependencies:
-      '@rushstack/node-core-library': 5.14.0(@types/node@22.14.1)
+      '@rushstack/node-core-library': 5.15.0(@types/node@22.14.1)
+      '@rushstack/problem-matcher': 0.1.0(@types/node@22.14.1)
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 22.14.1
 
-  '@rushstack/terminal@0.16.0(@types/node@24.6.0)':
+  '@rushstack/terminal@0.17.0(@types/node@24.6.0)':
     dependencies:
-      '@rushstack/node-core-library': 5.14.0(@types/node@24.6.0)
+      '@rushstack/node-core-library': 5.15.0(@types/node@24.6.0)
+      '@rushstack/problem-matcher': 0.1.0(@types/node@24.6.0)
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 24.6.0
 
-  '@rushstack/ts-command-line@5.0.3(@types/node@22.14.1)':
+  '@rushstack/ts-command-line@5.0.4(@types/node@22.14.1)':
     dependencies:
-      '@rushstack/terminal': 0.16.0(@types/node@22.14.1)
+      '@rushstack/terminal': 0.17.0(@types/node@22.14.1)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rushstack/ts-command-line@5.0.3(@types/node@24.6.0)':
+  '@rushstack/ts-command-line@5.0.4(@types/node@24.6.0)':
     dependencies:
-      '@rushstack/terminal': 0.16.0(@types/node@24.6.0)
+      '@rushstack/terminal': 0.17.0(@types/node@24.6.0)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -10543,7 +10561,7 @@ snapshots:
       lodash-es: 4.17.21
       nerf-dart: 1.0.0
       normalize-url: 8.1.0
-      npm: 10.9.3
+      npm: 10.9.4
       rc: 1.2.8
       read-pkg: 9.0.1
       registry-auth-token: 5.1.0
@@ -10641,7 +10659,7 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.8.0':
+  '@testing-library/jest-dom@6.9.0':
     dependencies:
       '@adobe/css-tools': 4.4.4
       aria-query: 5.3.2
@@ -11585,7 +11603,7 @@ snapshots:
   browserslist@4.26.2:
     dependencies:
       baseline-browser-mapping: 2.8.9
-      caniuse-lite: 1.0.30001745
+      caniuse-lite: 1.0.30001746
       electron-to-chromium: 1.5.227
       node-releases: 2.0.21
       update-browserslist-db: 1.1.3(browserslist@4.26.2)
@@ -11656,7 +11674,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001745: {}
+  caniuse-lite@1.0.30001746: {}
 
   ccount@2.0.1: {}
 
@@ -12959,7 +12977,7 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
-  generator-function@2.0.0: {}
+  generator-function@2.0.1: {}
 
   generic-names@4.0.0:
     dependencies:
@@ -13370,10 +13388,10 @@ snapshots:
     dependencies:
       get-east-asian-width: 1.4.0
 
-  is-generator-function@1.1.1:
+  is-generator-function@1.1.2:
     dependencies:
       call-bound: 1.0.4
-      generator-function: 2.0.0
+      generator-function: 2.0.1
       get-proto: 1.0.1
       has-tostringtag: 1.0.2
       safe-regex-test: 1.1.0
@@ -14336,7 +14354,7 @@ snapshots:
       path-key: 4.0.0
       unicorn-magic: 0.3.0
 
-  npm@10.9.3: {}
+  npm@10.9.4: {}
 
   nth-check@2.1.1:
     dependencies:
@@ -15745,7 +15763,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.0(@microsoft/api-extractor@7.52.13(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.5.0(@microsoft/api-extractor@7.52.14(@types/node@22.14.1))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.10)
       cac: 6.7.14
@@ -15765,7 +15783,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.52.13(@types/node@22.14.1)
+      '@microsoft/api-extractor': 7.52.14(@types/node@22.14.1)
       '@swc/core': 1.13.5(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3
@@ -15775,7 +15793,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsup@8.5.0(@microsoft/api-extractor@7.52.13(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.5.0(@microsoft/api-extractor@7.52.14(@types/node@24.6.0))(@swc/core@1.13.5(@swc/helpers@0.5.17))(jiti@2.6.0)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.10)
       cac: 6.7.14
@@ -15795,7 +15813,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.52.13(@types/node@24.6.0)
+      '@microsoft/api-extractor': 7.52.14(@types/node@24.6.0)
       '@swc/core': 1.13.5(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3
@@ -16059,7 +16077,7 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       is-arguments: 1.2.0
-      is-generator-function: 1.1.1
+      is-generator-function: 1.1.2
       is-typed-array: 1.1.15
       which-typed-array: 1.1.19
 
@@ -16209,7 +16227,7 @@ snapshots:
 
   vite-plugin-dts@4.5.4(@types/node@22.14.1)(rollup@4.52.3)(typescript@5.8.3)(vite@7.1.7(@types/node@22.14.1)(jiti@2.6.0)(yaml@2.8.1)):
     dependencies:
-      '@microsoft/api-extractor': 7.52.13(@types/node@22.14.1)
+      '@microsoft/api-extractor': 7.52.14(@types/node@22.14.1)
       '@rollup/pluginutils': 5.3.0(rollup@4.52.3)
       '@volar/typescript': 2.4.23
       '@vue/language-core': 2.2.0(typescript@5.8.3)
@@ -16228,7 +16246,7 @@ snapshots:
 
   vite-plugin-dts@4.5.4(@types/node@24.6.0)(rollup@4.52.3)(typescript@5.8.3)(vite@7.1.7(@types/node@24.6.0)(jiti@2.6.0)(yaml@2.8.1)):
     dependencies:
-      '@microsoft/api-extractor': 7.52.13(@types/node@24.6.0)
+      '@microsoft/api-extractor': 7.52.14(@types/node@24.6.0)
       '@rollup/pluginutils': 5.3.0(rollup@4.52.3)
       '@volar/typescript': 2.4.23
       '@vue/language-core': 2.2.0(typescript@5.8.3)
@@ -16510,7 +16528,7 @@ snapshots:
       is-async-function: 2.1.1
       is-date-object: 1.1.0
       is-finalizationregistry: 1.1.1
-      is-generator-function: 1.1.1
+      is-generator-function: 1.1.2
       is-regex: 1.2.1
       is-weakref: 1.1.1
       isarray: 2.0.5

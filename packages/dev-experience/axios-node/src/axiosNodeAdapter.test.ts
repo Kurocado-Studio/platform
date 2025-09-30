@@ -1,8 +1,8 @@
 import type {
   UseAxiosParameters,
   createAxiosInstance,
-} from '@kurocado-studio/axios-client-domain';
-import { modelAxiosDataResponse } from '@kurocado-studio/axios-client-domain';
+} from '@kurocado-studio/axios-domain';
+import { modelAxiosDataResponse } from '@kurocado-studio/axios-domain';
 import type { AxiosInstance } from 'axios';
 import { type Mock } from 'vitest';
 
@@ -11,9 +11,9 @@ import { axiosNodeAdapter } from './axiosNodeAdapter';
 export const mockAxiosInstance = vi.fn() as unknown as Mock<AxiosInstance> &
   ReturnType<typeof createAxiosInstance>;
 
-vi.mock('@kurocado-studio/axios-client-domain', async (importOriginal) => {
+vi.mock('@kurocado-studio/axios-domain', async (importOriginal) => {
   const actual: Record<string, unknown> = await importOriginal();
-  const domain = vi.importActual('@kurocado-studio/axios-client-domain');
+  const domain = vi.importActual('@kurocado-studio/axios-domain');
 
   return {
     ...domain,

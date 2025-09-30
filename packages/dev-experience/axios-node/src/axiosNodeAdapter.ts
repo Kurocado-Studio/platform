@@ -1,11 +1,11 @@
 import type {
   AxiosNodeFunction,
   UseAxiosParameters,
-} from '@kurocado-studio/axios-client-domain';
+} from '@kurocado-studio/axios-domain';
 import {
   ApiRequestError,
   modelAxiosDataResponse,
-} from '@kurocado-studio/axios-client-domain';
+} from '@kurocado-studio/axios-domain';
 
 export function axiosNodeAdapter<
   T extends Record<string, unknown>,
