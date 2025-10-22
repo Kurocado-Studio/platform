@@ -44,9 +44,9 @@ describe('useAxios (Vue)', () => {
       axiosInstance: mockAxiosInstance,
     };
 
-    const { state, request } = useAxios(payload);
+    const { state, requestHandler } = useAxios(payload);
 
-    await request(config);
+    await requestHandler(config);
 
     expect(state.data.value).toEqual(result);
     expect(state.isLoading.value).toBe(false);
@@ -63,9 +63,9 @@ describe('useAxios (Vue)', () => {
       axiosInstance: mockAxiosInstance,
     };
 
-    const { state, request } = useAxios(payload);
+    const { state, requestHandler } = useAxios(payload);
 
-    await request(config);
+    await requestHandler(config);
 
     expect(state.data.value).toBeUndefined();
     expect(state.isLoading.value).toBe(false);
@@ -82,8 +82,8 @@ describe('useAxios (Vue)', () => {
       axiosInstance: mockAxiosInstance,
     };
 
-    const { state, request } = useAxios(payload);
-    await request(config);
+    const { state, requestHandler } = useAxios(payload);
+    await requestHandler(config);
 
     expect(state.data.value).toEqual(result);
 

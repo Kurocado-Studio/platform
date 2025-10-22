@@ -22,7 +22,7 @@ export function useAxios<
   payload: UseAxiosParameters<T, K>,
 ): {
   state: StateReferences<K extends undefined ? T : K>;
-  request: AxiosRequestFunction<T, K>;
+  requestHandler: AxiosRequestFunction<T, K>;
 } {
   const data: Ref<(K extends undefined ? T : K) | undefined> = ref(undefined);
   const error: Ref<ApiRequestError | undefined> = ref(undefined);
@@ -34,7 +34,7 @@ export function useAxios<
     error.value = undefined;
   };
 
-  const request: AxiosRequestFunction<T, K> = async (config) => {
+  const requestHandler: AxiosRequestFunction<T, K> = async (config) => {
     try {
       isLoading.value = true;
       error.value = undefined;
@@ -49,6 +49,6 @@ export function useAxios<
 
   return {
     state: { data, error, isLoading, resetState },
-    request,
+    requestHandler,
   };
 }
