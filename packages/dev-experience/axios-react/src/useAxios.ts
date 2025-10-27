@@ -3,6 +3,8 @@ import {
   type AxiosDataState as MainAxiosDataState,
   type AxiosRequestFunction as MainAxiosRequestFunction,
   type UseAxiosParameters as MainUseAxiosParameters,
+  PROGRESS_STEP_MAPS,
+  attachProgressToInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
 import * as React from 'react';
@@ -45,12 +47,14 @@ export const useAxios: UseAxios = <
   >();
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [progress, setProgress] = React.useState<number>(0);
   const [error, setError] = React.useState<undefined | ApiRequestError>();
 
   const resetState: () => void = React.useCallback(() => {
     setIsLoading(false);
     setData(undefined);
     setError(undefined);
+    setProgress(0);
   }, []);
 
   const axiosRequest: AxiosHandler<T, K> = React.useCallback(
@@ -61,7 +65,19 @@ export const useAxios: UseAxios = <
         setIsLoading(true);
         setError(undefined);
 
-        const modeledData = await modelAxiosDataResponse<T, K>(payload, config);
+        const axiosWithProgressInstance = attachProgressToInstance(
+          payload.axiosInstance,
+          {
+            steps: PROGRESS_STEP_MAPS.mixed,
+            minimumDelay: 500,
+            onDownloadProgress: setProgress,
+          },
+        );
+
+        const modeledData = await modelAxiosDataResponse<T, K>(
+          { ...payload, axiosInstance: axiosWithProgressInstance },
+          config,
+        );
 
         setData(modeledData);
 
@@ -74,15 +90,13 @@ export const useAxios: UseAxios = <
     },
     [payload],
   );
-
-  const memoizedState = React.useMemo(() => {
-    return {
-      data,
-      error,
-      isLoading,
-      resetState,
-    };
-  }, [data, error, isLoading, resetState]);
+  const memoizedState = {
+    data,
+    error,
+    isLoading,
+    progress,
+    resetState,
+  };
 
   React.useEffect(() => {
     return () => resetState();

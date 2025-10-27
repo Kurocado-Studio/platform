@@ -2,6 +2,15 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import type { ApiRequestError } from './models';
 
+export type ProgressCallback = (progress: number) => void;
+
+export interface ProgressOptions {
+  minimumDelay?: number;
+  steps?: number[];
+  onDownloadProgress?: ProgressCallback;
+  onUploadProgress?: ProgressCallback;
+}
+
 export type * from 'axios';
 
 export interface ApiErrorResponse {
@@ -20,6 +29,7 @@ export interface AxiosDataState<T extends Record<string, unknown>> {
   data: T | undefined;
   error: ApiRequestError | undefined;
   isLoading: boolean;
+  progress: number;
   resetState: () => void;
 }
 
