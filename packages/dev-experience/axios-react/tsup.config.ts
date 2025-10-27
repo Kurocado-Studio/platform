@@ -12,6 +12,6 @@ export default defineConfig((options) => ({
   minify: true,
   target: 'esnext',
   noExternal: ['@kurocado-studio/axios-domain'],
-  external: ['react', 'vue'],
+  external: ['react', 'react-dom'],
   ...options,
 }));
