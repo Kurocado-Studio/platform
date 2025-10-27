@@ -11,7 +11,6 @@ export interface ProgressOptions {
   onUploadProgress?: ProgressCallback;
 }
 
-
 export type * from 'axios';
 
 export interface ApiErrorResponse {

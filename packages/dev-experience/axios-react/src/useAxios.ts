@@ -1,103 +1,108 @@
 import {
-    ApiRequestError,
-    type AxiosDataState as MainAxiosDataState,
-    type AxiosRequestFunction as MainAxiosRequestFunction,
-    type UseAxiosParameters as MainUseAxiosParameters,
-    modelAxiosDataResponse,
-    attachProgressToInstance,
-    PROGRESS_STEP_MAPS,
+  ApiRequestError,
+  type AxiosDataState as MainAxiosDataState,
+  type AxiosRequestFunction as MainAxiosRequestFunction,
+  type UseAxiosParameters as MainUseAxiosParameters,
+  PROGRESS_STEP_MAPS,
+  attachProgressToInstance,
+  modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
 import * as React from 'react';
 
 export type AxiosState<T extends Record<string, unknown>> =
-    MainAxiosDataState<T>;
+  MainAxiosDataState<T>;
 
 export type UseAxiosParameters<
-    T extends Record<string, unknown>,
-    K extends Record<string, unknown> | undefined = undefined,
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
 > = MainUseAxiosParameters<T, K>;
 
 export type AxiosRequestFunction<
-    T extends Record<string, unknown>,
-    K extends Record<string, unknown> | undefined = undefined,
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
 > = MainAxiosRequestFunction<T, K>;
 
 export type AxiosHandler<
-    T extends Record<string, unknown>,
-    K extends Record<string, unknown> | undefined = undefined,
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
 > = (
-    ...axiosRequestConfig: Parameters<AxiosRequestFunction<T, K>>
+  ...axiosRequestConfig: Parameters<AxiosRequestFunction<T, K>>
 ) => Promise<K extends undefined ? T : K>;
 
 export type UseAxios = <
-    T extends Record<string, unknown>,
-    K extends Record<string, unknown> | undefined = undefined,
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
 >(
-    options: UseAxiosParameters<T, K>,
+  options: UseAxiosParameters<T, K>,
 ) => [AxiosState<K extends undefined ? T : K>, AxiosHandler<T, K>];
 
 export const useAxios: UseAxios = <
-    T extends Record<string, unknown>,
-    K extends Record<string, unknown> | undefined = undefined,
+  T extends Record<string, unknown>,
+  K extends Record<string, unknown> | undefined = undefined,
 >(
-    payload: UseAxiosParameters<T, K>,
+  payload: UseAxiosParameters<T, K>,
 ) => {
-    const [data, setData] = React.useState<
-        (K extends undefined ? T : K) | undefined
-    >();
+  const [data, setData] = React.useState<
+    (K extends undefined ? T : K) | undefined
+  >();
 
-    const [isLoading, setIsLoading] = React.useState<boolean>(false);
-    const [progress, setProgress] = React.useState<number>(0);
-    const [error, setError] = React.useState<undefined | ApiRequestError>();
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [progress, setProgress] = React.useState<number>(0);
+  const [error, setError] = React.useState<undefined | ApiRequestError>();
 
-    const resetState: () => void = React.useCallback(() => {
-        setIsLoading(false);
-        setData(undefined);
+  const resetState: () => void = React.useCallback(() => {
+    setIsLoading(false);
+    setData(undefined);
+    setError(undefined);
+    setProgress(0);
+  }, []);
+
+  const axiosRequest: AxiosHandler<T, K> = React.useCallback(
+    async (...parameters) => {
+      const [config] = parameters;
+
+      try {
+        setIsLoading(true);
         setError(undefined);
-        setProgress(0)
-    }, []);
 
-    const axiosRequest: AxiosHandler<T, K> = React.useCallback(
-        async (...parameters) => {
-            const [config] = parameters;
+        const axiosWithProgressInstance = attachProgressToInstance(
+          payload.axiosInstance,
+          {
+            steps: PROGRESS_STEP_MAPS.mixed,
+            minimumDelay: 500,
+            onDownloadProgress: setProgress,
+          },
+        );
 
-            try {
-                setIsLoading(true);
-                setError(undefined);
+        const modeledData = await modelAxiosDataResponse<T, K>(
+          { ...payload, axiosInstance: axiosWithProgressInstance },
+          config,
+        );
 
-                const axiosWithProgressInstance = attachProgressToInstance(payload.axiosInstance, {
-                    steps: PROGRESS_STEP_MAPS.mixed,
-                    minimumDelay: 500,
-                    onDownloadProgress: setProgress,
-                })
+        setData(modeledData);
 
-                const modeledData = await modelAxiosDataResponse<T, K>({...payload,
-                axiosInstance: axiosWithProgressInstance}, config);
+        return modeledData;
+      } catch (error: unknown) {
+        setError(ApiRequestError.create(error));
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [payload],
+  );
+  const memoizedState = {
+    data,
+    error,
+    isLoading,
+    progress,
+    resetState,
+  };
 
-                setData(modeledData);
+  React.useEffect(() => {
+    return () => resetState();
+  }, [resetState]);
 
-                return modeledData;
-            } catch (error: unknown) {
-                setError(ApiRequestError.create(error));
-            } finally {
-                setIsLoading(false);
-            }
-        },
-        [payload],
-    );
-    const memoizedState = {
-        data,
-        error,
-        isLoading,
-        progress,
-        resetState,
-    }
+  console.log({ progress });
 
-    React.useEffect(() => {
-        return () => resetState();
-    }, [resetState]);
-
-console.log({progress})
-
-    return [memoizedState, axiosRequest];
+  return [memoizedState, axiosRequest];
 };
