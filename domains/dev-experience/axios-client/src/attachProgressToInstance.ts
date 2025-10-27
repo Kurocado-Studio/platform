@@ -1,94 +1,95 @@
-import { AxiosInstance, AxiosProgressEvent } from 'axios';
-import { ProgressCallback, ProgressOptions } from './types';
+import type { AxiosInstance, AxiosProgressEvent } from 'axios';
+
 import { DEFAULT_PROGRESS_OPTIONS } from './constants';
+import { ProgressCallback, ProgressOptions } from './types';
 
 export const attachProgressToInstance = (
-    instance: AxiosInstance,
-    progressOptions: ProgressOptions = {},
+  instance: AxiosInstance,
+  progressOptions: ProgressOptions = {},
 ) => {
-    const {
-        steps = DEFAULT_PROGRESS_OPTIONS.steps,
-        minimumDelay = DEFAULT_PROGRESS_OPTIONS.minimumDelay,
-        onDownloadProgress,
-        onUploadProgress,
-    } = progressOptions;
+  const {
+    steps = DEFAULT_PROGRESS_OPTIONS.steps,
+    minimumDelay = DEFAULT_PROGRESS_OPTIONS.minimumDelay,
+    onDownloadProgress,
+    onUploadProgress,
+  } = progressOptions;
 
-    let simulatedTimer: NodeJS.Timeout | null = null;
-    let simulationRunning = false;
+  let simulatedTimer: NodeJS.Timeout | undefined;
+  let simulationRunning = false;
 
-    const clearSimulation = () => {
-        if (simulatedTimer) clearTimeout(simulatedTimer);
-        simulatedTimer = null;
-        simulationRunning = false;
+  const clearSimulation = () => {
+    if (simulatedTimer) clearTimeout(simulatedTimer);
+    simulatedTimer = undefined;
+    simulationRunning = false;
+  };
+
+  const simulateProgressSteps = (callback?: ProgressCallback) => {
+    if (!callback || simulationRunning) return;
+    clearSimulation();
+
+    simulationRunning = true;
+    let index = 0;
+    const interval = minimumDelay / steps.length;
+
+    const nextStep = () => {
+      if (index < steps.length) {
+        callback(steps[index]);
+        index++;
+        simulatedTimer = setTimeout(nextStep, interval);
+      }
     };
 
-    const simulateProgressSteps = (callback?: ProgressCallback) => {
-        if (!callback || simulationRunning) return;
-        clearSimulation();
+    nextStep();
+  };
 
-        simulationRunning = true;
-        let index = 0;
-        const interval = minimumDelay / steps.length;
+  const createProgressHandler =
+    (callback?: ProgressCallback, maxProgress: number = 80) =>
+    (event: AxiosProgressEvent) => {
+      if (!callback) return;
+      let progress = 0;
 
-        const nextStep = () => {
-            if (index < steps.length) {
-                callback(steps[index]);
-                index++;
-                simulatedTimer = setTimeout(nextStep, interval);
-            }
-        };
+      if (event.lengthComputable) {
+        progress = Math.min(
+          maxProgress,
+          Math.round(
+            (event.loaded / (event.total ?? event.loaded)) * maxProgress,
+          ),
+        );
+      }
 
-        nextStep();
+      callback(progress);
+
+      if (progress >= maxProgress) clearSimulation();
     };
 
-    const createProgressHandler =
-        (callback?: ProgressCallback, maxProgress: number = 80) =>
-            (event: AxiosProgressEvent) => {
-                if (!callback) return;
-                let progress = 0;
+  instance.interceptors.request.use((request) => {
+    // Attach progress handlers
+    request.onDownloadProgress = createProgressHandler(onDownloadProgress);
+    request.onUploadProgress = createProgressHandler(onUploadProgress, 100);
 
-                if (event.lengthComputable) {
-                    progress = Math.min(
-                        maxProgress,
-                        Math.round(
-                            (event.loaded / (event.total ?? event.loaded)) * maxProgress,
-                        ),
-                    );
-                }
+    // Always start simulation at request time
+    if (onDownloadProgress) simulateProgressSteps(onDownloadProgress);
 
-                callback(progress);
+    return request;
+  });
 
-                if (progress >= maxProgress) clearSimulation();
-            };
+  instance.interceptors.response.use(
+    async (response) => {
+      if (onDownloadProgress && !simulationRunning) {
+        simulateProgressSteps(onDownloadProgress);
+      }
 
-    instance.interceptors.request.use((request) => {
-        // Attach progress handlers
-        request.onDownloadProgress = createProgressHandler(onDownloadProgress);
-        request.onUploadProgress = createProgressHandler(onUploadProgress, 100);
+      await new Promise((resolve) => setTimeout(resolve, minimumDelay));
 
-        // Always start simulation at request time
-        if (onDownloadProgress) simulateProgressSteps(onDownloadProgress);
+      onDownloadProgress?.(100);
+      clearSimulation();
+      return response;
+    },
+    (error) => {
+      clearSimulation();
+      return Promise.reject(error);
+    },
+  );
 
-        return request;
-    });
-
-    instance.interceptors.response.use(
-        async (response) => {
-            if (onDownloadProgress && !simulationRunning) {
-                simulateProgressSteps(onDownloadProgress);
-            }
-
-            await new Promise((resolve) => setTimeout(resolve, minimumDelay));
-
-            onDownloadProgress?.(100);
-            clearSimulation();
-            return response;
-        },
-        (err) => {
-            clearSimulation();
-            return Promise.reject(err);
-        },
-    );
-
-    return instance;
+  return instance;
 };
