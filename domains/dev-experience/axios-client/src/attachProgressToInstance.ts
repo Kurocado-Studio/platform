@@ -1,9 +1,15 @@
-import type { AxiosInstance, AxiosProgressEvent } from 'axios';
+import type {
+  AxiosInstance,
+  AxiosProgressEvent,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
+import { get } from 'lodash-es';
 
 import { DEFAULT_PROGRESS_OPTIONS } from './constants';
 import { ProgressCallback, ProgressOptions } from './types';
 
-export const attachProgressToInstance = (
+export const attachProgressToInstance = <T extends object = object>(
   instance: AxiosInstance,
   progressOptions: ProgressOptions = {},
 ) => {
@@ -62,19 +68,20 @@ export const attachProgressToInstance = (
       if (progress >= maxProgress) clearSimulation();
     };
 
-  instance.interceptors.request.use((request) => {
-    // Attach progress handlers
+  const requestUse = get(instance, 'interceptors.request.use', () => {});
+  requestUse((request: InternalAxiosRequestConfig<T>) => {
     request.onDownloadProgress = createProgressHandler(onDownloadProgress);
     request.onUploadProgress = createProgressHandler(onUploadProgress, 100);
 
-    // Always start simulation at request time
     if (onDownloadProgress) simulateProgressSteps(onDownloadProgress);
 
     return request;
   });
 
-  instance.interceptors.response.use(
-    async (response) => {
+  // ✅ safely get the response.use method
+  const responseUse = get(instance, 'interceptors.response.use', () => {});
+  responseUse(
+    async (response: AxiosResponse<T>) => {
       if (onDownloadProgress && !simulationRunning) {
         simulateProgressSteps(onDownloadProgress);
       }
@@ -85,7 +92,7 @@ export const attachProgressToInstance = (
       clearSimulation();
       return response;
     },
-    (error) => {
+    (error: unknown) => {
       clearSimulation();
       return Promise.reject(error);
     },

@@ -102,7 +102,5 @@ export const useAxios: UseAxios = <
     return () => resetState();
   }, [resetState]);
 
-  console.log({ progress });
-
   return [memoizedState, axiosRequest];
 };
