@@ -444,6 +444,9 @@ importers:
 
   packages/dev-experience/axios-react:
     dependencies:
+      '@kurocado-studio/axios-domain':
+        specifier: workspace:*
+        version: link:../../../domains/dev-experience/axios-client
       axios:
         specifier: ^1.12.2
         version: 1.13.0
