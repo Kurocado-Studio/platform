@@ -4,7 +4,6 @@ import type {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios';
-import { get } from 'lodash-es';
 
 import { DEFAULT_PROGRESS_OPTIONS } from './constants';
 import { ProgressCallback, ProgressOptions } from './types';
@@ -68,19 +67,17 @@ export const attachProgressToInstance = <T extends object = object>(
       if (progress >= maxProgress) clearSimulation();
     };
 
-  const requestUse = get(instance, 'interceptors.request.use', () => {});
-  requestUse((request: InternalAxiosRequestConfig<T>) => {
-    request.onDownloadProgress = createProgressHandler(onDownloadProgress);
-    request.onUploadProgress = createProgressHandler(onUploadProgress, 100);
+  instance?.interceptors?.request?.use(
+    (request: InternalAxiosRequestConfig<T>) => {
+      request.onDownloadProgress = createProgressHandler(onDownloadProgress);
+      request.onUploadProgress = createProgressHandler(onUploadProgress, 100);
 
-    if (onDownloadProgress) simulateProgressSteps(onDownloadProgress);
+      if (onDownloadProgress) simulateProgressSteps(onDownloadProgress);
+      return request;
+    },
+  );
 
-    return request;
-  });
-
-  // ✅ safely get the response.use method
-  const responseUse = get(instance, 'interceptors.response.use', () => {});
-  responseUse(
+  instance?.interceptors?.response?.use(
     async (response: AxiosResponse<T>) => {
       if (onDownloadProgress && !simulationRunning) {
         simulateProgressSteps(onDownloadProgress);

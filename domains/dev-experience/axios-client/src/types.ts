@@ -43,6 +43,7 @@ export type AxiosNodeFunction<T, K = undefined> = (
 
 export type UseAxiosParameters<T, K = undefined> = {
   axiosInstance: AxiosInstance;
+  progressOptions?: Pick<ProgressOptions, 'minimumDelay' | 'steps'>;
   options?: {
     deserializer?: (response: AxiosResponse<T>) => K extends undefined ? T : K;
   };

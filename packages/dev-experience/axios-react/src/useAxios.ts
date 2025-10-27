@@ -7,6 +7,7 @@ import {
   attachProgressToInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
+import { get } from 'lodash-es';
 import * as React from 'react';
 
 export type AxiosState<T extends Record<string, unknown>> =
@@ -68,8 +69,17 @@ export const useAxios: UseAxios = <
         const axiosWithProgressInstance = attachProgressToInstance(
           payload.axiosInstance,
           {
-            steps: PROGRESS_STEP_MAPS.mixed,
-            minimumDelay: 500,
+            steps: get(
+              payload,
+              ['progressOptions', 'steps'],
+              PROGRESS_STEP_MAPS.mixed,
+            ),
+            minimumDelay: get(
+              payload,
+              ['progressOptions', 'minimumDelay'],
+              500,
+            ),
+            onUploadProgress: setProgress,
             onDownloadProgress: setProgress,
           },
         );

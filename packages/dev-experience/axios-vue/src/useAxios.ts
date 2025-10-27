@@ -7,7 +7,7 @@ import {
   attachProgressToInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
-import { set } from 'lodash-es';
+import { get, set } from 'lodash-es';
 import { type Ref, ref } from 'vue';
 
 type StateReferences<T extends Record<string, unknown>> = {
@@ -46,9 +46,16 @@ export function useAxios<
       const axiosWithProgressInstance = attachProgressToInstance(
         payload.axiosInstance,
         {
-          steps: PROGRESS_STEP_MAPS.mixed,
-          minimumDelay: 500,
+          steps: get(
+            payload,
+            ['progressOptions', 'steps'],
+            PROGRESS_STEP_MAPS.mixed,
+          ),
+          minimumDelay: get(payload, ['progressOptions', 'minimumDelay'], 500),
           onDownloadProgress: (currentProgress) => {
+            progress.value = currentProgress;
+          },
+          onUploadProgress: (currentProgress) => {
             progress.value = currentProgress;
           },
         },
