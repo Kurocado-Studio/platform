@@ -23,7 +23,7 @@ project.
 export { commitLintConfig as default } from '@kurocado-studio/styleguide';
 ```
 
-**[See commitlint configuration](https://github.com/Kurocado-Studio/styleguide/blob/main/src/commitlint/index.js)**
+**[See commitlint configuration](https://github.com/Kurocado-Studio/styleguide/blob/main/src/commitlint/index.mjs)**
 
 ## Add **scripts**
 
