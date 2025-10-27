@@ -6,9 +6,10 @@ import { type ProgressOptions } from './types';
 
 const createMockInstance = (): AxiosInstance => {
   const instance = axios.create();
-  vi.spyOn(instance.interceptors.request, 'use');
-  vi.spyOn(instance.interceptors.response, 'use');
-  vi.spyOn(instance, 'request');
+  instance.interceptors.request.use = vi.fn();
+  instance.interceptors.response.use = vi.fn();
+  instance.request = vi.fn();
+
   return instance;
 };
 
