@@ -17,6 +17,7 @@ vi.mock('@kurocado-studio/axios-domain', async () => {
   return {
     ...actual,
     modelAxiosDataResponse: vi.fn(),
+    attachProgressToInstance: vi.fn((instance) => instance), // return untouched instance
     ApiRequestError: {
       create: vi.fn(
         (error) => new Error(`Wrapped: ${(error as Error).message}`),

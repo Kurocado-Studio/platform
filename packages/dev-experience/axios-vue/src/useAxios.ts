@@ -2,7 +2,9 @@
 import {
   ApiRequestError,
   type AxiosRequestFunction,
+  PROGRESS_STEP_MAPS,
   type UseAxiosParameters,
+  attachProgressToInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
 import { set } from 'lodash-es';
@@ -27,11 +29,13 @@ export function useAxios<
   const data: Ref<(K extends undefined ? T : K) | undefined> = ref(undefined);
   const error: Ref<ApiRequestError | undefined> = ref(undefined);
   const isLoading: Ref<boolean> = ref(false);
+  const progress: Ref<number> = ref(0);
 
   const resetState = (): void => {
     isLoading.value = false;
     data.value = undefined;
     error.value = undefined;
+    progress.value = 0;
   };
 
   const requestHandler: AxiosRequestFunction<T, K> = async (config) => {
@@ -39,7 +43,21 @@ export function useAxios<
       isLoading.value = true;
       error.value = undefined;
 
-      data.value = await modelAxiosDataResponse<T, K>(payload, config);
+      const axiosWithProgressInstance = attachProgressToInstance(
+        payload.axiosInstance,
+        {
+          steps: PROGRESS_STEP_MAPS.mixed,
+          minimumDelay: 500,
+          onDownloadProgress: (currentProgress) => {
+            progress.value = currentProgress;
+          },
+        },
+      );
+
+      data.value = await modelAxiosDataResponse<T, K>(
+        { ...payload, axiosInstance: axiosWithProgressInstance },
+        config,
+      );
     } catch (requestError: unknown) {
       set(error, ['value'], ApiRequestError.create(requestError));
     } finally {
