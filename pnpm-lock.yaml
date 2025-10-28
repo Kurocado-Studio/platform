@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      semantic-release-monorepo:
+        specifier: ^8.0.2
+        version: 8.0.2(semantic-release@24.2.9(typescript@5.8.3))
     devDependencies:
       '@internal/config':
         specifier: workspace:*
@@ -16,7 +20,7 @@ importers:
         version: link:packages/qa/react-qa
       commitlint:
         specifier: ^19.8.1
-        version: 19.8.1
+        version: 19.8.1(@types/node@24.9.1)(typescript@5.8.3)
       eslint:
         specifier: '9.31'
         version: 9.31.0(jiti@2.6.1)
@@ -8307,19 +8311,6 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@commitlint/cli@19.8.1':
-    dependencies:
-      '@commitlint/format': 19.8.1
-      '@commitlint/lint': 19.8.1
-      '@commitlint/load': 19.8.1
-      '@commitlint/read': 19.8.1
-      '@commitlint/types': 19.8.1
-      tinyexec: 1.0.1
-      yargs: 17.7.2
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
   '@commitlint/cli@19.8.1(@types/node@22.14.1)(typescript@5.8.3)':
     dependencies:
       '@commitlint/format': 19.8.1
@@ -8383,22 +8374,6 @@ snapshots:
       '@commitlint/parse': 19.8.1
       '@commitlint/rules': 19.8.1
       '@commitlint/types': 19.8.1
-
-  '@commitlint/load@19.8.1':
-    dependencies:
-      '@commitlint/config-validator': 19.8.1
-      '@commitlint/execute-rule': 19.8.1
-      '@commitlint/resolve-extends': 19.8.1
-      '@commitlint/types': 19.8.1
-      chalk: 5.6.2
-      cosmiconfig: 9.0.0(typescript@5.8.3)
-      cosmiconfig-typescript-loader: 6.2.0(cosmiconfig@9.0.0)
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      lodash.uniq: 4.5.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
 
   '@commitlint/load@19.8.1(@types/node@22.14.1)(typescript@5.8.3)':
     dependencies:
@@ -11782,14 +11757,6 @@ snapshots:
 
   commander@8.3.0: {}
 
-  commitlint@19.8.1:
-    dependencies:
-      '@commitlint/cli': 19.8.1
-      '@commitlint/types': 19.8.1
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
-
   commitlint@19.8.1(@types/node@22.14.1)(typescript@5.8.3):
     dependencies:
       '@commitlint/cli': 19.8.1(@types/node@22.14.1)(typescript@5.8.3)
@@ -11909,11 +11876,6 @@ snapshots:
       cosmiconfig: 9.0.0(typescript@5.8.3)
       jiti: 2.6.1
       typescript: 5.8.3
-
-  cosmiconfig-typescript-loader@6.2.0(cosmiconfig@9.0.0):
-    dependencies:
-      cosmiconfig: 9.0.0(typescript@5.8.3)
-      jiti: 2.6.1
 
   cosmiconfig@9.0.0(typescript@5.8.3):
     dependencies:

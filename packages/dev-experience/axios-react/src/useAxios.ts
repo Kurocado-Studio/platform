@@ -54,8 +54,8 @@ export const useAxios: UseAxios = <
   const resetState: () => void = React.useCallback(() => {
     setIsLoading(false);
     setData(undefined);
-    setError(undefined);
     setProgress(0);
+    setError(undefined);
   }, []);
 
   const axiosRequest: AxiosHandler<T, K> = React.useCallback(
