@@ -14,6 +14,7 @@ type StateReferences<T extends Record<string, unknown>> = {
   data: Ref<T | undefined>;
   error: Ref<ApiRequestError | undefined>;
   isLoading: Ref<boolean>;
+  progress: Ref<number>;
   resetState: () => void;
 };
 
@@ -73,7 +74,7 @@ export function useAxios<
   };
 
   return {
-    state: { data, error, isLoading, resetState },
+    state: { data, error, isLoading, resetState, progress },
     requestHandler,
   };
 }
