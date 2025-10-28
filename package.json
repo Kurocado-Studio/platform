@@ -50,8 +50,5 @@
     "vite": "5.2.8",
     "react": "19.1.0",
     "react-dom": "19.1.0"
-  },
-  "dependencies": {
-    "semantic-release-monorepo": "^8.0.2"
   }
 }
