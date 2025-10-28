@@ -52,9 +52,9 @@ export const useAxios: UseAxios = <
   const [error, setError] = React.useState<undefined | ApiRequestError>();
 
   const resetState: () => void = React.useCallback(() => {
+    setProgress(0);
     setIsLoading(false);
     setData(undefined);
-    setProgress(0);
     setError(undefined);
   }, []);
 
