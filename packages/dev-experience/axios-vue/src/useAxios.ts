@@ -41,8 +41,8 @@ export function useAxios<
 
   const requestHandler: AxiosRequestFunction<T, K> = async (config) => {
     try {
+      resetState();
       isLoading.value = true;
-      error.value = undefined;
 
       const axiosWithProgressInstance = attachProgressToInstance(
         payload.axiosInstance,
