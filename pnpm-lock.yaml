@@ -330,8 +330,8 @@ importers:
   internal/config:
     devDependencies:
       '@kurocado-studio/styleguide':
-        specifier: 2.6.0-develop.10
-        version: 2.6.0-develop.10(vlorv6e4fdfk62tlnu6hfl2kxi)
+        specifier: 2.7.0
+        version: 2.7.0(vlorv6e4fdfk62tlnu6hfl2kxi)
       '@testing-library/jest-dom':
         specifier: ^6.8.0
         version: 6.9.1
@@ -1852,8 +1852,8 @@ packages:
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
 
-  '@kurocado-studio/styleguide@2.6.0-develop.10':
-    resolution: {integrity: sha512-1Jx81ozwrh9wKxpHUA1Ox+8mH8eLaK8PkPjpafeNUiPgkNmqkjvQhkFkRgpDOE8l177omGL4J7GF0pKwP0M4vQ==}
+  '@kurocado-studio/styleguide@2.7.0':
+    resolution: {integrity: sha512-nMBLOrN7wxLKyd24jUkq7T5nuB7cZEfRDVSSqnys05CcB0HojMQssmKIkFcJ+ZA3lbdb3B1M6D6xLixfiIcu0Q==}
     engines: {node: '>=20'}
     peerDependencies:
       '@babel/eslint-parser': ^7.26.5
@@ -1889,7 +1889,7 @@ packages:
       eslint-plugin-vue: ^10.1.0
       globals: ^16.0.0
       husky: ^9.0.11
-      lint-staged: ^15.4.3
+      lint-staged: ^16.1.6
       lodash-es: ^4.17.21
       prettier: ^3.3.3
       prettier-plugin-packagejson: ^2.5.8
@@ -1897,7 +1897,7 @@ packages:
       typescript: ^5.3.3
       typescript-eslint: ^8.22.0
       url-join: ^5.0.0
-      vite: ^6
+      vite: ^7
       vite-plugin-dts: ^4.5.0
       vite-tsconfig-paths: ^5.1.4
       vue-eslint-parser: ^10.1.3
@@ -8904,7 +8904,7 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@kurocado-studio/styleguide@2.6.0-develop.10(vlorv6e4fdfk62tlnu6hfl2kxi)':
+  '@kurocado-studio/styleguide@2.7.0(vlorv6e4fdfk62tlnu6hfl2kxi)':
     dependencies:
       '@babel/eslint-parser': 7.28.5(@babel/core@7.28.5)(eslint@9.31.0(jiti@2.6.1))
       '@commitlint/cli': 19.8.1(@types/node@24.9.1)(typescript@5.8.3)
