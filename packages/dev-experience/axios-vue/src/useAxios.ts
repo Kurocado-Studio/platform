@@ -2,16 +2,19 @@
 import {
   ApiRequestError,
   type AxiosRequestFunction,
+  PROGRESS_STEP_MAPS,
   type UseAxiosParameters,
+  attachProgressToInstance,
   modelAxiosDataResponse,
 } from '@kurocado-studio/axios-domain';
-import { set } from 'lodash-es';
+import { get, set } from 'lodash-es';
 import { type Ref, ref } from 'vue';
 
 type StateReferences<T extends Record<string, unknown>> = {
   data: Ref<T | undefined>;
   error: Ref<ApiRequestError | undefined>;
   isLoading: Ref<boolean>;
+  progress: Ref<number>;
   resetState: () => void;
 };
 
@@ -27,19 +30,42 @@ export function useAxios<
   const data: Ref<(K extends undefined ? T : K) | undefined> = ref(undefined);
   const error: Ref<ApiRequestError | undefined> = ref(undefined);
   const isLoading: Ref<boolean> = ref(false);
+  const progress: Ref<number> = ref(0);
 
   const resetState = (): void => {
     isLoading.value = false;
     data.value = undefined;
     error.value = undefined;
+    progress.value = 0;
   };
 
   const requestHandler: AxiosRequestFunction<T, K> = async (config) => {
     try {
+      resetState();
       isLoading.value = true;
-      error.value = undefined;
 
-      data.value = await modelAxiosDataResponse<T, K>(payload, config);
+      const axiosWithProgressInstance = attachProgressToInstance(
+        payload.axiosInstance,
+        {
+          steps: get(
+            payload,
+            ['progressOptions', 'steps'],
+            PROGRESS_STEP_MAPS.mixed,
+          ),
+          minimumDelay: get(payload, ['progressOptions', 'minimumDelay'], 500),
+          onDownloadProgress: (currentProgress) => {
+            progress.value = currentProgress;
+          },
+          onUploadProgress: (currentProgress) => {
+            progress.value = currentProgress;
+          },
+        },
+      );
+
+      data.value = await modelAxiosDataResponse<T, K>(
+        { ...payload, axiosInstance: axiosWithProgressInstance },
+        config,
+      );
     } catch (requestError: unknown) {
       set(error, ['value'], ApiRequestError.create(requestError));
     } finally {
@@ -48,7 +74,7 @@ export function useAxios<
   };
 
   return {
-    state: { data, error, isLoading, resetState },
+    state: { data, error, isLoading, resetState, progress },
     requestHandler,
   };
 }

@@ -37,8 +37,11 @@ jobs:
       - name: Get last commit message
         id: get_commit
         run: |
-          msg="$(git log -1 --pretty=%B)"
-          echo "message=$msg" >> $GITHUB_OUTPUT
+          {
+            echo "message<<EOF"
+            git log -1 --pretty=%s
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
 
       - name: Select config
         id: envselect
