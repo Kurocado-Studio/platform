@@ -30,7 +30,7 @@ export interface TextAreaApi {
   descriptionProps?: React.HTMLAttributes<HTMLDivElement>;
   errorMessageProps?: React.HTMLAttributes<HTMLDivElement>;
   textAreaProps: React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
-    ref: React.Ref<HTMLInputElement>;
+    ref: React.Ref<HTMLTextAreaElement>;
   };
   isInvalid: boolean;
   labelProps: React.LabelHTMLAttributes<HTMLLabelElement> &

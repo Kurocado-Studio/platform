@@ -2,7 +2,7 @@ import { useField } from '@conform-to/react';
 import { mergeProps } from '@react-aria/utils';
 import { get } from 'lodash-es';
 import { useRef } from 'react';
-import { useTextField } from 'react-aria';
+import { type AriaTextFieldOptions, useTextField } from 'react-aria';
 
 import type { TextAreaApi, TextAreaMeta, TextAreaProperties } from '../types';
 import { composeAriaValidityState } from '../utils';
@@ -34,7 +34,7 @@ export const useAriaTextArea = <
       ? combinedErrors.join(', ')
       : undefined;
 
-  const ariaTextAreaProperties = {
+  const ariaTextAreaProperties: AriaTextFieldOptions<'textarea'> = {
     'aria-describedby': meta.descriptionId,
     'aria-label': label,
     'aria-errormessage': errorMessage,
