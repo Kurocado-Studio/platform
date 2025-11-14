@@ -27,7 +27,7 @@ export const useAriaTextField = <
   const inputId = `input-${meta.name}`;
   const labelId = `label-${meta.name}`;
 
-  const required = get(config, ['isRequired'], false);
+  const required = get(config, ['required'], false);
 
   const metaErrors = Array.isArray(meta.errors) ? meta.errors : [];
 

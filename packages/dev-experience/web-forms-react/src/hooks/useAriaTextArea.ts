@@ -22,7 +22,7 @@ export const useAriaTextArea = <
 
   const inputId = `textarea-${meta.name}`;
   const labelId = `textarea-label-${meta.name}`;
-  const required = get(config, ['isRequired'], false);
+  const required = get(config, ['required'], false);
 
   const metaErrors = Array.isArray(meta.errors) ? meta.errors : [];
   const combinedErrors = config.errorMessage

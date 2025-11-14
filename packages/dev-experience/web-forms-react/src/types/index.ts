@@ -74,6 +74,7 @@ export type TextFieldProperties<
   name: FieldName<FieldSchema, FormSchema, FormError> | string;
   label?: string;
   type?: string;
+  required?: boolean;
 };
 
 export type TextAreaProperties<
@@ -97,6 +98,7 @@ export type TextAreaProperties<
   name: FieldName<FieldSchema, FormSchema, FormError> | string;
   label?: string;
   type?: string;
+  required?: boolean;
 };
 
 export type ValidityStateProperties = ValidityState;
