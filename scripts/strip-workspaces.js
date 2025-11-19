@@ -1,4 +1,4 @@
-// scripts/strip-workspaces.js
+// scripts/stripInternalDependenciesBeforeNpmPublish.ts
 import fs from 'fs';
 import path from 'path';
 
