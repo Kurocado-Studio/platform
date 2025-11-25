@@ -90,4 +90,8 @@
         <description>Created after removal of "Templates" from Platform</description>
         <accepts>Templates.html</accepts>
     </rule>
+    <rule id="759e3371">
+        <description>Created after removal of "Auth0 by Okta module" from Platform</description>
+        <accepts>Auth0-by-Okta.html</accepts>
+    </rule>
 </rules>
