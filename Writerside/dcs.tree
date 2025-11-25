@@ -8,6 +8,7 @@
 
     <toc-element topic="home.md"/>
     <toc-element topic="Case-Study.md"/>
+    <toc-element topic="Important-Links.md"/>
     <toc-element topic="Teams.md">
         <toc-element topic="QA.md"/>
         <toc-element topic="IAM.md">
