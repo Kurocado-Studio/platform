@@ -4,7 +4,14 @@ _A unified, open-source foundation powering all studio products_
 
 ---
 
-## **1. Context**
+> **TL;DR:** The **Kurocado Studio Platform** is a shared architecture that powers all studio
+> products. It standardizes frontend patterns, APIs, and tooling so new products can be built fast,
+> and with a tiny engineering footprint. **One foundation → many products**.
+> **[Explore the code on GitHub](https://github.com/Kurocado-Studio/platform)** {style="note"}
+
+---
+
+## Context
 
 Throughout my career, I’ve gravitated toward platform work — the kind of engineering that sits
 beneath every product and keeps teams fast, aligned, and productive. At Project44 I built automated
@@ -31,16 +38,18 @@ The studio’s roadmap isn’t one product — it’s an ecosystem:
 Every piece needs to be consistent, maintainable, and high-quality.
 
 Building each of these independently would guarantee fragmentation and technical drift. So I made
-the decision early: **The studio needed one platform to power all of it.**
+the decision early: **the studio needed one platform to power all of it.**
 
 ---
 
-## **2. Why the Platform Is Open Source**
+## Why the Platform Is Open Source
 
 The decision to open-source the platform came directly from the studio’s business plan and my
-personal philosophy.
+personal philosophy. As it evolves, the platform will continue maturing into a full SaaS product
+supported through Open Collective sponsorship — ensuring it remains open-source while also
+financially sustainable.
 
-### **2.1 Business Rationale**
+### Business Rationale
 
 Open source reflects the values driving Kurocado Studio:
 
@@ -52,7 +61,7 @@ Open source reflects the values driving Kurocado Studio:
 Open-sourcing aligns with the “build in public” culture I admire. It positions the studio not just
 as a service provider, but as a platform-driven engineering organization.
 
-### **2.2 Engineering Rationale**
+### Engineering Rationale
 
 Open source enforces:
 
@@ -62,17 +71,17 @@ Open source enforces:
 - consistency across repos
 - community feedback loops
 
-It also supports the studio’s educational goals — letting developers learn directly from real,
+It also serves the studio’s educational goals — letting developers learn directly from real,
 production-grade scaffolding.
 
 ---
 
-## **3. Problem**
+## Problem
 
 Kurocado Studio’s product ecosystem — FormKit, 100 Daily UI challenges, a design system, and future
-apps — shared core requirements:
+apps — shared core requirements.
 
-### **3.1 Repeated Engineering Work**
+### Repeated Engineering Work
 
 Every project required its own:
 
@@ -86,7 +95,7 @@ Every project required its own:
 
 This creates the same scaling problems I’ve seen inside enterprise platform teams.
 
-### **3.2 Inconsistent Standards Across Projects**
+### Inconsistent Standards Across Projects
 
 Without a shared foundation:
 
@@ -96,18 +105,16 @@ Without a shared foundation:
 - Versioning becomes chaotic
 - Onboarding slows down
 
-### **3.3 High Maintenance Cost for a Small Team**
+### High Maintenance Cost for a Small Team
 
 As a solo engineer (for now), maintaining multiple standalone repos would eventually collapse under
-its own weight.
-
-I needed to solve the problem _systemically_, not project-by-project.
+its own weight. I needed to solve the problem _systemically_, not project-by-project.
 
 ---
 
-## **4. Goal**
+## Goal
 
-### **4.1 Engineering Goals**
+### Engineering Goals
 
 - Create a **TypeScript-first platform** for all studio products
 - Make new repo setup take minutes, not hours
@@ -116,7 +123,7 @@ I needed to solve the problem _systemically_, not project-by-project.
 - Support both monorepo and standalone structures
 - Ensure React, Vue, and design system components share the same foundation
 
-### **4.2 Business Goals**
+### Business Goals
 
 - Reduce engineering overhead for future client projects
 - Create a scalable base for the studio’s educational tools
@@ -125,7 +132,7 @@ I needed to solve the problem _systemically_, not project-by-project.
 
 ---
 
-## **5. My Role**
+## My Role
 
 I owned:
 
@@ -143,7 +150,7 @@ architecture — the work I naturally gravitate toward.
 
 ---
 
-## **6. Research & Inputs**
+## Research & Inputs
 
 This platform is built on years of pattern recognition from:
 
@@ -158,7 +165,7 @@ I distilled the best practices I’ve learned into something I could maintain as
 
 ---
 
-## **7. Constraints**
+## Constraints
 
 The platform had to:
 
@@ -174,9 +181,9 @@ These constraints pushed the design toward convention-over-configuration.
 
 ---
 
-## **8. Approach**
+## Approach
 
-### **8.1 Platform-First Thinking**
+### Platform-First Thinking
 
 Instead of configuring tooling per repo, I solved it once:
 
@@ -189,7 +196,7 @@ Instead of configuring tooling per repo, I solved it once:
 
 Everything inherits from the platform.
 
-### **8.2 Architecture Strategy**
+### Architecture Strategy
 
 - PNPM workspaces
 - Turborepo build pipelines
@@ -202,9 +209,9 @@ This approach ensures all studio projects evolve together, not apart.
 
 ---
 
-# **9. Solution**
+## Solution
 
-## **9.1 Monorepo Architecture**
+### Monorepo Architecture
 
 Core packages include:
 
@@ -219,9 +226,7 @@ automatically.
 
 ---
 
-## **9.2 Reusable CI/CD Workflows**
-
-A major differentiator.
+### Reusable CI/CD Workflows
 
 Any repo can import the studio workflows:
 
@@ -252,12 +257,15 @@ This gives every project:
 - changelog automation
 - npm publishing
 - tag pushes
+- works for both monorepos and standalone repos via the `monorepo` input
 
 No duplication. No drift.
 
+[See CI/CD Workflows](CI-CD-Workflows.md) for diagrams of how these pieces connect.
+
 ---
 
-## **9.3 Automated Release System**
+### Automated Release System
 
 The release workflow:
 
@@ -267,13 +275,13 @@ The release workflow:
 - updates the changelog
 - publishes to npm
 - pushes tags
-- supports both monorepo and standalone packages
+- works for both monorepo and standalone packages
 
 This eliminates the manual release chaos many teams face.
 
 ---
 
-## **9.4 Documentation Pipeline**
+### Documentation Pipeline
 
 Every repo automatically:
 
@@ -286,7 +294,7 @@ Documentation is part of the product — especially because everything is OSS.
 
 ---
 
-## **9.5 Developer Experience Improvements**
+### Developer Experience Improvements
 
 - opinionated defaults
 - instant repo setup
@@ -300,39 +308,38 @@ The platform enables me to build faster — without sacrificing quality.
 
 ---
 
-# **10. Challenges & How I Solved Them**
+## Challenges & How I Solved Them
 
-### **Reusable Workflows**
+### Reusable Workflows
 
 GitHub Actions are powerful but restrictive. I built clean input interfaces and centralized secrets
 to keep repos isolated but consistent.
 
-### **Supporting Both React and Vue**
+### Supporting Both React and Vue
 
-Shared tooling abstracts differences so all projects behave the same under the hood.
+Shared tooling abstracts framework differences so all projects behave the same under the hood.
 
-### **Monorepo Release Complexity**
+### Monorepo Release Complexity
 
 I implemented logic to detect package changes and apply versioning intelligently.
 
-### **Avoiding Platform Bloat**
+### Avoiding Platform Bloat
 
 I kept the platform focused: strong defaults, minimal configuration, no unnecessary abstractions.
 
 ---
 
-# **11. Impact**
+## Impact
 
-### **11.1 Engineering Impact**
+### Engineering Impact
 
 - All Kurocado Studio projects now share the same engineering standards
-- FormKit, the design system, and the Daily UI Challenge App all run on one backbone
 - New project setup takes minutes
 - Releases are fully automated
 - Zero configuration drift across repos
 - One engineer can maintain a multi-product ecosystem
 
-### **11.2 Business Impact**
+### Business Impact
 
 - Faster delivery for client work
 - Stronger studio identity built on transparent engineering
@@ -341,25 +348,25 @@ I kept the platform focused: strong defaults, minimal configuration, no unnecess
 
 ---
 
-# **12. What I’d Do Next**
+## What I’d Do Next
 
 - Add CLI scaffolding (“create-kurocado-app”)
 - Expand design tokens into a full design system
 - Add test utilities for UI challenges
 - Add preview deployments for PRs
 - Release multiple starter template repos
-- Support alpha/beta channels in release workflows
+- Harden alpha/beta release reporting and rollout visibility
 
 ---
 
-# **13. Reflection**
+## Reflection
 
-### **What I Learned About Platform Design**
+### What I Learned About Platform Design
 
 A strong platform turns one engineer into a team. Building this foundation taught me how much
 leverage comes from solving problems once and inheriting the solution everywhere.
 
-### **How This Reflects My Career Direction**
+### How This Reflects My Career Direction
 
 I realized I genuinely love architecting systems like this — the kind of high-leverage,
 cross-cutting work that powers entire product suites. This project represents where I’m most
